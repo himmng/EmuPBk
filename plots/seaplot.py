@@ -36,3 +36,4 @@ for i, j in zip(*np.triu_indices_from(g.axes, 1)):
     g.axes[i, j].set_visible(False)
 
 g.savefig('plot_nion_{0:.3f}_R_mfp_{1:.3f}_Mhalo_{2:.3f}.png'.format(n_ion.mean(),R_mfp.mean(),Mh.mean()),dpi=400)
+print('plot_nion_{0:.3f}_R_mfp_{1:.3f}_Mhalo_{2:.3f}.png'.format(n_ion.mean(),R_mfp.mean(),Mh.mean()))

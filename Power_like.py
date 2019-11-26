@@ -1,6 +1,6 @@
 import data as d
 import numpy as np
-index= d.index
+index= d.Index
 id = d.ind
 #======================================================================================================================#
 class PSlikeModule(object):

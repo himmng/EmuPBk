@@ -1,10 +1,9 @@
 import keras as ks
-import numpy as np
 
 #======================================================================================================================#
 
-path = '/home/ht/PycharmProject/THANN/data'                   #========Loading the ANN from the directory==================#
-model = ks.models.load_model(path+'EMuPk222.h5')   #========making the model ===============#
+path = '/home/ht/Desktop/NN'                   #========Loading the ANN model from the directory=======#
+model = ks.models.load_model(path+'/EMuPk222.h5')
 
 #======================================================================================================================#
 
