@@ -59,6 +59,8 @@ pk = pk * (dT_b ** 2)
 
 
 #================================================================================================================#
+'''The covarience matrix only contains diagonal terms, flattening it will make no difference in the dot-product 
+during likelihood evaluation'''
 
 cov = pk/(Nk_bins**(1./2.))      #=====Error in powerspectrum(for the covarience matrix)=========#
 

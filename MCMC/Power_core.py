@@ -11,10 +11,8 @@ class PScore(object):
         params = ctx.getParams()
 
         ctx.add('params_pk',params)
-        n_ion ,R_mfp, NoH = params
-
-        prm = [[n_ion,R_mfp,NoH]]
-        prm = np.array(prm)
+        n_ion, R_mfp, NoH = params
+        prm = np.array([[n_ion, R_mfp, NoH]])
         prm.reshape(1,3)
 
         pk_th = pk_pred(prm)
