@@ -1,6 +1,5 @@
-import data as d
 import numpy as np
-from Powerspectrum_Emulator import pk_pred
+from ANN.Powerspectrum_Emulator import pk_pred
 
 #======================================================================================================================#
 

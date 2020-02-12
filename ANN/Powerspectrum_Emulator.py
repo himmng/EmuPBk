@@ -2,8 +2,8 @@ import keras as ks
 
 #======================================================================================================================#
 
-path = '/home/ht/Desktop/NN'                   #========Loading the ANN model from the directory=======#
-model = ks.models.load_model(path+'/EMuPk222.h5')
+                 #========Loading the ANN model=======#
+model = ks.models.load_model('EMuPk222.h5')
 
 #======================================================================================================================#
 

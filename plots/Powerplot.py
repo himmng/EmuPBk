@@ -6,7 +6,7 @@ import pandas as pd
 
 #======================================================================================================================#
 
-path = '/home/ht/PycharmProjects/THANN/'
+path = '/MCMC/'
 n_ion , R_mfp , NoH = np.loadtxt(path+"Powerspectrum_THANN_.out", usecols = (0,1,2), unpack = True)
 #======= n_ion,mean free path and no- of halos =====#
 Mh = 1.087*1.e8*NoH
@@ -35,7 +35,6 @@ plt.subplot(132)
 plt.ylabel('freq.')
 plt.xlabel('$R_{mfp}$')
 plt.hist(R_mfp,bins=50,color='orange')
-#plt.axvline(R_mfp.mean(),color='green',lw=2)
 plt.subplot(133)
 plt.xlabel('$Mh_{min}$')
 plt.ylabel('$freq$')
