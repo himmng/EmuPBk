@@ -1,23 +1,28 @@
 # EmuPBk
-21-cm powerspectrum emulator based on Artificial Neural Network, It is trained over 1065 simulated powerspectrums for a 
-wide EoR parameter ranges at a redshift (z) of 9.210. It capable of reproducing the 21-cm powerspectrums with more than 
-98% accuracy compared to simulated 21-cm powerspectrum.
+ The Epoch of Reionization(EoR) 21-cm Powerspectrum and Bispectrum emulators based on Supervised machine learning(Artificial Neural Network). We have used the semi-numarical 
+EoR simulation **[Reion-Yuga](https://github.com/rajeshmondal18/ReionYuga)** to build the datasets for training and testing of the Artificial Neural Network(ANN). To build the ANN model, we have used 
+**[Keras](https://keras.io/)**, a python based deeplearning library.
 
-* These emulated 21-cm powerspectrum signals then can be used as a theoretical model for MCMC analysis, replacing the
- time consuming EoR simulations.
-==================================================
+Powerspectrum and Bispectrum are two different statistics used to probe the early Universe. So, we have developed two different
+ANN based emulators for each statistics.
 
-
-
-### How one can use the Trained ANN
-
-##### Note: The ANN is trained for a specific redshift z = 9.210. So, It will not be able to work well for other redshifts.
-
-* The ANN is trained for a specific redshift z = 9.210. So, the observational data should be at same redshift
- (corresponding wavelength of H1-line will be 21*(1+z)cm = 2.1441 meters). It will not be able to work well for other redshifts.
-
-* For paramete-estimation and Baysian MCMC, one has to provide the only 3 input parameters fo Epoch of Reionization,
- (Nion,Rmfp,MHmin) - which are Ionizing efficiency, Mean free path of ionizing photons & Minimum halo mass 
+These ANNs are trained over **1065** such simulated Powerspectrum and Bispectrum for given 3 main parameters of EoR
+**(Nion,Rmfp,MHmin)**- The Ionizing efficiency, Mean free path of ionizing photons & Minimum halo mass 
 that produces those ionizing photons in the same order shown here.
+
+* The ANN is trained for a specific redshift **z = 9.210**. So, the observational data should be at same redshift, the
+ corresponding wavelength of H1-line will be 21*(1+z)cm = 2.1441 meters, which is consistant with the future 
+ observations of EoR using **[SKA](https://www.skatelescope.org/)**. 
+ 
+* These emulated 21-cm Powerspectrum & Bispectrum signals then can be used as a theoretical models inplace of simulations.
+ This will remarkably speedup the parameter estimation task.
+
+
+**Note: The ANN is trained for a specific redshift z = 9.210. So, It will not be able to work well for other redshifts.**
+
+
+ 
+
+ 
 
  
