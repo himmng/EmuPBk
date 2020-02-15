@@ -1,5 +1,5 @@
 # EmuPBk
- The Epoch of Reionization(EoR) 21-cm Powerspectrum and Bispectrum emulators based on Supervised machine learning(Artificial Neural Network). We have used the semi-numarical 
+ The Epoch of Reionization(EoR) 21-cm Powerspectrum and Bispectrum emulators based on **Supervised machine learning**(Artificial Neural Network). We have used the semi-numarical 
 EoR simulation **[Reion-Yuga](https://github.com/rajeshmondal18/ReionYuga)** to build the datasets for training and testing of the Artificial Neural Network(ANN). To build the ANN model, we have used 
 **[Keras](https://keras.io/)**, a python based deeplearning library.
 
