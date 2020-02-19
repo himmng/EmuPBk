@@ -12,10 +12,11 @@ that produces those ionizing photons in the same order shown here.
 
 * The ANN is trained for a specific redshift **z = 9.210**. So, the observational data should be at same redshift, the
  corresponding wavelength of H1-line will be 21*(1+z)cm = 2.1441 meters, which is consistant with the future 
- observations of EoR using **[SKA](https://www.skatelescope.org/)**. 
+ observations of EoR using telescopes, such as **[SKA](https://www.skatelescope.org/)**. 
  
 * These emulated 21-cm Powerspectrum & Bispectrum signals then can be used as a theoretical models inplace of simulations.
- This will remarkably speedup the parameter estimation task.
+
+* We can further use these Emulators for a **MCMC Bayesian analysis**. This remarkably speeds up the parameter estimation task.
 
 
 **Note: The ANN is trained for a specific redshift z = 9.210. So, It will not be able to work well for other redshifts.**
