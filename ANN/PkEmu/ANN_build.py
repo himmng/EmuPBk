@@ -1,5 +1,5 @@
 import keras as ks
-from data.data_Powerspectrum.data_read import pk,params
+from data.data_Powerspectrum.data.data_read import pk,params
 from sklearn.model_selection import train_test_split
 
 '''Splitting the data_Powerspectrum for the training and testing ANN'''
