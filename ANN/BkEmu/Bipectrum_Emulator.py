@@ -8,7 +8,8 @@ model = ks.models.load_model(path+'98bk02.h5')
 #======================================================================================================================#
 
 def Bk_pred(params):
-    Bk_pred = model.predict(params)             #======function will return the powerspectrum,given the parameters=====#
+    Bk_pred = model.predict(params)  #======function will return the powerspectrum,given the parameters=====#
+    Bk_pred = Bk_pred*100.
 
     return Bk_pred
 
