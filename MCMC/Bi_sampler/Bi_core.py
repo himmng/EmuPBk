@@ -1,7 +1,5 @@
 import numpy as np
 
-from ANN.BkEmu.Bipectrum_Emulator import Bk_pred
-
 
 #======================================================================================================================#
 
@@ -17,7 +15,7 @@ class PScore(object):
         prm = np.array([[n_ion, R_mfp, NoH]])
         prm.reshape(1,3)
 
-        Bk_th = Bk_pred(prm)
+        Bk_th = ANN.BkEmu.Bipectrum_Emulator.Bk_pred(prm)
 
         ctx.add("key_data",Bk_th)
 

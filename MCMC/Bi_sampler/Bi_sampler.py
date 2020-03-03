@@ -1,5 +1,5 @@
-from MCMC.Bi_sampler.Bi_core import PScore as Bcr
-from MCMC.Bi_sampler.Bi_like import BklikeModule as Blk
+from Bi_core import PScore as Bcr
+from Bi_like import BklikeModule as Blk
 from cosmoHammer import LikelihoodComputationChain
 from cosmoHammer import MpiCosmoHammerSampler
 from cosmoHammer.util import Params
@@ -26,8 +26,8 @@ sampler = MpiCosmoHammerSampler(
             likelihoodComputationChain=chain,                  #=============mpi sampler===============================#
             filePrefix="Bipectrum_",
             walkersRatio=4,
-            burninIterations=20,
-            sampleIterations=20)
+            burninIterations=250,
+            sampleIterations=250)
 
 #======================================================================================================================#
 

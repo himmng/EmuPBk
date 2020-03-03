@@ -1,6 +1,5 @@
-from chainconsumer import ChainConsumer
 import numpy as np
-import pandas as pd
+from chainconsumer import ChainConsumer
 
 path = '/MCMC/Power_sampler/'
 n_ion , R_mfp , NoH = np.loadtxt(path+"Powerspectrum_THANN_.out",

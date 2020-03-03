@@ -1,6 +1,6 @@
 import numpy as np
 
-from data.data_Bispectrum.data_read2 import Bk_test, cov_inv_test
+from data_read2 import Bk_test, cov_inv_test
 
 id = 0 # using for first run
 #======================================================================================================================#
