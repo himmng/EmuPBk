@@ -1,8 +1,10 @@
-from cosmoHammer import MpiCosmoHammerSampler
+from data import Bi_like as Blk
+from data import Bi_core as Bcr
 from cosmoHammer import LikelihoodComputationChain
+from cosmoHammer import MpiCosmoHammerSampler
 from cosmoHammer.util import Params
-import MCMC.Bi_like as Blk
-import MCMC.Bi_core as Bcr
+
+
 
 #======================================================================================================================#
 

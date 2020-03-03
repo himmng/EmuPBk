@@ -1,8 +1,9 @@
-from cosmoHammer import MpiCosmoHammerSampler
 from cosmoHammer import LikelihoodComputationChain
+from cosmoHammer import MpiCosmoHammerSampler
 from cosmoHammer.util import Params
-from MCMC.Power_sampler.Power_like import PSlikeModule as slk
+
 from MCMC.Power_sampler.Power_core import PScore
+from MCMC.Power_sampler.Power_like import PSlikeModule as slk
 
 #======================================================================================================================#
 

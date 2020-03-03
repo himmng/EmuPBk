@@ -1,6 +1,7 @@
 import numpy as np
-from data.data_Bispectrum.data_read import Bk_02,params_02,cov_inv
 from ANN.BkEmu.Bispectrum_Emulator import Bk_pred as model
+
+from data.data_Bispectrum.data_read import cov_inv
 
 '''Initializing the no. of sampling steps, log_likelihood and parameter space'''
 N = 20000

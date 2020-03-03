@@ -1,6 +1,6 @@
-from ANN.ANN_build import index     # index array contains nearly 10 values
-from data.data_Powerspectrumt.data_read import pk, cov_inv
 import numpy as np
+from ANN.ANN_build import index  # index array contains nearly 10 values
+from data.data_Powerspectrumt.data_read import pk
 
 id = 0 # using for first run
 #======================================================================================================================#
