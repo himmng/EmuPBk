@@ -13,9 +13,9 @@ class BklikeModule(object):
 
         Bk_ob = Bk_test[id]               #====='id' can vary from 0 to 9 for 10 samples  ===========#
         diff = Bk_th - Bk_ob
-        diff = diff.reshape(1,7)
-        cov_inv = cov_inv_test
-        logl = -np.dot(np.dot(cov_inv,diff),diff.T)/2.
+        #diff = diff.reshape(1,7)
+        #cov_inv = cov_inv_test
+        logl = -np.dot(np.dot(diff,cov_inv_test),diff.T)/2.
         return logl
 
     def setup(self):
