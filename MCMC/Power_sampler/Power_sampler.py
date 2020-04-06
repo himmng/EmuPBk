@@ -1,8 +1,8 @@
+from cosmoHammer.MpiCosmoHammerSampler import MpiCosmoHammerSampler
 from cosmoHammer import LikelihoodComputationChain
-from cosmoHammer.CosmoHammerSampler import CosmoHammerSampler
 from cosmoHammer.util import Params
-from Power_core import PScore
 from Power_like import PSlikeModule as slk
+from Power_core import PScore
 
 #======================================================================================================================#
 
@@ -19,13 +19,13 @@ chain.addLikelihoodModule(slk())
 chain.setup()
 #======================================================================================================================#
 
-sampler = CosmoHammerSampler(
+sampler = MpiCosmoHammerSampler(
             params= params,
             likelihoodComputationChain=chain,                  #=============mpi sampler===============================#
-            filePrefix="Powerspectrum_THANN_",
-            walkersRatio=4,
+            filePrefix="PANN_",
+            walkersRatio=10,
             burninIterations=250,
-            sampleIterations=250, threadCount=8)
+            sampleIterations=250,)
 
 #======================================================================================================================#
 

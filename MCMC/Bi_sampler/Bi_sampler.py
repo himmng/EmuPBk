@@ -1,5 +1,5 @@
 from cosmoHammer import LikelihoodComputationChain
-from cosmoHammer import CosmoHammerSampler
+from cosmoHammer import MpiCosmoHammerSampler
 from cosmoHammer.util import Params
 
 from Bi_core import PScore as Bcr
@@ -23,13 +23,13 @@ chain.addLikelihoodModule(Blk())
 chain.setup()
 #======================================================================================================================#
 
-sampler = CosmoHammerSampler(
+sampler = MpiCosmoHammerSampler(
             params= params,
             likelihoodComputationChain=chain,                  #=============mpi sampler===============================#
             filePrefix="Bipectrum_",
-            burninIterations=250,
+            burninIterations=2,
             walkersRatio=2,
-            sampleIterations=1,threadCount=8)
+            sampleIterations=10)
 
 #======================================================================================================================#
 

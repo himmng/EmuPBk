@@ -1,0 +1,20 @@
+2020-03-25 14:15:58,371 INFO:Using CosmoHammer 0.6.1
+2020-03-25 14:15:58,371 INFO:Using emcee 3.0rc2
+2020-03-25 14:15:58,374 INFO:Sampler: <class 'cosmoHammer.CosmoHammerSampler.CosmoHammerSampler'>
+configuration: 
+  Params: [250.  38. 750.]
+  Burnin iterations: 20
+  Samples iterations: 20
+  Walkers ratio: 10
+  Reusing burn in: False
+  init pos generator: SampleBallPositionGenerator
+  stop criteria: IterationStopCriteriaStrategy
+  storage util: SampleFileUtil
+likelihoodComputationChain: 
+Core Modules: 
+  PScore
+Likelihood Modules: 
+  PSlikeModule
+
+2020-03-25 14:15:58,374 INFO:start burn in
+2020-03-25 14:17:04,995 INFO:Iteration finished:10
