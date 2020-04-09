@@ -1,4 +1,5 @@
 import keras as ks
+# noinspection PyUnresolvedReferences,PyUnresolvedReferences,PyUnresolvedReferences
 from data.data_Powerspectrum.data.data_read import pk,params
 from sklearn.model_selection import train_test_split
 

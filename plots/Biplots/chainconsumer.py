@@ -1,5 +1,6 @@
-import numpy as np
 import chainconsumer as cs
+import numpy as np
+
 path = '/home/ht/PycharmProjects/EmuPBk/MCMC/Bi_sampler/'
 n_ion , R_mfp , NoH = np.loadtxt(path+"Bipectrum_.out",
 

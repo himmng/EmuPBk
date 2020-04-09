@@ -1,6 +1,6 @@
 import numpy as np
 
-id = 1 #===using for first run
+id = 0 #===using for first run
 
 datapath = '/home/ht/PycharmProjects/EmuPBk/data/data_Powerspectrum/'
 pk = np.loadtxt(datapath+'pk_test')
@@ -14,7 +14,7 @@ def cov_inv(ind):
 	for i in range(len(nbins)):
 		for j in range(7):
 			cov[i,j,j] = pk[i,j]/np.sqrt(nbins[i][j])
-			cov[i]=np.linalg.inv(cov[i])
+		cov[i]=np.linalg.inv(cov[i])
 
 	return cov[ind]
 

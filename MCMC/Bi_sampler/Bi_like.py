@@ -1,6 +1,6 @@
 import numpy as np
 
-id = 1 #========= Observed Powerspectrum index
+id = 0 #========= Observed Powerspectrum index
 
 datapath = '/home/ht/PycharmProjects/EmuPBk/data/data_Bispectrum/k0.2/'
 

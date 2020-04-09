@@ -1,7 +1,8 @@
+import corner
 import matplotlib.pyplot as plt
 import numpy as np
 import seaborn as sns
-import corner
+
 #======================================================================================================================#
 datapath = '/home/ht/PycharmProjects/EmuPBk/data/data_Bispectrum/'
 #======================================================================================================================#
