@@ -1,23 +1,27 @@
 import matplotlib.pyplot as plt
 import numpy as np
-
+import seaborn as sns
+import corner
 #======================================================================================================================#
-
-path = '/home/ht/PycharmProjects/MCMC/Power_sampler/'
-n_ion , R_mfp , NoH = np.loadtxt(path+"PkANN_.out", usecols = (0,1,2), unpack = True)
+datapath = '/home/ht/PycharmProjects/EmuPBk/data/data_Bispectrum/'
+#======================================================================================================================#
+realparam = np.loadtxt(datapath+'params_test')
+realparam = realparam[1]
+path = '/home/ht/PycharmProjects/EmuPBk/MCMC/Bi_sampler/'
+n_ion , R_mfp , NoH = np.loadtxt(path+"Bipectrum_.out", usecols = (0,1,2), unpack = True)
 #======= n_ion,mean free path and no- of halos =====#
 Mh = 1.087*1.e8*NoH
-logL = np.loadtxt(path+"PkANN_prob.out", usecols = (0), unpack = True)     #=== loglikelyhood =====#
+logL = np.loadtxt(path+"Bipectrum_prob.out", usecols = (0), unpack = True)     #=== loglikelyhood =====#
 
 #======================================================================================================================#
 
 
 a=[]
 a = np.c_[n_ion,R_mfp,NoH]
-#sns.set_style('darkgrid')
-#fig = corner.corner(a,bins=100,weights = -logL,color='purple',truth_color='blue',labels = ['$\zeta$','$R_{mfp}$','$Mh_{min}$'])
-#fig.suptitle("$\zeta$ $h$,$R_{mfp}$,$Mh_{min}$  ")
-#fig.savefig('corner_plot.png')
+sns.set_style('darkgrid')
+fig = corner.corner(a,bins=100,weights = -logL,color='purple',truth_color='blue',labels = ['$\zeta$','$R_{mfp}$','$Mh_{min}$'])
+fig.suptitle("$\zeta$ $h$,$R_{mfp}$,$Mh_{min}$  ")
+fig.savefig('corner_plot.png')
 
 
 

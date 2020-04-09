@@ -1,32 +1,18 @@
-'''
 import tensorflow as tf
+tf.config.optimizer.set_jit(True)
 import numpy as np
 
+class ANN():
 
-class EANN():
 
-This will calculate the emulated statistics given the parameters
     def __int__(self,params):
         self.params = params
         self.params = np.reshape(self.params, (1, 3))
-    def model(self,md):
 
-        model = tf.keras.models.load_model(md)
+    def model(self,model):
+
+        model = tf.keras.models.load_model(model)
 
         model = model.predict(self.params)
 
         return model
-
-
-def PANN():
-    params = np.array([30,20,50])
-    model = '/PkEMu/Pk.h5'
-    pk = EANN.model(model)
-
-    return Pk
-
-print(PANN()
-      
-'''
-from cosmoHammer import MpiCosmoHammerSampler
-help(MpiCosmoHammerSampler())

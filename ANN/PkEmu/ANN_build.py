@@ -7,7 +7,7 @@ from sklearn.model_selection import train_test_split
 pk_train, pk_test , params_train, params_test = train_test_split(pk , params, shuffle=True, test_size=0.01)
 
 '''securing the indices of the test data_Powerspectrum for MCMC analysis'''
-index = np.argwhere(params = params_test)
+
 
 '''=============================== ANN Structure=======================================
 
@@ -34,8 +34,7 @@ model.compile(loss='mse', optimizer='adam', metrics=['accuracy'])
 
 model.fit(params_train, pk_train, epochs=1000, batch_size=20,)
 
-model.save('EMuPk22.h5')                         # Saving the ANN model.
-
+model.save('Pk.h5')
 
 
 
