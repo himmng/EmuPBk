@@ -26,4 +26,4 @@ for i, j in zip(*np.triu_indices_from(g.axes, 1)):
 
 loc = '/home/ht/PycharmProjects/EmuPBk/plots/Biplots/0/'
 g.savefig(path+'Bkplot_nion_{0:.2f}_R_mfp_{1:.2f}_Mhalo_{2:.2f}.png'
-          .format(n_ion.mean(), R_mfp.mean(), Mh.mean()), dpi=400)
+          .format(n_ion.mean(), R_mfp.mean(), Mh.mean()), dpi=100)
