@@ -1,8 +1,8 @@
 from chainconsumer import ChainConsumer
 import numpy  as np
 id = 12
-path1 = '/home/ht/PycharmProjects/EmuPBk/plots/results/Pk_results/%d/'%id
-path2 = '/home/ht/PycharmProjects/EmuPBk/plots/results/Bk_results/%d/'%id
+path1 = '/home/ht/PycharmProjects/EmuPBk/plots/results & plots/Pk_results/%d/'%id
+path2 = '/home/ht/PycharmProjects/EmuPBk/plots/results & plots/Bk_results/%d/'%id
 
 n_ionp , R_mfpp , NoHp = np.loadtxt(path1+"Pk_.out", usecols = (0,1,2), unpack = True)
 logLp = np.loadtxt(path1+"Pk_prob.out", usecols = (0), unpack = True)

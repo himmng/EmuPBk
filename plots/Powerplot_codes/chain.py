@@ -2,7 +2,7 @@ import numpy as np
 from chainconsumer import ChainConsumer
 
 id = 0
-path = '/home/ht/PycharmProjects/EmuPBk/plots/results/Pk_results/%d/'%id
+path = '/home/ht/PycharmProjects/EmuPBk/plots/results & plots/Pk_results/%d/'%id
 n_ion , R_mfp , NoH = np.loadtxt(path+"Pk_.out", usecols = (0,1,2), unpack = True)
 Mh = 1.087*NoH
 

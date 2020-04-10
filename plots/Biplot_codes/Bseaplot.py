@@ -4,7 +4,7 @@ import pandas as pd
 import seaborn as sns
 
 id = 0
-path = '/home/ht/PycharmProjects/EmuPBk/plots/results/Bk_results/%d/'%id
+path = '/home/ht/PycharmProjects/EmuPBk/plots/results & plots/Bk_results/%d/'%id
 
 n_ion , R_mfp , NoH = np.loadtxt(path+"Bk.out", usecols = (0,1,2), unpack = True)
 Mh = 1.087*NoH

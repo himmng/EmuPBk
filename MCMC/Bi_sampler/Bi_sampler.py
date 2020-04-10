@@ -10,7 +10,7 @@ from Bi_like import id
 paramters = [peak, min., max., sigma] ===> A rough idea about the parameters
 '''
 
-path = '/home/ht/PycharmProjects/EmuPBk/plots/results/Bk_results'
+path = '/plots/results & plots/Bk_results'
 params = Params(("n_ion",[250.,10.0,510.0,1.0]),("R_mfp", [65.0,5.0,130.0,.5]),("NoH",[750.0,10.0,1510.0,1.0]))
 
 
