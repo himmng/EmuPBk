@@ -1,6 +1,6 @@
 from chainconsumer import ChainConsumer
 import numpy  as np
-id = 12
+id = 17
 path1 = '/home/ht/PycharmProjects/EmuPBk/plots/results & plots/Pk_results/%d/'%id
 path2 = '/home/ht/PycharmProjects/EmuPBk/plots/results & plots/Bk_results/%d/'%id
 
@@ -22,4 +22,4 @@ fig = ChainConsumer().add_chain(datap, parameters=
     .add_chain(datab, name="Bispectrum",color='red').plotter.plot()
 
 fig.set_size_inches(3 + fig.get_size_inches())
-fig.savefig('plot_nion_{0:.3f}_R_mfp_{1:.3f}_Mhalo_{2:.3f}.png'.format(n_ionb.mean(),R_mfpb.mean(),Mhb.mean()),dpi=100)
+fig.savefig('jointplot_index{0:}.png'.format(id),dpi=100)
