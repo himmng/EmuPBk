@@ -1,6 +1,6 @@
 import numpy as np
 
-id = 17 #===using for first run
+id = 16 #===using for first run
 
 datapath = '/home/ht/PycharmProjects/EmuPBk/data/data_Powerspectrum/'
 pk = np.loadtxt(datapath+'pk_test')

@@ -1,0 +1,103 @@
+2020-04-10 03:59:19,055 INFO:Using CosmoHammer 0.6.1
+2020-04-10 03:59:19,055 INFO:Using emcee 2.2.1
+2020-04-10 03:59:19,057 INFO:Sampler: <class 'cosmoHammer.MpiCosmoHammerSampler.MpiCosmoHammerSampler'>
+configuration: 
+  Params: [250.  38. 750.]
+  Burnin iterations: 250
+  Samples iterations: 500
+  Walkers ratio: 20
+  Reusing burn in: False
+  init pos generator: SampleBallPositionGenerator
+  stop criteria: IterationStopCriteriaStrategy
+  storage util: SampleFileUtil
+likelihoodComputationChain: 
+Core Modules: 
+  Bkcore
+Likelihood Modules: 
+  BklikeModule
+
+2020-04-10 03:59:19,057 INFO:start burn in
+2020-04-10 03:59:19,059 INFO:MPI Process rank 0 starts sampling
+2020-04-10 03:59:23,567 INFO:Iteration finished:10
+2020-04-10 03:59:27,154 INFO:Iteration finished:20
+2020-04-10 03:59:31,628 INFO:Iteration finished:30
+2020-04-10 03:59:35,503 INFO:Iteration finished:40
+2020-04-10 03:59:39,166 INFO:Iteration finished:50
+2020-04-10 03:59:43,289 INFO:Iteration finished:60
+2020-04-10 03:59:47,719 INFO:Iteration finished:70
+2020-04-10 03:59:52,069 INFO:Iteration finished:80
+2020-04-10 03:59:56,637 INFO:Iteration finished:90
+2020-04-10 04:00:01,256 INFO:Iteration finished:100
+2020-04-10 04:00:05,840 INFO:Iteration finished:110
+2020-04-10 04:00:10,257 INFO:Iteration finished:120
+2020-04-10 04:00:14,822 INFO:Iteration finished:130
+2020-04-10 04:00:19,549 INFO:Iteration finished:140
+2020-04-10 04:00:24,275 INFO:Iteration finished:150
+2020-04-10 04:00:29,013 INFO:Iteration finished:160
+2020-04-10 04:00:33,639 INFO:Iteration finished:170
+2020-04-10 04:00:38,254 INFO:Iteration finished:180
+2020-04-10 04:00:43,096 INFO:Iteration finished:190
+2020-04-10 04:00:47,753 INFO:Iteration finished:200
+2020-04-10 04:00:52,315 INFO:Iteration finished:210
+2020-04-10 04:00:56,839 INFO:Iteration finished:220
+2020-04-10 04:01:01,488 INFO:Iteration finished:230
+2020-04-10 04:01:06,057 INFO:Iteration finished:240
+2020-04-10 04:01:10,757 INFO:Iteration finished:250
+2020-04-10 04:01:10,757 INFO:storing random state
+2020-04-10 04:01:10,759 INFO:burn in sampling done! Took: 111.7017s
+2020-04-10 04:01:10,759 INFO:Mean acceptance fraction for burn in:0.2991
+2020-04-10 04:01:10,759 INFO:Reseting emcee sampler
+2020-04-10 04:01:10,763 INFO:start sampling after burn in
+2020-04-10 04:01:10,764 INFO:MPI Process rank 0 starts sampling
+2020-04-10 04:01:15,472 INFO:Iteration finished:10
+2020-04-10 04:01:20,143 INFO:Iteration finished:20
+2020-04-10 04:01:24,701 INFO:Iteration finished:30
+2020-04-10 04:01:29,400 INFO:Iteration finished:40
+2020-04-10 04:01:34,107 INFO:Iteration finished:50
+2020-04-10 04:01:38,986 INFO:Iteration finished:60
+2020-04-10 04:01:43,604 INFO:Iteration finished:70
+2020-04-10 04:01:48,232 INFO:Iteration finished:80
+2020-04-10 04:01:52,877 INFO:Iteration finished:90
+2020-04-10 04:01:57,576 INFO:Iteration finished:100
+2020-04-10 04:02:02,221 INFO:Iteration finished:110
+2020-04-10 04:02:06,934 INFO:Iteration finished:120
+2020-04-10 04:02:11,564 INFO:Iteration finished:130
+2020-04-10 04:02:16,022 INFO:Iteration finished:140
+2020-04-10 04:02:20,827 INFO:Iteration finished:150
+2020-04-10 04:02:25,372 INFO:Iteration finished:160
+2020-04-10 04:02:30,185 INFO:Iteration finished:170
+2020-04-10 04:02:34,780 INFO:Iteration finished:180
+2020-04-10 04:02:39,223 INFO:Iteration finished:190
+2020-04-10 04:02:43,699 INFO:Iteration finished:200
+2020-04-10 04:02:48,179 INFO:Iteration finished:210
+2020-04-10 04:02:52,765 INFO:Iteration finished:220
+2020-04-10 04:02:57,393 INFO:Iteration finished:230
+2020-04-10 04:03:01,923 INFO:Iteration finished:240
+2020-04-10 04:03:06,409 INFO:Iteration finished:250
+2020-04-10 04:03:11,097 INFO:Iteration finished:260
+2020-04-10 04:03:15,543 INFO:Iteration finished:270
+2020-04-10 04:03:20,233 INFO:Iteration finished:280
+2020-04-10 04:03:24,928 INFO:Iteration finished:290
+2020-04-10 04:03:29,523 INFO:Iteration finished:300
+2020-04-10 04:03:34,177 INFO:Iteration finished:310
+2020-04-10 04:03:38,840 INFO:Iteration finished:320
+2020-04-10 04:03:43,360 INFO:Iteration finished:330
+2020-04-10 04:03:47,834 INFO:Iteration finished:340
+2020-04-10 04:03:52,292 INFO:Iteration finished:350
+2020-04-10 04:03:56,853 INFO:Iteration finished:360
+2020-04-10 04:04:01,560 INFO:Iteration finished:370
+2020-04-10 04:04:06,205 INFO:Iteration finished:380
+2020-04-10 04:04:10,852 INFO:Iteration finished:390
+2020-04-10 04:04:15,419 INFO:Iteration finished:400
+2020-04-10 04:04:20,000 INFO:Iteration finished:410
+2020-04-10 04:04:24,610 INFO:Iteration finished:420
+2020-04-10 04:04:29,400 INFO:Iteration finished:430
+2020-04-10 04:04:34,126 INFO:Iteration finished:440
+2020-04-10 04:04:39,020 INFO:Iteration finished:450
+2020-04-10 04:04:43,575 INFO:Iteration finished:460
+2020-04-10 04:04:48,279 INFO:Iteration finished:470
+2020-04-10 04:04:53,025 INFO:Iteration finished:480
+2020-04-10 04:04:57,631 INFO:Iteration finished:490
+2020-04-10 04:05:02,368 INFO:Iteration finished:500
+2020-04-10 04:05:02,369 INFO:sampling done! Took: 231.6052s
+2020-04-10 04:05:02,369 INFO:Mean acceptance fraction:0.2999

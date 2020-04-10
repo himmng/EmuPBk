@@ -1,13 +1,13 @@
 import numpy as np
 
-id = 16 #========= Observed Powerspectrum index
-
-datapath = '/home/ht/PycharmProjects/EmuPBk/data/data_Bispectrum/k0.2/'
+id = 17 #========= Observed Powerspectrum index
+k = [0.2,0.3,1.5]
+datapath = '/home/ht/PycharmProjects/EmuPBk/data/data_Bispectrum/k%.1f/'%k[0]
 
 Bk = np.loadtxt(datapath+'Bk_test')
+#Bk = np.around(Bk,1)
 params = np.loadtxt(datapath+'params_test')
 nbins = np.loadtxt(datapath+'N_bins_test')
-
 def cov_inv(ind):
     '''Covariance matrix calculated by using sample variance'''
 

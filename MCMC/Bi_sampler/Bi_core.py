@@ -4,12 +4,15 @@ tf.config.optimizer.set_jit(True)
 
 
 
-modelpath = '/home/ht/PycharmProjects/EmuPBk/ANN/BkEmu/Bk02.h5'
-model = tf.keras.models.load_model(modelpath)
+model1 = '/home/ht/PycharmProjects/EmuPBk/ANN/BkEmu/Bk02.h5'
+model2 = '/home/ht/PycharmProjects/EmuPBk/ANN/BkEmu/Bk0.3.h5'
+model3 = '/home/ht/PycharmProjects/EmuPBk/ANN/BkEmu/Bk15.h5'
 
-rescale =100. #======The rescaling factor used for training the data
+model = tf.keras.models.load_model(model1)
 
-
+rescale1 =100. #======The rescaling factor used for training the data
+rescale2 = 10000.
+rescale3 = 10000000.
 def Bk_pred(params):
 
     '''The funtion will be able to predict the 21-cm Bispectrum given the parameters,
@@ -17,7 +20,8 @@ def Bk_pred(params):
      '''
     params = np.reshape(params,(1,3))
     Bk_th = model.predict(params)
-    Bk_th = Bk_th*rescale
+    Bk_th = Bk_th*rescale1
+    Bk_th = np.around(Bk_th,1)
 
     return Bk_th
 
