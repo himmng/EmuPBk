@@ -3,8 +3,8 @@ import numpy as np
 import pandas as pd
 import seaborn as sns
 
-id = 0
-path = '/home/ht/PycharmProjects/EmuPBk/plots/results & plots/Bk_results/%d/'%id
+id = 17
+path = '/home/ht/PycharmProjects/EmuPBk/plots/results & plots/Bk_results/K0.3/%d/'%id
 
 n_ion , R_mfp , NoH = np.loadtxt(path+"Bk.out", usecols = (0,1,2), unpack = True)
 Mh = 1.087*NoH
@@ -24,6 +24,6 @@ g.map_diag(sns.distplot, color="g", kde_kws={"shade": True})
 for i, j in zip(*np.triu_indices_from(g.axes, 1)):
     g.axes[i, j].set_visible(False)
 
-loc = '/home/ht/PycharmProjects/EmuPBk/plots/Biplots/0/'
+loc = '/home/ht/PycharmProjects/EmuPBk/plots/'
 g.savefig(path+'Bkplot_nion_{0:.2f}_R_mfp_{1:.2f}_Mhalo_{2:.2f}.png'
           .format(n_ion.mean(), R_mfp.mean(), Mh.mean()), dpi=100)

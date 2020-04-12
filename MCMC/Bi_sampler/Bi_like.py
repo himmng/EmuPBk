@@ -1,13 +1,16 @@
 import numpy as np
 
-id = 17 #========= Observed Powerspectrum index
-k = [0.2,0.3,1.5]
-datapath = '/home/ht/PycharmProjects/EmuPBk/data/data_Bispectrum/k%.1f/'%k[0]
+id = 14
+#========= Observed Powerspectrum index
+k=0.2
 
-Bk = np.loadtxt(datapath+'Bk_test')
-#Bk = np.around(Bk,1)
+
+datapath = '/home/ht/PycharmProjects/EmuPBk/data/data_Bispectrum/'
+
+Bk = np.loadtxt(datapath+'BK02test')
 params = np.loadtxt(datapath+'params_test')
-nbins = np.loadtxt(datapath+'N_bins_test')
+nbins = np.loadtxt(datapath+'nbins02_test')
+
 def cov_inv(ind):
     '''Covariance matrix calculated by using sample variance'''
 
@@ -30,6 +33,7 @@ class BklikeModule(object):
     def computeLikelihood(self,ctx):
         Bk_th = ctx.get("key_data")
         diff = np.subtract(Bk_th,Bk_ob)
+        diff = diff/100.
         logl = -np.dot(np.dot(diff,cov),diff.T)/2.
         return logl
 

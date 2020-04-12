@@ -4,15 +4,14 @@ import numpy as np
 import seaborn as sns
 
 #======================================================================================================================#
-datapath = '/home/ht/PycharmProjects/EmuPBk/data/data_Bispectrum/'
+id = 17
+path = '/home/ht/PycharmProjects/EmuPBk/plots/results & plots/Bk_results/K0.3/%d/'%id
 #======================================================================================================================#
-realparam = np.loadtxt(datapath+'params_test')
-realparam = realparam[1]
-path = '/home/ht/PycharmProjects/EmuPBk/MCMC/Bi_sampler/'
-n_ion , R_mfp , NoH = np.loadtxt(path+"Bipectrum_.out", usecols = (0,1,2), unpack = True)
+
+n_ion , R_mfp , NoH = np.loadtxt(path+"Bk.out", usecols = (0,1,2), unpack = True)
 #======= n_ion,mean free path and no- of halos =====#
 Mh = 1.087*1.e8*NoH
-logL = np.loadtxt(path+"Bipectrum_prob.out", usecols = (0), unpack = True)     #=== loglikelyhood =====#
+logL = np.loadtxt(path+"Bkprob.out", usecols = (0), unpack = True)     #=== loglikelyhood =====#
 
 #======================================================================================================================#
 
