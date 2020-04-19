@@ -1,7 +1,8 @@
 import chainconsumer as cs
 import numpy as np
-k = 0.2
-id = 15
+k = 1.5
+id = 17
+
 path = '/home/ht/PycharmProjects/EmuPBk/plots/results & plots/Bk_results/K{0:.1f}/{1:d}/'.format(k,id)
 
 n_ion , R_mfp , NoH = np.loadtxt(path+"Bk.out", usecols = (0,1,2), unpack = True)
@@ -9,12 +10,12 @@ Mh = 1.087*NoH
 
 logL = np.loadtxt(path+"Bkprob.out", usecols = (0), unpack = True)
 
-data = [n_ion, R_mfp,NoH,logL]
+data = [n_ion, R_mfp,NoH,]
 
 
 
-c = cs.ChainConsumer().add_chain(data,parameters=["$\zeta$", "$R_{mfp}$", "$Mh_{min}$","logL"])
-c.configure(color_params="logL",cmap='Blues_r',cmaps=['Blues'])
+c = cs.ChainConsumer().add_chain(data,parameters=["$\zeta$", "$R_{mfp}$", "$Mh_{min}$"])
+#c.configure(color_params="logL",cmap='Blues_r',cmaps=['Blues'])
 fig = c.plotter.plot(figsize=1.0)
 
 fig.set_size_inches(3 + fig.get_size_inches())  # Resize fig for doco. You don't need this.

@@ -15,7 +15,7 @@ paramters = [peak, min., max., sigma] ===> A rough idea about the parameters
 '''
 
 path = '/home/ht/PycharmProjects/EmuPBk/plots/results & plots/Bk_results/K%.1f'%k
-params = Params(("n_ion",[125,10,250,1]),("R_mfp", [75,5,150,1]),("NoH",[750,10,1510,1]))
+params = Params(("n_ion",[125,10,250,0.5]),("R_mfp", [75,5,150,0.5]),("NoH",[750,10,1510,1]))
 
 
 chain = LikelihoodComputationChain(min = params[:,1] , max = params[:,2])

@@ -1,15 +1,15 @@
 import numpy as np
 
-id = 14
+id = 3
 #========= Observed Powerspectrum index
-k=0.2
+k=0.3
 
 
 datapath = '/home/ht/PycharmProjects/EmuPBk/data/data_Bispectrum/'
 
-Bk = np.loadtxt(datapath+'BK02test')
+Bk = np.loadtxt(datapath+'BK03test')
 params = np.loadtxt(datapath+'params_test')
-nbins = np.loadtxt(datapath+'nbins02_test')
+nbins = np.loadtxt(datapath+'nbins03_test')
 
 def cov_inv(ind):
     '''Covariance matrix calculated by using sample variance'''

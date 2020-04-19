@@ -36,7 +36,7 @@ sampler = MpiCosmoHammerSampler(
             burninIterations=250,
             sampleIterations=250,threadCount=16)
 
-print("start sampling: Here we go with the power of zeus.")
+print("start sampling:.")
 sampler.startSampling()
 start = time.time()
 sampler.startSampling()

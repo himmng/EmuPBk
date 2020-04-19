@@ -7,7 +7,7 @@ tf.config.optimizer.set_jit(True)
 modelpath1 = '/home/ht/PycharmProjects/EmuPBk/ANN/BkEmu/BkANN02.h5'
 modelpath2 = '/home/ht/PycharmProjects/EmuPBk/ANN/BkEmu/BkANN03.h5'
 modelpath3 = '/home/ht/PycharmProjects/EmuPBk/ANN/BkEmu/BkANN15.h5'
-model = tf.keras.models.load_model(modelpath1)
+model = tf.keras.models.load_model(modelpath2)
 
 rescale1 =100. #======The rescaling factor used for training the data
 rescale2 =10000.
@@ -21,7 +21,7 @@ def Bk_pred(params):
      '''
     params = np.reshape(params,(1,3))
     Bk_th = model.predict(params)
-    Bk_th = Bk_th*rescale1
+    Bk_th = Bk_th*rescale2
     Bk_th =np.around(Bk_th,1)
 
     return Bk_th
