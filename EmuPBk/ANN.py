@@ -5,8 +5,8 @@ from tensorflow import keras as ks
 
 model = ks.models.Sequential()
 Dense = ks.layers.Dense
-path = os.path.abspath(os.path.join(__file__, os.pardir))
-path = path+'/tests/'
+#path = os.path.abspath(os.path.join(__file__, os.pardir))
+#path = path+'/tests/'
 
 class Model:
     '''
@@ -52,8 +52,8 @@ class Model:
         self.history = model.fit(self.parameters,self.data, validation_split=self.validation, epochs=self.epochs,
                                  batch_size=self.batch)
 
-        model.save(path+'PK.h5')
-        print('saved the model at %s'%path)
+        model.save('PK.h5')
+        print('The model PK.h5 saved at your current directory')
 
 
 
@@ -76,8 +76,8 @@ class Model:
         self.history = model.fit(self.parameters, self.data, validation_split=self.validation, epochs=self.epochs,
                                  batch_size=self.batch, )
 
-        model.save(path+'Bk_model_01.h5')
-        print('saved the model at %s'%path)
+        model.save('Bk_model_01.h5')
+        print('Bk_model_01.h5 model saved at current directory')
 
     def train_BK_model_02(self,name='Bispectrum'):
         '''
@@ -99,7 +99,7 @@ class Model:
                                  batch_size=self.batch, )
 
         model.save(path+'Bk_model_01.h5')
-        print('model saved at location %s'%path)
+        print('Bk_model_01.h5 model saved at current location')
 
 
 
@@ -138,7 +138,7 @@ class Model:
         plt.xlabel('epoch')
         plt.legend(['training', 'validation'], loc='upper right')
         plt.savefig(path+'%s_acc._vs._loss.png'%(self.name))
-        print('saved at the location %s'%path)
+        print('Successfully saved the figure at current location ')
 
 
 

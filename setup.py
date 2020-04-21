@@ -10,7 +10,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="EmuPBk",
-    version='0.0.2',
+    version='1.0.0',
     author='Himanshu Tiwari',
     author_email="himanshuhimang@gmail.com",
     packages=setuptools.find_packages(),
