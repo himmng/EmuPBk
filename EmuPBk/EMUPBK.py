@@ -16,12 +16,13 @@ class EMUPBK:
     :default: It will use existing trained models, but you can use it for newly trained
     models as well, (both for Powerspctrum and Bispectrum)
     '''
-    def __init__(self,):
+    def __init__(self,params):
 
 
         self.model = ks.models.load_model
+        self.params = np.reshape(params,(len(params),len(params[0])))
 
-    def PK(self,params, load_model = pathpk):
+    def PK(self, load_model = pathpk):
         '''The 21-cm powerspectrum EmuPBk based on Artificial Neural Networks(ANN),
             It is 99% accurate in the prediction of Power spectrum, given the 3 parameter array
             Input:
@@ -31,14 +32,14 @@ class EMUPBK:
 
             Output: P(k)
         '''
-        params = np.reshape(params, (1, 3))
+        params = np.reshape(params, (len(params), 3))
         model = self.model(load_model)
-        pk = model.predict(params)
+        pk = model.predict(self.params)
 
         return pk
 
 
-    def BK02(self,params,rescale02=100,load_model=pathbk02):
+    def BK02(self,rescale02=100,load_model=pathbk02):
         '''
         21-cm Bispectrum emulator for k1 = 0.2 mpc^-1
         :param params: array([Nion, Rmfp, NoH])
@@ -47,15 +48,15 @@ class EMUPBK:
         :return: Bk
 
         '''
-        params = np.reshape(params, (1, 3))
+
         model = self.model(load_model)
-        Bk02 = model.predict(params)
+        Bk02 = model.predict(self.params)
         Bk02 = Bk02*rescale02
 
         return Bk02
 
 
-    def BK03(self, params,rescale03=10000,load_model=pathbk03):
+    def BK03(self,rescale03=10000,load_model=pathbk03):
         '''
         21-cm Bispectrum emulator for k1 = 0.3 mpc^-1
         :param params: array([Nion, Rmfp, NoH])
@@ -63,15 +64,14 @@ class EMUPBK:
         used for new models, e.g.: path = './' or 'current working directory'
         :return: Bk
         '''
-        params = np.reshape(params, (1, 3))
         model = self.model(load_model)
-        Bk03 = model.predict(params)
+        Bk03 = model.predict(self.params)
         Bk03 = Bk03*rescale03
 
         return Bk03
 
 
-    def BK15(self, params,rescale15=10000000,load_model=pathbk15):
+    def BK15(self,rescale15=10000000,load_model=pathbk15):
         '''
         21-cm Bispectrum emulator for k1 = 1.5 mpc^-1
         :param params: array([Nion, Rmfp, NoH])
@@ -80,9 +80,8 @@ class EMUPBK:
         :return: Bk
         '''
 
-        params = np.reshape(params, (1, 3))
         model = self.model(load_model)
-        Bk15 = model.predict(params)
+        Bk15 = model.predict(self.params)
         Bk15 = Bk15*rescale15
 
 
