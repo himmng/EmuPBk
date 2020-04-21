@@ -138,7 +138,7 @@ class Model:
         plt.xlabel('epoch')
         plt.legend(['training', 'validation'], loc='upper right')
         plt.savefig(path+'%s_acc._vs._loss.png'%(self.name))
-        print('Successfully saved the figure at current location ')
+        print('Successfully saved the figure at current location')
 
 
 
