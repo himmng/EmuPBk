@@ -10,7 +10,7 @@ try:
     setup, Extension
 except ImportError:
     from distutils.core import setup, Extension
-    setup, Extensio
+    setup, Extension
 
 from setuptools.command.test import test as TestCommand
 
@@ -26,7 +26,7 @@ class PyTest(TestCommand):
         sys.exit(errno)
 
 
-desc = open("README.rst").read()
+desc = open("README.md").read()
 required = ["numpy", "emcee","tensorflow","cosmoHammer","chainconsumer","matplotlib","seaborn"]
 test_requires = ["mock"]
 
@@ -44,8 +44,8 @@ setup(
     test_requires=test_requires,
     package_data={'EmuPBk': ['data/*.dat']},
     include_package_data=True,
-    keywords=["ANN based 21-cm signal emulator",
-              "21-cm powerspectrum and Bispectrum emulator",
+    keywords=["ANN based 21-cm signal EmuPBk",
+              "21-cm powerspectrum and Bispectrum EmuPBk",
               "parameter estimation",
               "cosmology",
               "MCMC"],

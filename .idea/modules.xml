@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/EmuPBkemu.iml" filepath="$PROJECT_DIR$/.idea/EmuPBkemu.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/EmuPBk.iml" filepath="$PROJECT_DIR$/.idea/EmuPBk.iml" />
     </modules>
   </component>
 </project>

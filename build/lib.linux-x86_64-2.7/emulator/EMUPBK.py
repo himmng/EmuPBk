@@ -23,7 +23,7 @@ class EMUPBK:
         pass
     
     def PK(self,params):
-        '''The 21-cm powerspectrum emulator based on Artificial Neural Networks(ANN),
+        '''The 21-cm powerspectrum EmuPBk based on Artificial Neural Networks(ANN),
             It is 99% accurate in the prediction of Powerspectrum, given the three parameter array
             Input: array([Nion,Rmfp,NoH])
 

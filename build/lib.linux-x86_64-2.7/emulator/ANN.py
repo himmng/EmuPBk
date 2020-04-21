@@ -40,7 +40,7 @@ class Model:
 
     def train_Pk(self, name = 'Power_spectrum'):
         '''
-        :return: A trained ANN based 21-cm powerspectrum emulator
+        :return: A trained ANN based 21-cm powerspectrum EmuPBk
         '''
         self.name = name
         model.add(Dense(3, input_shape=np.shape(self.parameters[0]), activation='elu', kernel_initializer=self.kernel_init,))
@@ -60,7 +60,7 @@ class Model:
     def train_BK_model_01(self,name = 'Bispectrum'):
         '''
         Train your Bispectrum data given the parameters
-        :return: A trained ANN based 21-cm Bispectrum emulator
+        :return: A trained ANN based 21-cm Bispectrum EmuPBk
         '''
         self.name = name
         model.add(Dense(80, input_shape=np.shape(self.parameters[0]), activation='elu'))
@@ -83,7 +83,7 @@ class Model:
         '''
         Train your Bispectrum data given the parameters
         Please normalize the data before training
-        :return: A trained ANN based 21-cm Bispectrum emulator
+        :return: A trained ANN based 21-cm Bispectrum EmuPBk
         '''
         self.name = name
         model.add(Dense(80, input_shape=np.shape(self.parameters[0]), activation='elu'))

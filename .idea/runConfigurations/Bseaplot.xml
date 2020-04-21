@@ -1,6 +1,6 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="Bseaplot" type="PythonConfigurationType" factoryName="Python" singleton="false" nameIsGenerated="true">
-    <module name="EmuPBkemu" />
+    <module name="EmuPBk" />
     <option name="INTERPRETER_OPTIONS" value="" />
     <option name="PARENT_ENVS" value="true" />
     <envs>
