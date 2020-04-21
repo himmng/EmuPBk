@@ -7,7 +7,7 @@ Powerspectrum and Bispectrum are two different statistics used to probe the earl
 ANN based emulators for each statistics.
 
 These ANNs are trained over **1065** such simulated Powerspectrum and Bispectrum for given 3 main parameters of EoR
-**(Nion,Rmfp,MHmin)**- The Ionizing efficiency, Mean free path of ionizing photons & Minimum halo mass 
+**(Nion,Rmfp,Mhmin)**- The Ionizing efficiency, Mean free path of ionizing photons & Minimum halo mass 
 that produces those ionizing photons in the same order shown here.
 
 * The ANN is trained for a specific redshift **z = 9.210**. So, the observational data should be at same redshift, the
