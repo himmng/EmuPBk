@@ -6,7 +6,7 @@ from tensorflow import keras as ks
 model = ks.models.Sequential()
 Dense = ks.layers.Dense
 path = os.path.abspath(os.path.join(__file__, os.pardir))
-path = path+'/data/'
+path = path+'/tests/'
 
 class Model:
     '''

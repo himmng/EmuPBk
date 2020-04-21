@@ -3,7 +3,7 @@ import os
 from tensorflow import keras as ks
 
 path = os.path.abspath(os.path.join(__file__, os.pardir))
-path = path+'/existing_models/'
+path = path+'/tests/'
 
 print(path)
 
