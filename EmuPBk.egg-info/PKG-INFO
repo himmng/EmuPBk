@@ -1,0 +1,16 @@
+Metadata-Version: 1.1
+Name: EmuPBk
+Version: 0.0.1
+Summary: ANN based 21-cm Powespectrum and Bispectrum Emulator
+Home-page: http://himmng.github.io/EmuPBk
+Author: Himanshu Tiwari
+Author-email: himanshuhimang@gmail.com
+License: MIT
+Description: UNKNOWN
+Keywords: ANN based 21-cm signal emulator,21-cm powerspectrum and Bispectrum emulator,parameter estimation,cosmology,MCMC
+Platform: UNKNOWN
+Classifier: Intended Audience :: Science/Research
+Classifier: Programming Language :: Python
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.6
