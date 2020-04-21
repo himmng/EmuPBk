@@ -11,19 +11,24 @@ pathbk03 = path+'BkANN03.h5'
 pathbk15 = path+'BkANN15.h5'
 
 class EMUPBK:
-    '''It is able to give the Epoch of Reionization(EoR) 21-cm power spectrum
+    ''' gives the Epoch of Reionization(EoR) 21-cm power spectrum
             and bispectrum given the 3 astrophysical
             parameter (Nion,Rmfp,NoH)
+    :default: It will use existing trained models, but you can use it for newly trained
+    models as well, (both for Powerspctrum and Bispectrum)
     '''
     def __init__(self,):
+
+
         self.model = ks.models.load_model
-
-
 
     def PK(self,params, path = pathpk):
         '''The 21-cm powerspectrum EmuPBk based on Artificial Neural Networks(ANN),
-            It is 99% accurate in the prediction of Powerspectrum, given the three parameter array
-            Input: array([Nion,Rmfp,NoH])
+            It is 99% accurate in the prediction of Power spectrum, given the 3 parameter array
+            Input:
+            :param params: array([Nion,Rmfp,NoH])
+            :param path: default it use exisiting trained model, can be used for new
+            models, e.g.: path = './' or 'current working directory'
 
             Output: P(k)
         '''
@@ -35,7 +40,14 @@ class EMUPBK:
 
 
     def BK02(self,params,rescale02=100,path=pathbk02):
+        '''
+        21-cm Bispectrum emulator for k1 = 0.2 mpc^-1
+        :param params: array([Nion, Rmfp, NoH])
+        :param path: default it use exisiting trained model, can be
+        used for new models, e.g.: path = './' or 'current working directory'
+        :return: Bk
 
+        '''
         params = np.reshape(params, (1, 3))
         model = self.model(path)
         Bk02 = model.predict(params)
@@ -45,8 +57,13 @@ class EMUPBK:
 
 
     def BK03(self, params,rescale03=10000,path=pathbk03):
-
-
+        '''
+        21-cm Bispectrum emulator for k1 = 0.3 mpc^-1
+        :param params: array([Nion, Rmfp, NoH])
+        :param path: default it use exisiting trained model, can be
+        used for new models, e.g.: path = './' or 'current working directory'
+        :return: Bk
+        '''
         params = np.reshape(params, (1, 3))
         model = self.model(path)
         Bk03 = model.predict(params)
@@ -56,6 +73,13 @@ class EMUPBK:
 
 
     def BK15(self, params,rescale15=10000000,path=pathbk15):
+        '''
+        21-cm Bispectrum emulator for k1 = 1.5 mpc^-1
+        :param params: array([Nion, Rmfp, NoH])
+        :param path: default it use exisiting trained model, can be
+        used for new models, e.g.: path = './' or 'current working directory'
+        :return: Bk
+        '''
 
         params = np.reshape(params, (1, 3))
         model = self.model(path)
