@@ -1,32 +1,51 @@
-==============================================================
-EmuPBk(ANN based 21-cm Powerspectrum and Bispectrum Emulator)
-==============================================================
+======
+EmuPBk
+======
+
+
 
 .. image:: https://badge.fury.io/py/EmuPBk.png
     :target: http://badge.fury.io/py/EmuPBk
 
-    
- The Epoch of Reionization(EoR) 21-cm Powerspectrum and Bispectrum emulators based on **Supervised machine learning**(Artificial Neural Network). We have used the semi-numarical 
-EoR simulation **[Reion-Yuga](https://github.com/rajeshmondal18/ReionYuga)** to build the datasets for training and testing of the Artificial Neural Network(ANN). To build the ANN model, we have used 
-**[Keras](https://keras.io/)**, a python based deeplearning library.
 
-Powerspectrum and Bispectrum are two different statistics used to probe the early Universe. So, we have developed two different
-ANN based emulators for each statistics.
+The Epoch of Reionization(EoR) 21-cm Powerspectrum and Bispectrum emulators based on Supervised machine learning(Artificial Neural Network). We have used the semi-numarical
+simulation `ReionYuga <https://github.com/rajeshmondal18/ReionYuga>`_ to build the data-sets for training and testing of Artificial Neural Network(ANN). To build the ANN model, we have used
+`tensorflow-keras <https://keras.io/>`_, a python based deeplearning library.
 
-These ANNs are trained over **1065** such simulated Powerspectrum and Bispectrum for given 3 main parameters of EoR
-**(Nion,Rmfp,Mhmin)**- The Ionizing efficiency, Mean free path of ionizing photons & Minimum halo mass 
-that produces those ionizing photons in the same order shown here.
+To 21-cm Powerspectrum and Bispectrum statistics puts great possibility to probe the EoR.
+So, we have developed two different ANN based emulators for each statistics.
 
-* The ANN is trained for a specific redshift **z = 9.210**. So, the observational data should be at same redshift, the
- corresponding wavelength of H1-line will be 21*(1+z)cm = 2.1441 meters, which is consistant with the future 
- observations of EoR using telescopes, such as **[SKA](https://www.skatelescope.org/)**. 
- 
-* These emulated 21-cm Powerspectrum & Bispectrum signals then can be used as a theoretical models inplace of simulations.
+Package includes 4 already trained ANN models 1 for Powerspectrum & 3 for Bispectrum
+for different k-modes. These ANNs are trained over 1058 such simulated Powerspectrum and Bispectrum for given 3 main parameters of EoR
+(Nion,Rmfp,Mhmin)- The ionizing efficiency, Mean free path of ionizing photons(The size of the ionized region) & Minimum halo mass of the ionizing region.
 
-* We can further use these Emulators for a **MCMC Bayesian analysis**. This remarkably speeds up the parameter estimation task.
+But, anyone can train their own model, and get the accuracy and loss details.
+
+Easy install::
+
+    $ pip install EmuPBk
+
+Fast train you own model::
+
+    from EmuPBk import ANN
+
+    '''
+    Ready with your (data,params)
+    data   => (powerspectrum or Bispectrum)
+    params =>  EoR parameters
+    '''
+
+    model = ANN.Model(data,params)
+
+    Pk = model.train_Pk()            # if training powerspectrum
+
+    Bk = model.train_BK_model_01()   # if training Bispectrum
 
 
-**Note: The ANN is trained for a specific redshift z = 9.210. So, It will not be able to work well for other redshifts.**
+The documentation of EmuPBk is available at  `readthedocs.org <https://>`_
+and the package is distributed over `PyPI <https://pypi.org/project/EmuPBk/>`_.
+Help Contact: `himanshuhimang@gmail.com <himanshuhimang@gmail.com>`_
+
 
 
  
