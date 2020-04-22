@@ -44,7 +44,7 @@ Fast train you own model::
     Bk = model.train_BK_model_01()   # if training Bispectrum
 
 
-The documentation of EmuPBk is available at  `readthedocs.org <https://>`_
+The documentation of EmuPBk is available at  `readthedocs.org <https://emupbk.readthedocs.io/en/latest/>`_
 and the package is distributed over `PyPI <https://pypi.org/project/EmuPBk/>`_.
 Help Contact: `himanshuhimang@gmail.com <himanshuhimang@gmail.com>`_
 
