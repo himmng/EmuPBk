@@ -14,7 +14,7 @@ The Epoch of Reionization(EoR) 21-cm Powerspectrum and Bispectrum emulators base
 simulation `ReionYuga <https://github.com/rajeshmondal18/ReionYuga>`_ to build the data-sets for training and testing of Artificial Neural Network(ANN). To build the ANN model, we have used
 `tensorflow-keras <https://keras.io/>`_, a python based deeplearning library.
 
-To 21-cm Powerspectrum and Bispectrum statistics puts great possibility to probe the EoR.
+The 21-cm Powerspectrum and Bispectrum statistics put great possibility to probe the EoR.
 So, we have developed two different ANN based emulators for each statistics.
 
 Package includes 4 already trained ANN models 1 for Powerspectrum & 3 for Bispectrum
