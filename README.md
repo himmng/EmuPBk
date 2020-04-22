@@ -2,8 +2,8 @@
 EmuPBk(ANN based 21-cm Powerspectrum and Bispectrum Emulator)
 ==============================================================
 
-.. image:: https://badge.fury.io/py/cosmoHammer.png
-    :target: http://badge.fury.io/py/cosmoHammer
+.. image:: https://badge.fury.io/py/EmuPBk.png
+    :target: http://badge.fury.io/py/EmuPBk
 
     
  The Epoch of Reionization(EoR) 21-cm Powerspectrum and Bispectrum emulators based on **Supervised machine learning**(Artificial Neural Network). We have used the semi-numarical 
