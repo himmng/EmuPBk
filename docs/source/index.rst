@@ -1,7 +1,10 @@
-.. complexity documentation master file, created by
-   sphinx-quickstart on Wed April 22 19:14 2020.
+.. EmuPBk documentation master file, created by
+   sphinx-quickstart on Wed Apr 22 21:38:22 2020.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
+
+Welcome to EmuPBk's documentation!
+==================================
 
 .. include:: ../../README.rst
 

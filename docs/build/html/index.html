@@ -1,0 +1,147 @@
+
+<!DOCTYPE html>
+
+<html lang="English">
+  <head>
+    <meta charset="utf-8" />
+    <title>Welcome to EmuPBk&#39;s documentation! &#8212; EmuPBk 2020 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="welcome-to-emupbk-s-documentation">
+<h1>Welcome to EmuPBk's documentation!<a class="headerlink" href="#welcome-to-emupbk-s-documentation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="emupbk-ann-based-21-cm-powerspectrum-and-bispectrum-emulator">
+<h2>EmuPBk(ANN based 21-cm Powerspectrum and Bispectrum Emulator)<a class="headerlink" href="#emupbk-ann-based-21-cm-powerspectrum-and-bispectrum-emulator" title="Permalink to this headline">¶</a></h2>
+<p>EoR simulation <strong>[Reion-Yuga](https://github.com/rajeshmondal18/ReionYuga)</strong> to build the datasets for training and testing of the Artificial Neural Network(ANN). To build the ANN model, we have used
+<strong>[Keras](https://keras.io/)</strong>, a python based deeplearning library.</p>
+<p>Powerspectrum and Bispectrum are two different statistics used to probe the early Universe. So, we have developed two different
+ANN based emulators for each statistics.</p>
+<p>These ANNs are trained over <strong>1065</strong> such simulated Powerspectrum and Bispectrum for given 3 main parameters of EoR
+<strong>(Nion,Rmfp,Mhmin)</strong>- The Ionizing efficiency, Mean free path of ionizing photons &amp; Minimum halo mass
+that produces those ionizing photons in the same order shown here.</p>
+<ul class="simple">
+<li><p>The ANN is trained for a specific redshift <strong>z = 9.210</strong>. So, the observational data should be at same redshift, the</p></li>
+</ul>
+<blockquote>
+<div><p>corresponding wavelength of H1-line will be 21*(1+z)cm = 2.1441 meters, which is consistant with the future
+observations of EoR using telescopes, such as <strong>[SKA](https://www.skatelescope.org/)</strong>.</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>These emulated 21-cm Powerspectrum &amp; Bispectrum signals then can be used as a theoretical models inplace of simulations.</p></li>
+<li><p>We can further use these Emulators for a <strong>MCMC Bayesian analysis</strong>. This remarkably speeds up the parameter estimation task.</p></li>
+</ul>
+<p><strong>Note: The ANN is trained for a specific redshift z = 9.210. So, It will not be able to work well for other redshifts.</strong></p>
+<div class="section" id="user-guide">
+<h3>User Guide<a class="headerlink" href="#user-guide" title="Permalink to this headline">¶</a></h3>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+<div class="section" id="license">
+<h3>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h3>
+<p>MIT License</p>
+<p>Copyright (c) 2020 Himanshu Tiwari</p>
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the &quot;Software&quot;), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:</p>
+<p>The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.</p>
+<p>THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="#">EmuPBk</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Himanshu Tiwari.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.0.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
