@@ -32,10 +32,10 @@ extensions = ['sphinx.ext.autodoc', 'sphinx.ext.coverage', 'sphinx.ext.mathjax',
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 
-# The suffix of source filenames.
+# The suffix of master filenames.
 source_suffix = '.rst'
 
-# The encoding of source files.
+# The encoding of master files.
 #source_encoding = 'utf-8-sig'
 
 # The master toctree document.
@@ -64,8 +64,8 @@ release = __version__
 # Else, today_fmt is used as the format for a strftime call.
 #today_fmt = '%B %d, %Y'
 
-# List of patterns, relative to source directory, that match files and
-# directories to ignore when looking for source files.
+# List of patterns, relative to master directory, that match files and
+# directories to ignore when looking for master files.
 exclude_patterns = []
 
 # The reST default role (used for this markup: `text`) to use for all documents.
@@ -122,7 +122,7 @@ pygments_style = 'sphinx'
 #html_logo = None
 
 # The name of an image file (within the static path) to use as favicon of the
-# docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
+# master.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
 # pixels large.
 #html_favicon = None
 
@@ -190,7 +190,7 @@ latex_elements = {
 }
 
 # Grouping the document tree into LaTeX files. List of tuples
-# (source start file, target name, title, author, documentclass [howto/manual]).
+# (master start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
   ('index', 'EmuPBk.tex', u'EmuPBk Documentation',
    u'Himanshu Tiwari', 'manual'),
@@ -220,7 +220,7 @@ latex_documents = [
 # -- Options for manual page output --------------------------------------------
 
 # One entry per manual page. List of tuples
-# (source start file, name, description, authors, manual section).
+# (master start file, name, description, authors, manual section).
 man_pages = [
     ('index', 'EmuPBk', u'EmuPBk Documentation',
      [u'Himanshu Tiwari'], 1)
@@ -233,7 +233,7 @@ man_pages = [
 # -- Options for Texinfo output ------------------------------------------------
 
 # Grouping the document tree into Texinfo files. List of tuples
-# (source start file, target name, title, author,
+# (master start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
   ('index', 'EmuPBk', u'EmuPBk Documentation',

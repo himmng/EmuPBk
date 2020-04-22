@@ -13,13 +13,6 @@ User Guide
 
    user/install
    user/usage
-   user/HowToEmuPBk
-
-Contents:
----------
-
-.. toctree::
-   :maxdepth: 2
 
 
 License
