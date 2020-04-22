@@ -3,9 +3,11 @@ EmuPBk
 ======
 
 
-
 .. image:: https://badge.fury.io/py/EmuPBk.png
     :target: http://badge.fury.io/py/EmuPBk
+    
+.. image:: https://readthedocs.org/projects/emupbk/badge/?version=latest
+            :target: https://emupbk.readthedocs.io/en/latest/?badge=latest
 
 
 The Epoch of Reionization(EoR) 21-cm Powerspectrum and Bispectrum emulators based on Supervised machine learning(Artificial Neural Network). We have used the semi-numarical
