@@ -24,9 +24,3 @@ User Guide
    license
    help
 
-
-
-Indices and tables
-==================
-
-* :ref:`search`

@@ -1,4 +1,4 @@
 Help
 ====
 
-If you're having any trouble, please contact himanshuhimang@gmail.com
+If you're having any troubles, please contact himanshuhimang@gmail.com
