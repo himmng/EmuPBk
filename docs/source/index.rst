@@ -21,6 +21,7 @@ User Guide
 
    install
    usage
+   animateyourpredictions
    license
    help
 

@@ -55,8 +55,9 @@ Get the training accuracy and loss plot on data and validation data:
     model.get_plot()
 
     # The plot will be saved at current directory.
-
-
+.. image:: lvac02.png
+   :alt: An example of accuracy and loss plot
+   :align: center
 
 Use already existing models for the predictions:
 

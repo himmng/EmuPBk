@@ -1,6 +1,6 @@
-=========
-Animation
-=========
+========================
+Animate your predictions
+========================
 
 
 How to get animation for your test prediction

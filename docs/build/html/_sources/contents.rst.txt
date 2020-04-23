@@ -8,5 +8,6 @@ Content
     readme
     install
     usage
+    animateyourpredictions
     license
     help
