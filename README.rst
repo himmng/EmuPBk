@@ -19,7 +19,7 @@ So, we have developed two different ANN based emulators for each statistics.
 
 Package includes 4 already trained ANN models 1 for Powerspectrum & 3 for Bispectrum
 for different k-modes. These ANNs are trained over 1058 such simulated Powerspectrum and Bispectrum for given 3 main parameters of EoR
-(Nion,Rmfp,Mhmin)- The ionizing efficiency, Mean free path of ionizing photons(The size of the ionized region) & Minimum halo mass of the ionizing region.
+(Nion,Rmfp,Mhmin)- The ionizing efficiency, Mean free path of ionizing photons(The size of the ionized region) & Minimum dark matter halo mass that hosts these ionizing source.
 
 But, anyone can train their own model, and get the accuracy and loss details.
 
