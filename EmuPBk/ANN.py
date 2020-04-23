@@ -1,12 +1,10 @@
 import numpy as np
 import matplotlib.pyplot as plt
-import os
 from tensorflow import keras as ks
 
 model = ks.models.Sequential()
 Dense = ks.layers.Dense
-#path = os.path.abspath(os.path.join(__file__, os.pardir))
-#path = path+'/tests/'
+
 
 class Model:
     '''
@@ -103,7 +101,6 @@ class Model:
 
 
 
-
     def get_plot(self):
         '''
         Please normalize the data before training
@@ -139,6 +136,9 @@ class Model:
         plt.legend(['training', 'validation'], loc='upper right')
         plt.savefig('%s_acc._vs._loss.png'%(self.name))
         print('Successfully saved the figure at current location')
+
+
+
 
 
 
