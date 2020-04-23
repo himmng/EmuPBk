@@ -11,7 +11,7 @@ EmuPBk
             :target: https://emupbk.readthedocs.io/en/latest/?badge=latest
 
 
-The Epoch of Reionization(EoR) is the one of the least and yet important period
+The Epoch of Reionization(EoR) is the one of the least known and yet important period
 in the history of Universe. It is supposed, that the first structures were
 formed during this era. The 21-cm Powerspectrum and Bispectrum statistics
 puts great possibility to probe the EoR. So, we have developed two different ANN based emulators
