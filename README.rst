@@ -27,7 +27,7 @@ Easy install::
 
     $ pip install EmuPBk
 
-Fast train you own model::
+Fast train your own model::
 
     from EmuPBk import ANN
 
