@@ -32,7 +32,6 @@ class EMUPBK:
 
             Output: P(k)
         '''
-        params = np.reshape(params, (len(params), 3))
         model = self.model(load_model)
         pk = model.predict(self.params)
 
