@@ -1,5 +1,5 @@
 import sphinx_rtd_theme
-
+import nbsphinx
 
 # Configuration file for the Sphinx documentation builder.
 #
