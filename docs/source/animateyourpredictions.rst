@@ -1,5 +1,5 @@
 ========================
-Animate your predictions
+Visualize your predictions
 ========================
 
 
@@ -10,7 +10,7 @@ For Powerspectrum:
 
 ::
 
-        from EmuPBk.EMUPBK import Animate_Pk
+        from EmuPBk.visualize import Animate_Pk
 
         animation = Animate_Pk(test_data,test_params,k,load_model,rescale)
 
@@ -41,7 +41,7 @@ For Unique (k2/k1 vs Cos(α)) parameter space:
 
 ::
 
-    from EmuPBk import Animate_Bk
+    from EmuPBk.visualize import Animate_Bk
 
     animation = Animate_Bk(test_data,test_params,load_model,xHI,
                          k1,cos_min,cos_max, cos_step,
@@ -78,3 +78,5 @@ For different k2/k1 ratios:
 .. image:: Bk_vs_cos.gif
    :alt: At individual k2/k1 ratio,(figure generated using our existing model)
    :align: center
+
+

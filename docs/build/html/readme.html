@@ -25,6 +25,7 @@
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
         <script src="_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -86,7 +87,8 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="install.html">How to install:</a></li>
 <li class="toctree-l1"><a class="reference internal" href="usage.html">How to Use</a></li>
-<li class="toctree-l1"><a class="reference internal" href="animateyourpredictions.html">Animate your predictions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="animateyourpredictions.html">Visualize your predictions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Visualize.html">This function uses  chianconsumer, for more details about chainconsume go to :https://samreay.github.io/ChainConsumer/chain_api.html</a></li>
 <li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
 <li class="toctree-l1"><a class="reference internal" href="help.html">Help</a></li>
 </ul>
@@ -153,19 +155,44 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="emupbk">
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="emupbk">
 <h1>EmuPBk<a class="headerlink" href="#emupbk" title="Permalink to this headline">¶</a></h1>
 <a class="reference external image-reference" href="http://badge.fury.io/py/EmuPBk"><img alt="https://badge.fury.io/py/EmuPBk.png" src="https://badge.fury.io/py/EmuPBk.png" /></a>
 <a class="reference external image-reference" href="https://emupbk.readthedocs.io/en/latest/?badge=latest"><img alt="https://readthedocs.org/projects/emupbk/badge/?version=latest" src="https://readthedocs.org/projects/emupbk/badge/?version=latest" /></a>
-<p>The Epoch of Reionization(EoR) is the one of the least and yet important period
+<p>The Epoch of Reionization(EoR) is the one of the least known and yet important period
 in the history of Universe. It is supposed, that the first structures were
 formed during this era. The 21-cm Powerspectrum and Bispectrum statistics
 puts great possibility to probe the EoR. So, we have developed two different ANN based emulators
 for each statistics. The 21-cm Powerspectrum and Bispectrum emulator are based on Supervised machine learning
 (Artificial Neural Network).
-The already existing model ANNs are trained over 1000 such simulated Powerspectrum and Bispectrum
+This module contains some already existing ANN models are trained over 1000 such simulated Powerspectrum and Bispectrum
 for given 3 main parameters of EoR(Nion,Rmfp,Mhmin)- The ionizing efficiency, Mean free path of
 ionizing photons(The size of the ionized region) &amp; Minimum halo mass of the ionizing region.
+And also, one can make their own models according to their datasets.
 We used semi-numarical simulation <a class="reference external" href="https://github.com/rajeshmondal18/ReionYuga">ReionYuga</a>
 to build the data-sets for training and testing of Artificial Neural Network(ANN).
 To build the ANN model, we have used <a class="reference external" href="https://keras.io/">tensorflow-keras</a>, a python based deeplearning library.</p>

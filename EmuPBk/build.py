@@ -6,7 +6,7 @@ model = ks.models.Sequential()
 Dense = ks.layers.Dense
 
 
-class Model:
+class ANN:
     '''
     This will help you to train your data (21-cm powerspectrum and bispectrum ) for
     an already build Artificial Neural Network
@@ -96,7 +96,7 @@ class Model:
         self.history = model.fit(self.parameters, self.data,validation_split=self.validation, epochs=self.epochs,
                                  batch_size=self.batch, )
 
-        model.save(path+'Bk_model_01.h5')
+        model.save('Bk_model_02.h5')
         print('Bk_model_01.h5 model saved at current location')
 
 
