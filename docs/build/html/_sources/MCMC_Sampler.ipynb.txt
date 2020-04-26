@@ -1,0 +1,225 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# MCMC Sampler"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "The MCMC sampling is done using emcee based CosmoHammer.\n",
+    "\n",
+    "For more details about \n",
+    "\n",
+    "\n",
+    "emcee: https://emcee.readthedocs.io/en/stable/\n",
+    "\n",
+    "\n",
+    "CosmoHammer: http://cosmo-docs.phys.ethz.ch/cosmoHammer/"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import emcee\n",
+    "import cosmoHammer\n",
+    "import numpy as np"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "we have used an older version of emcee."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "(u'2.2.1', '0.6.1')"
+      ]
+     },
+     "execution_count": 2,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "emcee.__version__,cosmoHammer.__version__"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "All the custom core and likelihood modules are already in the EmuPBk's MCMC class."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "from EmuPBk.MCMC import sampler"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Loading the data"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "path = '/home/ht/PycharmProjects/EmuPBK/vv/data/data_Powerspectrum/'\n",
+    "data = np.loadtxt(path+'pk_test')\n",
+    "nbins = np.loadtxt(path+'nbins_test')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'\\n:param data: load your data\\n:param cov: data for covariance calculation\\n'"
+      ]
+     },
+     "execution_count": 5,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "mcmc = sampler.Run_MCMC(data[0],nbins[0])\n",
+    "'''\n",
+    ":param data: load your data\n",
+    ":param cov: data for covariance calculation\n",
+    "'''\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## MCMC using already existing ANN models"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Core setup is done\n",
+      "Core setup is done\n",
+      "logLikelihood setup is done\n"
+     ]
+    }
+   ],
+   "source": [
+    "mcmc.load_existing_model(name = 'Pk')\n",
+    "\n",
+    " '''\n",
+    "        Use the existing ANN models for MCMC analysis\n",
+    "        :param name: use ('Pk','Bk02','Bk03','Bk15')==>for powerspectrum, Bispectrum02, Bispectrum03, Bispectrum15\n",
+    "'''"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "find best fit point\n",
+      "converged after 131 iterations!\n",
+      "best fit found:  [[-1.32994776e-05]] [ 16.01032703  31.67938218 526.2873946 ]\n",
+      "start sampling:.\n",
+      "The time taken 29.50 sec. done!\n",
+      "Done!\n"
+     ]
+    }
+   ],
+   "source": [
+    "mcmc.sampler(walker_ratio=6, burnin=200, samples=200, threads=-1)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## MCMC using Your own model"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "mcmc.load_model(load_model,name,rescale)\n",
+    "\n",
+    "'''\n",
+    "        :param load_model: load your own model, (give the path)\n",
+    "        :param name: name of data, ('Pk','Bk02','Bk03','Bk15')==>for powerspectrum, Bispectrum02, Bispectrum03, Bispectrum15\n",
+    "        :param rescale: rescale used in the training\n",
+    "'''\n",
+    "\n",
+    "mcmc.sampler(walker_ratio=6, burnin=200, samples=200, threads=-1)\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 2",
+   "language": "python",
+   "name": "python2"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 2
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython2",
+   "version": "2.7.17"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}
