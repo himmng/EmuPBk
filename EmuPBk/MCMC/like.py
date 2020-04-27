@@ -5,7 +5,7 @@ class LikeModule(object):
 
 	'''Likelihood module for cosmoHammer sampling'''
 
-	def __init__(self,data,nbins):
+	def __init__(self,data,nbins,div):
 
 		'''
 		:param data: load the observational data, or (test_data)
@@ -17,6 +17,7 @@ class LikeModule(object):
 		cov = abs(data)/np.sqrt(nbins)
 		cov = eye*cov
 		self.cov_inv = np.linalg.inv(cov)
+		self.div = div
 
 	def computeLikelihood(self,ctx):
 		'''
@@ -27,7 +28,7 @@ class LikeModule(object):
 		pk_th = ctx.get("key_data")
 		diff = np.subtract(pk_th, self.data)
 		diff = diff.reshape(1,len(self.data))
-		diff = diff/100.
+		diff = diff/self.div
 		logl = -np.dot(diff,np.dot(self.cov_inv,diff.T))/2.
 
 		return logl

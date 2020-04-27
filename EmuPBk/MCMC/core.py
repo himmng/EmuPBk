@@ -7,7 +7,7 @@ class Core(object):
 
     '''Core module for CosmoHammer'''
 
-    def __init__(self,load_model,rescale=1):
+    def __init__(self,load_model,rescale):
         '''
         :param load_model: load the model(can be a function of parameters  model=f(a,b,c)),
         :param rescale: if model is ANN based, the rescaling used in training.

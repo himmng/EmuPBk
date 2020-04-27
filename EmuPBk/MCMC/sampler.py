@@ -1,8 +1,8 @@
 import os
 import time
 import numpy as np
-from core import Core
-from like import LikeModule
+from EmuPBk.MCMC.core import Core
+from EmuPBk.MCMC.like import LikeModule
 from cosmoHammer.util import Params
 from cosmoHammer import MpiCosmoHammerSampler
 from cosmoHammer import LikelihoodComputationChain
@@ -24,7 +24,7 @@ class Run_MCMC:
     Uses MPI sampler class
     '''
 
-    def __init__(self,data,nbins):
+    def __init__(self,data,nbins,div = 1):
 
         '''
         :param data: load your data
@@ -33,7 +33,7 @@ class Run_MCMC:
 
         chain = LikelihoodComputationChain(min=params[:, 1], max=params[:, 2])
         chain.params = params
-        chain.addLikelihoodModule(LikeModule(data,nbins))
+        chain.addLikelihoodModule(LikeModule(data,nbins,div))
         self.chain = chain
 
     def load_existing_model(self,name='Pk'):
