@@ -7,7 +7,7 @@ with open("README.rst", "r") as fh:
 
 setuptools.setup(
     name="EmuPBk",
-    version='3.0',
+    version='1.0',
     author='Himanshu Tiwari',
     author_email="himanshuhimang@gmail.com",
     packages=setuptools.find_packages(),
@@ -20,8 +20,8 @@ setuptools.setup(
               "parameter estimation",
               "cosmology",
               "MCMC"],
-    project_urls=[
-    "Documentation: https://emupbk.readthedocs.io/en/latest/"],
+    project_urls={
+    "Documentation": "https://emupbk.readthedocs.io/en/latest/",},
     classifiers=[
         "Intended Audience :: Science/Research",
         "Programming Language :: Python",
