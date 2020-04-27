@@ -22,7 +22,7 @@ class Predict:
         self.model = ks.models.load_model
         self.params = np.reshape(params,(1,3))
 
-    def PK(self,params,load_model = path+'Pk.h5'):
+    def PK(self,load_model = path+'Pk.h5'):
 
         '''The 21-cm powerspectrum EmuPBk based on Artificial Neural Networks(ANN),
             It is 99% accurate in the prediction of Power spectrum, given the 3 parameter array
@@ -35,7 +35,7 @@ class Predict:
         '''
         model = self.model(load_model)
         #model = ks.models.load_model(load_model)
-        pk = model.predict(params)
+        pk = model.predict(self.params)
 
         return pk
 
