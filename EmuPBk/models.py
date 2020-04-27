@@ -20,7 +20,7 @@ class Predict:
 
 
         self.model = ks.models.load_model
-        self.params = np.reshape(params,(1,3))
+        self.params = params
 
     def PK(self,load_model = path+'Pk.h5'):
 
