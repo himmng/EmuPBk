@@ -16,7 +16,7 @@ class Predict:
     models as well, (both for Powerspctrum and Bispectrum)
     '''
 
-    def __init__(self,params,load_model):
+    def __init__(self,params):
 
 
         self.model = ks.models.load_model
@@ -33,8 +33,8 @@ class Predict:
 
             Output: P(k)
         '''
-
-        model = ks.models.load_model(load_model)
+        model = self.model(load_model)
+        #model = ks.models.load_model(load_model)
         pk = model.predict(params)
 
         return pk
