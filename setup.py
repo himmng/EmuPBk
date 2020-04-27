@@ -7,7 +7,7 @@ with open("README.rst", "r") as fh:
 
 setuptools.setup(
     name="EmuPBk",
-    version='2.1.0',
+    version='2.0',
     author='Himanshu Tiwari',
     author_email="himanshuhimang@gmail.com",
     packages=setuptools.find_packages(),
