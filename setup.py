@@ -20,8 +20,8 @@ setuptools.setup(
               "parameter estimation",
               "cosmology",
               "MCMC"],
-    project_urls={
-    'Documentation':'https://emupbk.readthedocs.io/en/latest/',}
+    project_urls=[
+    "Documentation: https://emupbk.readthedocs.io/en/latest/"],
     classifiers=[
         "Intended Audience :: Science/Research",
         "Programming Language :: Python",
