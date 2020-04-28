@@ -18,7 +18,7 @@ puts great possibility to probe the EoR. So, we have developed two different ANN
 (Artificial Neural Network).
 This module contains some trained ANN models from over 1000 simulated Powerspectrum and Bispectrum given the 3 EoR parameters(Nion,Rmfp,Mhmin)- The ionizing efficiency, Mean free path of
 ionizing photons(The size of the ionized region) & Minimum halo mass of the ionized region.
-We used a C-based semi-numarical code`ReionYuga <https://github.com/rajeshmondal18/ReionYuga>`_
+We used a C-based semi-numarical code `ReionYuga <https://github.com/rajeshmondal18/ReionYuga>`_
 to build the data-sets for training and testing our ANNs.
 
 However, the structure of ANNs' are such, that anyone can build their own ANN model from their own datasets.
