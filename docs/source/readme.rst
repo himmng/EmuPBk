@@ -11,20 +11,23 @@ EmuPBk
             :target: https://emupbk.readthedocs.io/en/latest/?badge=latest
 
 
-The Epoch of Reionization(EoR) is the one of the least known and yet important period
-in the history of Universe. It is supposed, that the first structures were
-formed during this era. The 21-cm Powerspectrum and Bispectrum statistics
-puts great possibility to probe the EoR. So, we have developed two different ANN based emulators
-for each statistics. The 21-cm Powerspectrum and Bispectrum emulator are based on Supervised machine learning
+Epoch of Reionization(EoR) is one of the least known and yet important period
+in the history of the Universe. The very first structures(Stars, Galaxies) are supposed to
+form during this era. The 21-cm Powerspectrum and Bispectrum statistics
+puts great possibility to probe the EoR. So, we have developed two different ANN based 21-cm statistical signal emulators (21-cm Powerspectrum and Bispectrum emulator) based on Supervised machine learning
 (Artificial Neural Network).
-This module contains some already existing ANN models are trained over 1000 such simulated Powerspectrum and Bispectrum
-for given 3 main parameters of EoR(Nion,Rmfp,Mhmin)- The ionizing efficiency, Mean free path of
-ionizing photons(The size of the ionized region) & Minimum halo mass of the ionizing region.
-And also, one can make their own models according to their datasets.
-We used semi-numarical simulation `ReionYuga <https://github.com/rajeshmondal18/ReionYuga>`_
-to build the data-sets for training and testing of Artificial Neural Network(ANN).
-To build the ANN model, we have used `tensorflow-keras <https://keras.io/>`_, a python based deeplearning library.
+This module contains some trained ANN models from over 1000 simulated Powerspectrum and Bispectrum given the 3 EoR parameters(Nion,Rmfp,Mhmin)- The ionizing efficiency, Mean free path of
+ionizing photons(The size of the ionized region) & Minimum halo mass of the ionized region.
+We used a C-based semi-numarical code`ReionYuga <https://github.com/rajeshmondal18/ReionYuga>`_
+to build the data-sets for training and testing our ANNs.
 
+However, the structure of ANNs' are such, that anyone can build their own ANN model from their own datasets.
+This module also simplifies MCMC analysis and posterior visualization.
+
+All ANNs' related tasks were done using `keras <https://keras.io/>`_, a python based deeplearning library,
+For MCMC analysis we used python `cosmoHammer <http://cosmo-docs.phys.ethz.ch/cosmoHammer/>`_, which uses 
+`emcee <https://emcee.readthedocs.io/en/stable/>`_
+and for plotting and visualization we used `chainconsumer <https://samreay.github.io/ChainConsumer/>`_
 
 
  
