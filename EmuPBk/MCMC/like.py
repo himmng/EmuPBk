@@ -5,16 +5,19 @@ class LikeModule(object):
 
 	'''Likelihood module for cosmoHammer sampling'''
 
-	def __init__(self,data,nbins,div):
+	def __init__(self,data,noise=0,nbins,div):
 
 		'''
 		:param data: load the observational data, or (test_data)
+		:param noise: noise in the observational data, if any (optional)
 		:param nbins: numbers of k-bins at each data-set
 		'''
 
 		self.data = data
 		eye = np.eye(len(data))
-		cov = abs(data)/np.sqrt(nbins)
+		cov1 = abs(data)/np.sqrt(nbins)
+		cov2 = abs(noise)/np.sqrt(nbins)
+		cov = cov1 + cov2
 		cov = eye*cov
 		self.cov_inv = np.linalg.inv(cov)
 		self.div = div
