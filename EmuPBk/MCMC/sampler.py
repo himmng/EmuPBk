@@ -24,7 +24,7 @@ class Run_MCMC:
     Uses MPI sampler class
     '''
 
-    def __init__(self,data,nbins,div = 1):
+    def __init__(self,data,noise=0,nbins,div=1):
 
         '''
         :param data: load your data
@@ -33,7 +33,7 @@ class Run_MCMC:
 
         chain = LikelihoodComputationChain(min=params[:, 1], max=params[:, 2])
         chain.params = params
-        chain.addLikelihoodModule(LikeModule(data,nbins,div))
+        chain.addLikelihoodModule(LikeModule(data,noise,nbins,div))
         self.chain = chain
 
     def load_existing_model(self,name='Pk'):
