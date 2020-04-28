@@ -5,7 +5,7 @@ class LikeModule(object):
 
 	'''Likelihood module for cosmoHammer sampling'''
 
-	def __init__(self,data,noise,nbins,div):
+	def __init__(self,data,nbins,noise,div):
 
 		'''
 		:param data: load the observational data, or (test_data)
