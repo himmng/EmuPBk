@@ -10,38 +10,31 @@ EmuPBk
             :target: https://emupbk.readthedocs.io/en/latest/?badge=latest
 
 
-The Epoch of Reionization(EoR) 21-cm Powerspectrum and Bispectrum emulators based on Supervised machine learning(Artificial Neural Network). We have used the semi-numarical
-simulation `ReionYuga <https://github.com/rajeshmondal18/ReionYuga>`_ to build the data-sets for training and testing of Artificial Neural Network(ANN). To build the ANN model, we have used
-`tensorflow-keras <https://keras.io/>`_, a python based deeplearning library.
 
-The 21-cm Powerspectrum and Bispectrum statistics put great possibility to probe the EoR.
-So, we have developed two different ANN based emulators for each statistics.
+Epoch of Reionization(EoR) is one of the least known and yet important period
+in the history of the Universe. The very first structures(Stars, Galaxies) are supposed to
+form during this era. The 21-cm Powerspectrum and Bispectrum statistics
+puts great possibility to probe the EoR. So, we have developed two different ANN based 21-cm statistical signal emulators (21-cm Powerspectrum and Bispectrum emulator) based on Supervised machine learning
+(Artificial Neural Network).
+This module contains some trained ANN models from over 1000 simulated Powerspectrum and Bispectrum given the 3 EoR parameters(Nion,Rmfp,Mhmin)- The ionizing efficiency, Mean free path of
+ionizing photons(The size of the ionized region) & Minimum halo mass of the ionized region.
+We used a C-based semi-numarical code `ReionYuga <https://github.com/rajeshmondal18/ReionYuga>`_
+to build the data-sets for training and testing our ANNs.
 
-Package includes 4 already trained ANN models 1 for Powerspectrum & 3 for Bispectrum
-for different k-modes. These ANNs are trained over 1058 such simulated Powerspectrum and Bispectrum for given 3 main parameters of EoR
-(Nion,Rmfp,Mhmin)- The ionizing efficiency, Mean free path of ionizing photons(The size of the ionized region) & Minimum dark matter halo mass that hosts these ionizing source.
 
-But, anyone can train their own model, and get the accuracy and loss details.
+
+However, the structure of ANNs' are such, that anyone can build their own ANN model from their own datasets.
+This module also simplifies MCMC analysis and posterior visualization.
+
+All ANNs' related tasks were done using `keras <https://keras.io/>`_, a python based deeplearning library,
+For MCMC analysis we used python `cosmoHammer <http://cosmo-docs.phys.ethz.ch/cosmoHammer/>`_, which uses 
+`emcee <https://emcee.readthedocs.io/en/stable/>`_
+and for plotting and visualization we used `chainconsumer <https://samreay.github.io/ChainConsumer/>`_
+
 
 Easy install::
 
     $ pip install EmuPBk
-
-Fast train your own model::
-
-    from EmuPBk import ANN
-
-    '''
-    Ready with your (data,params)
-    data   => (powerspectrum or Bispectrum)
-    params =>  EoR parameters
-    '''
-
-    model = ANN.Model(data,params)
-
-    Pk = model.train_Pk()            # if training powerspectrum
-
-    Bk = model.train_BK_model_01()   # if training Bispectrum
 
 
 The documentation of EmuPBk is available at  `readthedocs.org <https://emupbk.readthedocs.io/en/latest/>`_
