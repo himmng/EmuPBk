@@ -191,12 +191,13 @@ class Get_Posterior:
     :logl: the loglikelihood array contains the values of loglikelihood at each step done by sampler:array(N*1)
     '''
 
-    def __init__(self, params='NA', logL='NA'):
+    def __init__(self,nop, params=None, logL=None):
 
         self.params = params
         self.logL = logL
+        self.nop = nop
 
-    def corner(self, dpi=120):
+    def corner(self, dpi=120,):
         '''
         Generalized function for any data for with any no. of parameters
 
@@ -204,11 +205,12 @@ class Get_Posterior:
         :return: corner plot of the parameters
         '''
         parameters = []
-        for i in range(len(self.params[0])):
+        for i in range(self.nop):
             parameters.append(str(input('name of param_%d: ' % (i + 1), )))
 
-        fig = ChainConsumer().add_chain(self.params, parameters=parameters).plotter.plot()
+        ChainConsumer().add_chain(self.params, parameters=parameters)
 
+        fig = ChainConsumer.plotter.plot(figsize=1.0)
         fig.set_size_inches(3 + fig.get_size_inches())
         fig.savefig('plot_corner.png', dpi=dpi)
 
@@ -239,8 +241,8 @@ class Get_Posterior:
         color = ['red', 'blue', 'green', 'orange', 'pink', 'yellow']
         c = ChainConsumer()
         parameters = []
-        nop = int(input('no. of parameters are there: ', ))
-        for j in range(nop):
+
+        for j in range(self.nop):
             parameters.append(str(input('name of param_%d: ' % (j + 1), )))
 
         nod = int(input('no. of different datasets you are using: ', ))
