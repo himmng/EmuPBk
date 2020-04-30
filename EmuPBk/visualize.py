@@ -4,6 +4,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 from tensorflow import keras as ks
 from chainconsumer import ChainConsumer
+from numpy.random import normal
 from mpl_toolkits import mplot3d
 
 
@@ -22,6 +23,7 @@ class Animate_Pk:
          :return a comparision plot animation between real test_data and predicted data.
 
          '''
+
         self.test_data = test_data
         self.test_params = test_params
         self.k = k
@@ -193,30 +195,26 @@ class Get_Posterior:
 
     def __init__(self,nop, params=None, logL=None):
 
+        self.c = ChainConsumer()
         self.params = params
         self.logL = logL
         self.nop = nop
 
-    def corner(self, dpi=120,):
-        '''
-        Generalized function for any data for with any no. of parameters
 
-        :param dpi: dots per inches for you plot (low value : low resolution,fast processing, high value: high. resolution, slow speed)
-        :return: corner plot of the parameters
-        '''
-        parameters = []
-        for i in range(self.nop):
-            parameters.append(str(input('name of param_%d: ' % (i + 1), )))
+    def corner(self,dpi=120):
 
-        ChainConsumer().add_chain(self.params, parameters=parameters)
+        parameters = ['$\zeta$','$R_{mfp}$','$Mhalo_{min}\times 10^8M_{\odot}$']
+        params = input('Enter the data: ',)
+        self.c.add_chain(params, parameters=parameters,)
 
-        fig = ChainConsumer.plotter.plot(figsize=1.0)
+        fig = self.c.plotter.plot(figsize=1.0)
+
         fig.set_size_inches(3 + fig.get_size_inches())
-        fig.savefig('plot_corner.png', dpi=dpi)
 
-        print('corner plot successfully saved at your current directory')
+        fig.savefig('joint_plot.png', dpi=dpi)
 
-    def jointplot(self,dpi=120):
+
+    def jointplot(self,dpi=120,):
 
         '''
         Generelized fuction can work with any data,with any no. of parameters
@@ -237,9 +235,8 @@ class Get_Posterior:
         :return: joint plot between all the given data
 
         '''
-
+        truth = normal(size=3)
         color = ['red', 'blue', 'green', 'orange', 'pink', 'yellow']
-        c = ChainConsumer()
         parameters = []
 
         for j in range(self.nop):
@@ -251,10 +248,10 @@ class Get_Posterior:
             name = str(input('name of dataset_%d: ' % (i + 1), ))
             data = str(input('enter data_%d file name: ' % (i + 1), ))
             params = np.loadtxt(data)
-            c.add_chain(params, parameters=parameters,
+            self.c.add_chain(params, parameters=parameters,
                         name="%s" % name, color=color[i])
 
-        fig = c.plotter.plot(figsize=1.0)
+        fig = self.c.plotter.plot(truth=truth)
 
         fig.set_size_inches(3 + fig.get_size_inches())
 

@@ -6,11 +6,11 @@ Build your own ANN model based on EoR 21-cm Powerspectrum or Bispectrum:
 
 ::
 
-    from EmuPBk import ANN
+    from EmuPBk.build import ANN
 
     # load your (data,params) as ==> (Pk,EoR parameters) or (Bk, EoR parameters)
 
-    model = ANN.Model(data,params,epochs,batch,optimizer,kernel_init,validation)
+    model = ANN(data,params,epochs,batch,optimizer,kernel_init,validation)
         '''
                 : data: must be an array (N*k_bins)
                 : params: must be an array (N*n_parameters)
@@ -63,7 +63,7 @@ Use already existing models for the predictions:
 
 ::
 
-    from EmuPBk.EMUPBK import EMUPBK
+    from EmuPBk.models import Predict
 
 
 
@@ -72,36 +72,23 @@ Use already existing models for the predictions:
 
     params = np.random.randn(6,3)
 
-    model = EMUPBK(params)
+    model = Predict(params)
 
     # predicting power spectrum
 
-    pk = model.PK()
+    pk = Predict.PK()
 
     # gives the power spectrum array for given parameters.
 
     # predicting Bispectrum
 
-    Bk02 = model.Bk02()    # for k = 0.2 mpc^-1
-    Bk03 = model.Bk03()    # for k = 0.3 mpc^-1
-    Bk15 = model.Bk15()    # for k = 1.5 mpc^-1
+    Bk02 = Predict.Bk02()    # for k = 0.2 mpc^-1
+    Bk03 = Predict.Bk03()    # for k = 0.3 mpc^-1
+    Bk15 = Predict.Bk15()    # for k = 1.5 mpc^-1
 
 .. note:: By default, it will use existing models, to use you own models do the following.
 
-Your saved model will be at current directory, if now get the path of your model:
 
-::
-
-
-    pk = model.PK(load_model = 'PK.h5')
-
-    # OR
-
-    pk = model.PK(load_model = 'path/to/your/Pk_model')
-
-    # similarly do for Bispectrum
-
-    Bk02 = model.Bk02(load_model = 'BK.h5' or 'path/to/your/Bk_model' )
 
 
 

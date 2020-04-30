@@ -24,7 +24,7 @@ class Run_MCMC:
     Uses MPI sampler class
     '''
 
-    def __init__(self,data,nbins,noise=0,div=1):
+    def __init__(self,data,nbins,noise=None,div=1):
 
         '''
         :param data: load your data
@@ -70,7 +70,7 @@ class Run_MCMC:
         self.chain.setup()
 
 
-    def sampler(self,walker_ratio, burnin, samples, threads=-1):
+    def sampler(self,walker_ratio, burnin, samples,number, threads=-1):
         '''
 
         :param walker_ratio:  the ratio of walkers and the count of sampled parameters
@@ -86,7 +86,7 @@ class Run_MCMC:
         sampler = MpiCosmoHammerSampler(
                     params= params,
                     likelihoodComputationChain=self.chain,
-                    filePrefix='%s'%self.name,
+                    filePrefix='%s'%self.name+'%d'%number,
                     walkersRatio=walker_ratio,
                     burninIterations=burnin,
                     sampleIterations=samples,threadCount=threads)
