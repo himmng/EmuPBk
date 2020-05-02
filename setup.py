@@ -1,4 +1,3 @@
-import os
 import setuptools
 
 with open("README.rst", "r") as fh:
@@ -7,7 +6,7 @@ with open("README.rst", "r") as fh:
 
 setuptools.setup(
     name="EmuPBk",
-    version='0.1',
+    version='0.0.2',
     author='Himanshu Tiwari',
     author_email="himanshuhimang@gmail.com",
     packages=setuptools.find_packages(),

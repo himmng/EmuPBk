@@ -70,12 +70,13 @@ class Run_MCMC:
         self.chain.setup()
 
 
-    def sampler(self,walker_ratio, burnin, samples,number, threads=-1):
+    def sampler(self,walker_ratio, burnin, samples,num, threads=-1):
         '''
 
         :param walker_ratio:  the ratio of walkers and the count of sampled parameters
         :param burnin: burin iterations
         :param samples: no. of sample iterations
+        :param num: number to put in output files e.g: string(name+num)=Pk_1,Bk_1
         :param threads: no. of cpu threads
         '''
         print("find best fit point")
@@ -86,7 +87,7 @@ class Run_MCMC:
         sampler = MpiCosmoHammerSampler(
                     params= params,
                     likelihoodComputationChain=self.chain,
-                    filePrefix='%s'%self.name+'%d'%number,
+                    filePrefix='%s'%self.name+'%d'%num,
                     walkersRatio=walker_ratio,
                     burninIterations=burnin,
                     sampleIterations=samples,threadCount=threads)

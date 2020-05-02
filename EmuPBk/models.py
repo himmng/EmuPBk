@@ -1,4 +1,3 @@
-import numpy as np
 import os
 
 from tensorflow import keras as ks
@@ -34,7 +33,6 @@ class Predict:
             Output: P(k)
         '''
         model = self.model(load_model)
-        #model = ks.models.load_model(load_model)
         pk = model.predict(self.params)
 
         return pk

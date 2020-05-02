@@ -193,32 +193,43 @@ class Get_Posterior:
     :logl: the loglikelihood array contains the values of loglikelihood at each step done by sampler:array(N*1)
     '''
 
-    def __init__(self,nop, params=None, logL=None):
+    def __init__(self,nop):
+        '''
+        :param nop: number of parameters
+        '''
 
         self.c = ChainConsumer()
         self.params = params
         self.logL = logL
         self.nop = nop
+        self.parameters = []
+
+        for j in range(nop):
+            self.parameters.append(str(input('name of param_%d: ' % (j + 1), )))
 
 
-    def corner(self,dpi=120):
 
-        parameters = ['$\zeta$','$R_{mfp}$','$Mhalo_{min}\times 10^8M_{\odot}$']
-        params = input('Enter the data: ',)
-        self.c.add_chain(params, parameters=parameters,)
+    def corner(self,index,dpi=120):
+        '''
+        :param index: index for plot name
+        '''
+
+        data = str(input('enter data_%d file name: ', ))
+        params = np.loadtxt(data)
+        self.c.add_chain(params, parameters=self.parameters,)
 
         fig = self.c.plotter.plot(figsize=1.0)
 
         fig.set_size_inches(3 + fig.get_size_inches())
 
-        fig.savefig('joint_plot.png', dpi=dpi)
+        fig.savefig('corner_plot_%d.png'%index, dpi=dpi)
 
 
-    def jointplot(self,dpi=120,):
+    def jointplot(self,index,dpi=120,):
 
         '''
         Generelized fuction can work with any data,with any no. of parameters
-
+        index: data index name
         dpi: dots per inches for you plot (low value : low resolution,fast processing, high value: high. resolution, slow speed)
         :return: corner plot between the parameters. (default:120)
 
@@ -239,23 +250,20 @@ class Get_Posterior:
         color = ['red', 'blue', 'green', 'orange', 'pink', 'yellow']
         parameters = []
 
-        for j in range(self.nop):
-            parameters.append(str(input('name of param_%d: ' % (j + 1), )))
-
-        nod = int(input('no. of different datasets you are using: ', ))
+        nod = int(input('no. of different data-sets you are using: ', ))
 
         for i in range(nod):
             name = str(input('name of dataset_%d: ' % (i + 1), ))
             data = str(input('enter data_%d file name: ' % (i + 1), ))
             params = np.loadtxt(data)
-            self.c.add_chain(params, parameters=parameters,
+            self.c.add_chain(params, parameters=self.parameters,
                         name="%s" % name, color=color[i])
 
         fig = self.c.plotter.plot(truth=truth)
 
         fig.set_size_inches(3 + fig.get_size_inches())
 
-        fig.savefig('joint_plot.png', dpi=dpi)
+        fig.savefig('joint_plot_%d.png'%index, dpi=dpi)
 
         print('joint_plot.png successfully saved at your current directory')
 
