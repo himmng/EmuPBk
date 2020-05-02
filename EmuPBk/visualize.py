@@ -199,13 +199,13 @@ class Get_Posterior:
         '''
 
         self.c = ChainConsumer()
-        self.params = params
-        self.logL = logL
         self.nop = nop
-        self.parameters = []
 
+        parameters=[]
         for j in range(nop):
-            self.parameters.append(str(input('name of param_%d: ' % (j + 1), )))
+            parameters.append(str(input('name of param_%d: ' % (j + 1), )))
+
+        self.parameters = parameters
 
 
 
