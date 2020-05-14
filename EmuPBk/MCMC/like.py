@@ -15,9 +15,8 @@ class LikeModule(object):
 
 		self.data = data
 		eye = np.eye(len(data))
-		cov1 = abs(data)/np.sqrt(nbins)
-		cov2 = abs(noise)/np.sqrt(nbins)
-		cov = cov1 + cov2
+		cov = abs(data)/np.sqrt(nbins)
+		cov = cov + abs(noise)
 		cov = eye*cov
 		self.cov_inv = np.linalg.inv(cov)
 		self.div = div

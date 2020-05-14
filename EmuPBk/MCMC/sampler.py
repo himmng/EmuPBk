@@ -15,7 +15,7 @@ from cosmoHammer.pso.MpiParticleSwarmOptimizer import MpiParticleSwarmOptimizer
 path = os.path.abspath(os.path.join(__file__, os.pardir))
 path = path+'/tests/existing_models/'
 
-params = Params(("n_ion",[105,10,220,2]),("R_mfp", [62,5,130,1]),("NoH",[750,10,1510,5]))
+params = Params(("n_ion",[105,10,220,4]),("R_mfp", [62,5,130,4]),("NoH",[750,10,1510,5]))
 
 class Run_MCMC:
 
@@ -52,10 +52,17 @@ class Run_MCMC:
         elif name == 'Bk03':
             self.chain.addCoreModule(Core(load_model=path+'Bk03.h5',rescale=10000))
 
-        else:
+        elif name == 'Bk15':
             self.chain.addCoreModule(Core(load_model=path+'Bk15.h5',rescale=10000000))
-        self.chain.setup()
 
+
+        elif name =='NewBk02':
+            self.chain.addCoreModule(Core(load_model=path+'NewBk02.h5',rescale=100))
+
+
+        elif name == 'NewBk03':
+            self.chain.addCoreModule(Core(load_model=path + 'NewBk03.h5', rescale=10000))
+        self.chain.setup()
 
     def load_model(self,load_model,name='Pk',rescale=1):
 
@@ -92,7 +99,7 @@ class Run_MCMC:
                     burninIterations=burnin,
                     sampleIterations=samples,threadCount=threads)
 
-        print("start sampling:.")
+        print("started sampling:")
         start = time.time()
         sampler.startSampling()
         end = time.time()
