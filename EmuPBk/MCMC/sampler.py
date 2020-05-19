@@ -14,8 +14,9 @@ from cosmoHammer.pso.MpiParticleSwarmOptimizer import MpiParticleSwarmOptimizer
 
 path = os.path.abspath(os.path.join(__file__, os.pardir))
 path = path+'/tests/existing_models/'
+params = Params(("n_ion", [105, 10, 220, 5]), ("R_mfp", [62, 5, 130, 5]),
+                ("NoH", [750, 10, 1510, 15]))
 
-params = Params(("n_ion",[105,10,220,4]),("R_mfp", [62,5,130,4]),("NoH",[750,10,1510,5]))
 
 class Run_MCMC:
 
