@@ -9,8 +9,9 @@ class LikeModule(object):
 
 		'''
 		:param data: load the observational data, or (test_data)
-		:param noise: noise in the observational data, if any (optional)
 		:param nbins: numbers of k-bins at each data-set
+		:param noise: noise in the observational data, if any (optional)
+
 		'''
 
 		self.data = data

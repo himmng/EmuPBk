@@ -8,14 +8,15 @@ from cosmoHammer import MpiCosmoHammerSampler
 from cosmoHammer import LikelihoodComputationChain
 from cosmoHammer.pso.MpiParticleSwarmOptimizer import MpiParticleSwarmOptimizer
 
-
-#The parameter space is defined
-#paramters = [peak, min., max., sigma] ===> A rough idea about the prior
+# The parameter space is defined
+# paramters = [peak, min., max., sigma] ===> A rough idea about the prior
 
 path = os.path.abspath(os.path.join(__file__, os.pardir))
-path = path+'/tests/existing_models/'
-params = Params(("n_ion", [105, 10, 220, 5]), ("R_mfp", [62, 5, 130, 5]),
-                ("NoH", [750, 10, 1510, 15]))
+path = path + '/tests/existing_models/'
+
+params = Params(("n_ion", [105, 10, 220, 2]), ("R_mfp", [62, 5, 130, 1]), ("NoH", [750, 10, 1510, 5]))
+
+
 
 
 class Run_MCMC:
@@ -31,11 +32,15 @@ class Run_MCMC:
         :param data: load your data
         :param nbins: no. of bins in the data (for covariance matrix )
         '''
+        params = Params(("n_ion", [105, 10, 220,2.5]), ("R_mfp", [62, 5, 130, 1.5]), ("NoH", [750, 10, 1510, 5.0]))
 
         chain = LikelihoodComputationChain(min=params[:, 1], max=params[:, 2])
         chain.params = params
         chain.addLikelihoodModule(LikeModule(data,nbins,noise,div))
         self.chain = chain
+
+
+
 
     def load_existing_model(self,name='Pk'):
         '''
@@ -63,6 +68,7 @@ class Run_MCMC:
 
         elif name == 'NewBk03':
             self.chain.addCoreModule(Core(load_model=path + 'NewBk03.h5', rescale=10000))
+
         self.chain.setup()
 
     def load_model(self,load_model,name='Pk',rescale=1):
@@ -78,7 +84,7 @@ class Run_MCMC:
         self.chain.setup()
 
 
-    def sampler(self,walker_ratio, burnin, samples,num, threads=-1):
+    def sampler(self,walker_ratio, burnin, samples, num, threads=-1):
         '''
 
         :param walker_ratio:  the ratio of walkers and the count of sampled parameters
@@ -86,12 +92,13 @@ class Run_MCMC:
         :param samples: no. of sample iterations
         :param num: number to put in output files e.g: string(name+num)=Pk_1,Bk_1
         :param threads: no. of cpu threads
-        '''
+
+        self.chain.setup()
         print("find best fit point")
         pso = MpiParticleSwarmOptimizer(self.chain, params[:, 1], params[:, 2])
         psoTrace = np.array([pso.gbest.position.copy() for _ in pso.sample()])
         params[:, 0] = pso.gbest.position
-
+        '''
         sampler = MpiCosmoHammerSampler(
                     params= params,
                     likelihoodComputationChain=self.chain,
@@ -107,3 +114,4 @@ class Run_MCMC:
         tics = end-start
         print("The time taken %.2f sec. done!"%tics)
         print('Done!')
+

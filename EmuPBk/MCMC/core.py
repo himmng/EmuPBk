@@ -32,6 +32,7 @@ class Core(object):
 
         Pk_th = self.model.predict(params)
         Pk_th = Pk_th*self.rescale
+
         ctx.add("key_data",Pk_th)
 
     def setup(self):

@@ -201,22 +201,21 @@ class Get_Posterior:
         self.c = ChainConsumer()
         self.nop = nop
 
-        parameters=[]
-        for j in range(nop):
-            parameters.append(str(input('name of param_%d: ' % (j + 1), )))
+        parameters=["$\zeta$", "$R_{mfp}$", r"$Mh_{min} \times 10^8 M\odot$"]
+
 
         self.parameters = parameters
 
 
 
-    def corner(self,index,dpi=120):
+    def corner(self,index,color='blue',dpi=120):
         '''
         :param index: index for plot name
         '''
 
         data = str(input('enter data_%d file name: ', ))
         params = np.loadtxt(data)
-        self.c.add_chain(params, parameters=self.parameters,)
+        self.c.add_chain(params, parameters=self.parameters,color=color)
 
         fig = self.c.plotter.plot(figsize=1.0)
 
