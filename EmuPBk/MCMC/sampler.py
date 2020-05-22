@@ -61,14 +61,6 @@ class Run_MCMC:
         elif name == 'Bk15':
             self.chain.addCoreModule(Core(load_model=path+'Bk15.h5',rescale=10000000))
 
-
-        elif name =='NewBk02':
-            self.chain.addCoreModule(Core(load_model=path+'NewBk02.h5',rescale=100))
-
-
-        elif name == 'NewBk03':
-            self.chain.addCoreModule(Core(load_model=path + 'NewBk03.h5', rescale=10000))
-
         self.chain.setup()
 
     def load_model(self,load_model,name='Pk',rescale=1):
