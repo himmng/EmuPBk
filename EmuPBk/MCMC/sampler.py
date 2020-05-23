@@ -5,6 +5,7 @@ from EmuPBk.MCMC.core import Core
 from EmuPBk.MCMC.like import LikeModule
 from cosmoHammer.util import Params
 from cosmoHammer import MpiCosmoHammerSampler
+from cosmoHammer import CosmoHammerSampler
 from cosmoHammer import LikelihoodComputationChain
 from cosmoHammer.pso.MpiParticleSwarmOptimizer import MpiParticleSwarmOptimizer
 
@@ -14,7 +15,9 @@ from cosmoHammer.pso.MpiParticleSwarmOptimizer import MpiParticleSwarmOptimizer
 path = os.path.abspath(os.path.join(__file__, os.pardir))
 path = path + '/tests/existing_models/'
 
-params = Params(("n_ion", [105, 10, 220, 2]), ("R_mfp", [62, 5, 130, 1]), ("NoH", [750, 10, 1510, 5]))
+sigma = np.array([[1.0,1.0,2.0],[2.0,1.0,3.0],[3.0,1.5,5.0],[4.0,3.0,6.0],[5.0,4.0,10.0]])
+i = int(input('use sigma array index 0 to 4 :',))
+params = Params(("n_ion", [105, 10, 220, sigma[i,0]), ("R_mfp", [62, 5, 130, sigma[i,1]]), ("NoH", [750, 10, 1510, sigma[i,2]]))
 
 
 
@@ -32,7 +35,7 @@ class Run_MCMC:
         :param data: load your data
         :param nbins: no. of bins in the data (for covariance matrix )
         '''
-        params = Params(("n_ion", [105, 10, 220,2.5]), ("R_mfp", [62, 5, 130, 1.5]), ("NoH", [750, 10, 1510, 5.0]))
+
 
         chain = LikelihoodComputationChain(min=params[:, 1], max=params[:, 2])
         chain.params = params
@@ -76,7 +79,7 @@ class Run_MCMC:
         self.chain.setup()
 
 
-    def sampler(self,walker_ratio, burnin, samples, num, threads=-1):
+    def mpi_sampler(self,walker_ratio, burnin, samples, num, threads=-1):
         '''
 
         :param walker_ratio:  the ratio of walkers and the count of sampled parameters
@@ -91,13 +94,45 @@ class Run_MCMC:
         psoTrace = np.array([pso.gbest.position.copy() for _ in pso.sample()])
         params[:, 0] = pso.gbest.position
         '''
-        sampler = MpiCosmoHammerSampler(
+        mpi_sampler = MpiCosmoHammerSampler(
                     params= params,
                     likelihoodComputationChain=self.chain,
                     filePrefix='%s'%self.name+'%d'%num,
                     walkersRatio=walker_ratio,
                     burninIterations=burnin,
                     sampleIterations=samples,threadCount=threads)
+        print("started sampling:")
+        start = time.time()
+        mpi_sampler.startSampling()
+        end = time.time()
+        tics = end - start
+        print("The time taken %.2f sec. done!" % tics)
+        print('Done!')
+
+
+    def sampler(self, walker_ratio, burnin, samples, num, threads=-1):
+        '''
+
+            :param walker_ratio:  the ratio of walkers and the count of sampled parameters
+            :param burnin: burin iterations
+            :param samples: no. of sample iterations
+            :param num: number to put in output files e.g: string(name+num)=Pk_1,Bk_1
+            :param threads: no. of cpu threads
+
+            self.chain.setup()
+            print("find best fit point")
+            pso = MpiParticleSwarmOptimizer(self.chain, params[:, 1], params[:, 2])
+            psoTrace = np.array([pso.gbest.position.copy() for _ in pso.sample()])
+            params[:, 0] = pso.gbest.position
+        '''
+
+        sampler = CosmoHammerSampler(
+                params=params,
+                likelihoodComputationChain=self.chain,
+                filePrefix='%s' % self.name + '%d' % num,
+                walkersRatio=walker_ratio,
+                burninIterations=burnin,
+                sampleIterations=samples, threadCount=threads)
 
         print("started sampling:")
         start = time.time()
