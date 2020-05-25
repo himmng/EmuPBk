@@ -40,8 +40,8 @@ class Animate_Pk:
             plt.xlabel('k')
             plt.ylabel('P(k)')
             plt.suptitle('Simulated Powerspectrum vs. ANN predictions on test data-%d' % i)
-            plt.plot(self.k, self.test_data[i], label='Simulated Powerspectrum', color='black', marker='o', )
-            plt.plot(self.k, self.pk_pred[i], label='ANN predicted', color='blue')
+            plt.loglog(self.k, self.test_data[i], label='Simulated Powerspectrum', color='black', marker='o', )
+            plt.loglog(self.k, self.pk_pred[i], label='ANN predicted', color='blue')
             plt.legend(loc='lower right')
             filename = 'Pk_pred' + str(i) + '.jpg'
             plt.savefig(filename)

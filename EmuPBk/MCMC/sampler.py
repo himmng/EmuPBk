@@ -14,10 +14,12 @@ from cosmoHammer.pso.MpiParticleSwarmOptimizer import MpiParticleSwarmOptimizer
 
 path = os.path.abspath(os.path.join(__file__, os.pardir))
 path = path + '/tests/existing_models/'
-
+i = int(input('enter sigma array index from 0 to 5 :',))
 sigma = np.array([[1.0,1.0,2.0],[2.0,1.0,3.0],[3.0,1.5,5.0],[4.0,3.0,6.0],[5.0,4.0,10.0]])
-i = int(input('use sigma array index 0 to 4 :',))
-params = Params(("n_ion", [105, 10, 220, sigma[i,0]), ("R_mfp", [62, 5, 130, sigma[i,1]]), ("NoH", [750, 10, 1510, sigma[i,2]]))
+sigma = sigma[i]
+params = Params(("n_ion", [105, 10, 220, sigma[0]]),
+                ("R_mfp", [62, 5, 130, sigma[1]]),
+                ("NoH", [750, 10, 1510, sigma[2]]))
 
 
 
