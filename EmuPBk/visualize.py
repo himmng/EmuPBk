@@ -1,3 +1,4 @@
+#from models import path
 import os
 import numpy as np
 import seaborn as sns
@@ -6,7 +7,7 @@ from tensorflow import keras as ks
 from chainconsumer import ChainConsumer
 from numpy.random import normal
 from mpl_toolkits import mplot3d
-from models import path
+
 
 class Animate_Pk:
     '''
@@ -31,23 +32,24 @@ class Animate_Pk:
         pk_pred = model.predict(test_params)
         self.pk_pred = pk_pred * rescale
 
-    def get_animation_PK(self):
+    def get_animation_Pk(self):
         for i in range(len(self.test_params)):
             plt.style.use('seaborn-pastel')
 
             plt.figure(figsize=(8, 6))
-            plt.axes(xlim=(0, 3), ylim=(0, 105))
-            plt.xlabel('k')
-            plt.ylabel('P(k)')
+            #plt.axes(xlim=(0, 3), ylim=(0, 105))
+            plt.xlabel('$k(Mpc^{-1})$',size=20)
+            plt.ylabel(r'$k^3P(k)/2\pi^2(mK^2)$',size=20)
             plt.suptitle('Simulated Powerspectrum vs. ANN predictions on test data-%d' % i)
             plt.xscale('log')
             plt.yscale('symlog')
-            plt.plot(self.k, self.test_data[i], label='Simulated Powerspectrum', color='black', marker='o', )
-            plt.plot(self.k, self.pk_pred[i], label='ANN predicted', color='blue')
+            plt.ylim(0,130)
+            plt.plot(self.k, self.test_data[i], 'bo', label='Simulated Powerspectrum')
+            plt.plot(self.k, self.pk_pred[i], 'c', label='ANN predicted')
             plt.legend(loc='lower right')
             filename = 'Pk_pred' + str(i) + '.jpg'
             plt.savefig(filename)
-            plt.gca()
+            #plt.gca()
 
         os.system('convert -delay 150 Pk*.jpg Pk_pred.gif')
         os.system('rm Pk*.jpg')
@@ -119,7 +121,7 @@ class Animate_Bk:
             plt.tick_params(labelsize=10)
 
             plt.suptitle(
-                r'At $k_1$ = {0:f},$x_HI$ = {1:.3f}, $\zeta$ = {2:.2f}, $Rmfp$= {3:.2f}, $M_h$= {4:.2f}$\times 10^8 M_\odot$'
+                r'At $k_1$ = {0:f}, $x_H$ = {1:.3f}, $\zeta$ = {2:.2f}, $Rmfp$= {3:.2f}, $M_h$= {4:.2f}$\times 10^8 M_\odot$'
                     .format(self.k1, self.xHI[index], self.test_params[index][0], self.test_params[index][1],
                             1.087 * self.test_params[index][2]), size=15)
 

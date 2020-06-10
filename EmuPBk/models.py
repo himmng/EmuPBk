@@ -1,5 +1,4 @@
 import os
-
 from tensorflow import keras as ks
 
 #==========These are default existing models=======================#
