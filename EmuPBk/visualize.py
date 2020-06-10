@@ -6,7 +6,7 @@ from tensorflow import keras as ks
 from chainconsumer import ChainConsumer
 from numpy.random import normal
 from mpl_toolkits import mplot3d
-
+from models import path
 
 class Animate_Pk:
     '''
@@ -40,8 +40,10 @@ class Animate_Pk:
             plt.xlabel('k')
             plt.ylabel('P(k)')
             plt.suptitle('Simulated Powerspectrum vs. ANN predictions on test data-%d' % i)
-            plt.loglog(self.k, self.test_data[i], label='Simulated Powerspectrum', color='black', marker='o', )
-            plt.loglog(self.k, self.pk_pred[i], label='ANN predicted', color='blue')
+            plt.xscale('log')
+            plt.yscale('symlog')
+            plt.plot(self.k, self.test_data[i], label='Simulated Powerspectrum', color='black', marker='o', )
+            plt.plot(self.k, self.pk_pred[i], label='ANN predicted', color='blue')
             plt.legend(loc='lower right')
             filename = 'Pk_pred' + str(i) + '.jpg'
             plt.savefig(filename)
@@ -117,7 +119,7 @@ class Animate_Bk:
             plt.tick_params(labelsize=10)
 
             plt.suptitle(
-                r'At $k_1$ = {0:f},$x_H$ = {1:.3f}, $\zeta$ = {2:.2f}, $Rmfp$= {3:.2f}, $M_h$= {4:.2f}$\times 10^8 M_\odot$'
+                r'At $k_1$ = {0:f},$x_HI$ = {1:.3f}, $\zeta$ = {2:.2f}, $Rmfp$= {3:.2f}, $M_h$= {4:.2f}$\times 10^8 M_\odot$'
                     .format(self.k1, self.xHI[index], self.test_params[index][0], self.test_params[index][1],
                             1.087 * self.test_params[index][2]), size=15)
 
@@ -129,7 +131,7 @@ class Animate_Bk:
             # plt.plot(cosalpha,Bk_test[index][-1],'.-')
             cbar = plt.colorbar(label=r"$\frac{k_1^3.k_2^3.B(k_1,k_2,k_3).\delta T_b^3}{(2\pi^2)^2}$", )
             cbar.ax.yaxis.label.set_size(20, )
-            plt.xlabel(r'$cos(\alpha)$')
+            plt.xlabel(r'$cos(\theta)$')
             plt.ylabel(r'$k_2/k_1$')
 
             plt.subplot(1, 2, 2)
@@ -141,7 +143,7 @@ class Animate_Bk:
             cbar = plt.colorbar(label=r"$\frac{k_1^3.k_2^3.B(k_1,k_2,k_3).\delta T_b^3}{(2\pi^2)^2}$", )
             cbar.ax.yaxis.label.set_size(20, )
             plt.ylabel(r'$k_2/k_1$')
-            plt.xlabel(r'$cos(\alpha)$')
+            plt.xlabel(r'$cos(\theta)$')
             filename = 'Bk_pred' + str(index) + '.jpg'
             plt.savefig(filename)
 
@@ -167,7 +169,7 @@ class Animate_Bk:
                 plt.yticks([False])
                 BB = self.Bk_test[j][i]
                 BP = self.Bk_pdct[j][i]
-                plt.xlabel(r'cos($\alpha$)')
+                plt.xlabel(r'cos($\theta$)')
                 plt.ylabel(r'$B(k_1,k_2,k_3)$')
 
                 plt.plot(self.cosalpha, BB, '.-', label='real')
