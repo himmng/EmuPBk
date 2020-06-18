@@ -12,18 +12,18 @@ EmuPBk
 
 
 Epoch of Reionization(EoR) is one of the least known and yet important period
-in the history of the Universe. The very first structures(Stars, Galaxies) are supposed to
-form during this era. The 21-cm Powerspectrum and Bispectrum statistics
-puts great possibility to probe the EoR. So, we have developed two different ANN based 21-cm statistical signal emulators (21-cm Powerspectrum and Bispectrum emulator) based on Supervised machine learning
-(Artificial Neural Network).
-This module contains some trained ANN models from over 1000 simulated Powerspectrum and Bispectrum given the 3 EoR parameters(Nion,Rmfp,Mhmin)- The ionizing efficiency, Mean free path of
-ionizing photons(The size of the ionized region) & Minimum halo mass of the ionized region.
+in the history of the Universe. The very first structures (Stars, Galaxies) were formed during this era. The 21-cm Powerspectrum and Bispectrum statistics
+puts great possibility to probe this period.
+We have developed two different ANN based 21-cm statistical signal emulators (21-cm Powerspectrum and Bispectrum emulator) based on Supervised machine learning
+(Artificial Neural Network) to infer the upcoming future observations.
+This module contains some trained ANN models from over 1000 simulated Powerspectrum and Bispectrum given the 3 EoR model parameters (Nion,Rmfp,Mhmin)- The ionizing efficiency, Mean free path of
+ionizing photons(A proxy to the size of the ionized region) & Minimum halo mass of the host source.
 We used a C-based semi-numarical code `ReionYuga <https://github.com/rajeshmondal18/ReionYuga>`_
 to build the data-sets for training and testing our ANNs.
 
 
 
-However, the structure of ANNs' are such, that anyone can build their own ANN model from their own datasets.
+The structure of ANNs' are such, that anyone can build their own ANN model from their own datasets.
 This module also simplifies MCMC analysis and posterior visualization.
 
 All ANNs' related tasks were done using `keras <https://keras.io/>`_, a python based deeplearning library,
