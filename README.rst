@@ -32,7 +32,7 @@ For MCMC analysis we used python `cosmoHammer <http://cosmo-docs.phys.ethz.ch/co
 and for plotting and visualization we used `chainconsumer <https://samreay.github.io/ChainConsumer/>`_
 
 
-Easy install::
+pip install::
 
     $ pip install EmuPBk
 
