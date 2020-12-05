@@ -25,7 +25,7 @@ copyright = '2020, Himanshu Tiwari'
 author = 'Himanshu Tiwari'
 
 # The full version, including alpha/beta/rc tags
-release = '1.1.0'
+release = '6.2'
 
 
 # -- General configuration ---------------------------------------------------

@@ -3,17 +3,19 @@ import numpy as np
 
 class LikeModule(object):
 
-	'''Likelihood module for cosmoHammer sampling'''
+	'''Likelihood module (CosmoHammer)'''
 
 	def __init__(self,data,nbins,noise,div):
 
 		'''
-		:param data: load the observational data, or (test_data)
-		:param nbins: numbers of k-bins at each data-set
-		:param noise: noise in the observational data, if any (optional)
-
+		:param data: load the observational (test powerspectrum, bispectrum)data,
+		 or (test_data, dtype=array,list)
+		:param nbins: numbers of k-modes contributing in powerspectrum
+		OR
+		number of triangles contributing in bispectrum (dtype = array, list)
+		:param noise: instrumental noise, (dtype = array, list)
+		:div: normalizing constant for likelihood.
 		'''
-
 		self.data = data
 		eye = np.eye(len(data))
 		cov = abs(data)/np.sqrt(nbins)
@@ -24,18 +26,16 @@ class LikeModule(object):
 
 	def computeLikelihood(self,ctx):
 		'''
-
-		:param ctx: context (loads proposed parameters, and proposed data)
+		:param ctx: context (load proposed steps from context)
 		:return: loglikelihood
 		'''
-		pk_th = ctx.get("key_data")
-		diff = np.subtract(pk_th, self.data)
+		model_th = ctx.get("model_th")
+		diff = np.subtract(model_th, self.data)
 		diff = diff.reshape(1,len(self.data))
-		diff = diff/self.div
 		logl = -np.dot(diff,np.dot(self.cov_inv,diff.T))/2.
-
+		logl = logl/self.div
 		return logl
 
 	def setup(self):
 
-		print("logLikelihood setup is done")
+		print("Likelihood setup done!")

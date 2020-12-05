@@ -1,19 +1,17 @@
 import numpy as np
 from tensorflow import keras as ks
 
-
-
 class Core(object):
 
-    '''Core module for CosmoHammer'''
+    '''Core module (CosmoHammer)'''
 
-    def __init__(self,load_model,rescale):
+    def __init__(self,load_model,norm):
         '''
-        :param load_model: load the model(can be a function of parameters  model=f(a,b,c)),
+        :param load_model: load the model(can be a function of parameters model=f(a,b,c)),
         :param rescale: if model is ANN based, the rescaling used in training.
         '''
         self.model = ks.models.load_model(load_model)
-        self.rescale = rescale
+        self.norm = norm
 
     def __call__(self, ctx):
         '''
@@ -24,19 +22,19 @@ class Core(object):
 
         ctx.add('params_pk',params)
 
-        n_ion, R_mfp, NoH = params
+        Mhmin, Nion, Rmfp = params
 
-        params = np.array([[n_ion, R_mfp, NoH]])
+        params = np.array([[Mhmin, Nion, Rmfp]])
 
         params = np.reshape(params,(1,3))
 
-        Pk_th = self.model.predict(params)
-        Pk_th = Pk_th*self.rescale
+        model_th = self.model.predict(params)
+        model_th = model_th * self.norm
 
-        ctx.add("key_data",Pk_th)
+        ctx.add("model_th",model_th)
 
     def setup(self):
 
-        print("Core setup is done")
+        print("Core setup done!")
 
 #======================================================================================================================#

@@ -6,11 +6,12 @@ Content
     :maxdepth: 2
 
     readme
-    install
-    usage
-    animateyourpredictions
-    MCMC_Sampler.ipynb
-    Visualize.ipynb
-    3D_animate
+    project
+    simulation
+    pk_model
+    bk_model
+    noise
+    parameter_estimation
+    additional
     license
     help

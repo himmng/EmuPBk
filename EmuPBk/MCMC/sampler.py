@@ -10,16 +10,14 @@ from cosmoHammer import LikelihoodComputationChain
 from cosmoHammer.pso.MpiParticleSwarmOptimizer import MpiParticleSwarmOptimizer
 
 # The parameter space is defined
-# paramters = [peak, min., max., sigma] ===> A rough idea about the prior
+# paramters = [peak, min., max., jump] ===> A rough idea about the prior
 
 path = os.path.abspath(os.path.join(__file__, os.pardir))
 path = path + '/tests/existing_models/'
-i = int(input('enter sigma array index from 0 to 5 :',))
-sigma = np.array([[1.0,1.0,2.0],[2.0,1.0,3.0],[3.0,1.5,5.0],[4.0,3.0,6.0],[5.0,4.0,10.0]])
-sigma = sigma[i]
-params = Params(("n_ion", [105, 10, 220, sigma[0]]),
-                ("R_mfp", [62, 5, 130, sigma[1]]),
-                ("NoH", [750, 10, 1510, sigma[2]]))
+
+params = Params(("NoH", [275, 10, 550, 3],
+                 "n_ion", [90.00, 10.00, 180.00, 1]),
+                ("R_mfp", [30.00, 5.00, 60.00, 0.5]))
 
 
 
@@ -27,15 +25,14 @@ params = Params(("n_ion", [105, 10, 220, sigma[0]]),
 class Run_MCMC:
 
     '''
-    CosmoHammer based MCMC sampler
-    Uses MPI sampler class
-    '''
+    sampler & MPI sampler class  '''
 
-    def __init__(self,data,nbins,noise=None,div=1):
+    def __init__(self,data,nbins,noise=0.,div=1):
 
         '''
         :param data: load your data
-        :param nbins: no. of bins in the data (for covariance matrix )
+        :param nbins: number of k-modes in powerspectrum OR
+         number of triangle contributions in bispectrum (for covariance matrix )
         '''
 
 
@@ -47,37 +44,31 @@ class Run_MCMC:
 
 
 
-    def load_existing_model(self,name='Pk'):
+    def load_existing_model(self,name='pk'):
         '''
         Use the existing ANN models for MCMC analysis
-        :param name: use ('Pk','Bk02','Bk03','Bk15')==>for powerspectrum, Bispectrum02, Bispectrum03, Bispectrum15
+        :param name: use ('pk','bk')==>for powerspectrum,
+        Bispectrum
         '''
 
         self.name = name
-        if name == 'Pk':
-            self.chain.addCoreModule(Core(load_model=path+'Pk.h5',rescale=1))
+        if name == 'pk':
+            self.chain.addCoreModule(Core(load_model=path+'pk.h5',norm=1.))
 
-        elif name == 'Bk02':
-            self.chain.addCoreModule(Core(load_model=path+'Bk02.h5',rescale=100))
-
-        elif name == 'Bk03':
-            self.chain.addCoreModule(Core(load_model=path+'Bk03.h5',rescale=10000))
-
-        elif name == 'Bk15':
-            self.chain.addCoreModule(Core(load_model=path+'Bk15.h5',rescale=10000000))
+        elif name == 'bk':
+            self.chain.addCoreModule(Core(load_model=path+'bk.h5',norm=100.))
 
         self.chain.setup()
 
-    def load_model(self,load_model,name='Pk',rescale=1):
+    def load_model(self,load_model,name='pk',norm=1.):
 
         '''
         :param load_model: load your own model, (give the path)
-        :param name: name of data, ('Pk','Bk02','Bk03','Bk15')==>for powerspectrum, Bispectrum02, Bispectrum03, Bispectrum15
+        :param name: name for data, ('pk','bk')==>for powerspectrum, bispectrum
         :param rescale: rescale used in the training
         '''
         self.name = name
-        self.chain.addCoreModule(Core(load_model,rescale))
-
+        self.chain.addCoreModule(Core(load_model,norm))
         self.chain.setup()
 
 

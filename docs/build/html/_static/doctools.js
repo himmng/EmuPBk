@@ -4,7 +4,7 @@
  *
  * Sphinx JavaScript utilities for all documentation.
  *
- * :copyright: Copyright 2007-2020 by the Sphinx team, see AUTHORS.
+ * :copyright: Copyright 2007-2019 by the Sphinx team, see AUTHORS.
  * :license: BSD, see LICENSE for details.
  *
  */
@@ -36,16 +36,7 @@ jQuery.urldecode = function(x) {
 
 /**
  * small helper function to urlencode strings
- */__author__ = "Rob Knight, Gavin Huttley, and Peter Maxwell"
-__copyright__ = "Copyright 2007, The Cogent Project"
-__credits__ = ["Rob Knight", "Peter Maxwell", "Gavin Huttley",
-                    "Matthew Wakefield"]
-__license__ = "GPL"
-__version__ = "1.0.1"
-__maintainer__ = "Rob Knight"
-__email__ = "rob@spot.colorado.edu"
-__status__ = "Production"
-
+ */
 jQuery.urlencode = encodeURIComponent;
 
 /**
@@ -96,13 +87,14 @@ jQuery.fn.highlightText = function(text, className) {
           node.nextSibling));
         node.nodeValue = val.substr(0, pos);
         if (isInSVG) {
+          var bbox = span.getBBox();
           var rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
-          var bbox = node.parentElement.getBBox();
-          rect.x.baseVal.value = bbox.x;
+       	  rect.x.baseVal.value = bbox.x;
           rect.y.baseVal.value = bbox.y;
           rect.width.baseVal.value = bbox.width;
           rect.height.baseVal.value = bbox.height;
           rect.setAttribute('class', className);
+          var parentOfText = node.parentNode.parentNode;
           addItems.push({
               "parent": node.parentNode,
               "target": rect});
@@ -292,11 +284,10 @@ var Documentation = {
   },
 
   initOnKeyListeners: function() {
-    $(document).keydown(function(event) {
+    $(document).keyup(function(event) {
       var activeElementType = document.activeElement.tagName;
       // don't navigate when in search box or textarea
-      if (activeElementType !== 'TEXTAREA' && activeElementType !== 'INPUT' && activeElementType !== 'SELECT'
-          && !event.altKey && !event.ctrlKey && !event.metaKey && !event.shiftKey) {
+      if (activeElementType !== 'TEXTAREA' && activeElementType !== 'INPUT' && activeElementType !== 'SELECT') {
         switch (event.keyCode) {
           case 37: // left
             var prevHref = $('link[rel="prev"]').prop('href');

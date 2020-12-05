@@ -5,6 +5,7 @@
 
 EmuPBk documentation!
 =====================
+
 About
 -----
 
@@ -12,19 +13,21 @@ About
    :maxdepth: 2
 
    readme
+   project
+   simulation
+   pk_model
+   bk_model
+   noise
+   parameter_estimation
 
-User Guide
+Use
 ----------
 
 .. toctree::
    :maxdepth: 2
 
-   install
-   usage
-   animateyourpredictions
-   MCMC_Sampler.ipynb
-   Visualize.ipynb
-   3D_animate
+
+   additional
    license
    help
 

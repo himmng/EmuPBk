@@ -6,7 +6,7 @@ with open("README.rst", "r") as fh:
 
 setuptools.setup(
     name="EmuPBk",
-    version='6.1',
+    version='6.5',
     author='Himanshu Tiwari',
     author_email="himanshuhimang@gmail.com",
     packages=setuptools.find_packages(),
@@ -14,8 +14,8 @@ setuptools.setup(
     license="MIT License",
     description="ANN based 21-cm Powespectrum and Bispectrum Emulator",
     include_package_data=True,
-    keywords=["ANN based 21-cm signal EmuPBk",
-              "21-cm powerspectrum and Bispectrum EmuPBk",
+    keywords=["EmuPBk",
+              "ANN emulation on 21-cm powerspectrum and Bispectrum EmuPBk",
               "parameter estimation",
               "cosmology",
               "MCMC"],

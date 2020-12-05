@@ -1,0 +1,286 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Co-variance &amp; Noise &mdash; EmuPBk 6.2 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="&lt;no title&gt;" href="parameter_estimation.html" />
+    <link rel="prev" title="Bispectrum emulation" href="bk_model.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="contents.html" class="icon icon-home" alt="Documentation Home"> EmuPBk
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="readme.html">EmuPBk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="project.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="simulation.html">Populating the Parameter Space</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pk_model.html">Powerspectrum emulation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bk_model.html">Bispectrum emulation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Co-variance &amp; Noise</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#sample-variance">Sample variance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#noise">Noise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#noise-powerspectrum">Noise powerspectrum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#noise-bispectrum">Noise bispectrum</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="additional.html">How to use</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help.html">Contact</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="contents.html">EmuPBk</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="contents.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Co-variance &amp; Noise</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/noise.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="co-variance-noise">
+<h1>Co-variance &amp; Noise<a class="headerlink" href="#co-variance-noise" title="Permalink to this headline">¶</a></h1>
+<p>The ultimate goal of ours is to constrain the astrophysical model parameters
+using emulated EoR signal statistics. We use Bayesian Inference to do this
+exercise. We assume a clean signal with all foregrounds removed.</p>
+<p>Likelihood function comprises of co-variance matrix.
+We have included sample variance and noise as our co-variance.</p>
+<div class="section" id="sample-variance">
+<h2>Sample variance<a class="headerlink" href="#sample-variance" title="Permalink to this headline">¶</a></h2>
+<p>It is the intrinsic error associated with each cosmic realization. In this case, we are
+including number of k-modes contributing to a powerspectrum OR number of triangles
+contributing to a bispectrum.
+The Signal to Noise (SNR) for powerspectrum and bispectrum:</p>
+<a class="reference internal image-reference" href="_images/SNR_CV_Pk.jpg"><img alt="_images/SNR_CV_Pk.jpg" class="align-center" src="_images/SNR_CV_Pk.jpg" style="width: 80%;" /></a>
+<img alt="_images/SNR_CV.jpg" src="_images/SNR_CV.jpg" />
+</div>
+<div class="section" id="noise">
+<h2>Noise<a class="headerlink" href="#noise" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="noise-powerspectrum">
+<h2>Noise powerspectrum<a class="headerlink" href="#noise-powerspectrum" title="Permalink to this headline">¶</a></h2>
+<p>We are using SKA-low instrumental noise for 1000 hours of observation time at
+redshift z = 8.0.</p>
+<p>Noise powerspectrum can are plotted against the k-modes.</p>
+<a class="reference internal image-reference" href="_images/Noise_Pk.jpg"><img alt="_images/Noise_Pk.jpg" class="align-center" src="_images/Noise_Pk.jpg" style="width: 80%;" /></a>
+<p>Powerspectrum SNR</p>
+<a class="reference internal image-reference" href="_images/pk_SNR.jpg"><img alt="_images/pk_SNR.jpg" class="align-center" src="_images/pk_SNR.jpg" style="width: 80%;" /></a>
+</div>
+<div class="section" id="noise-bispectrum">
+<h2>Noise bispectrum<a class="headerlink" href="#noise-bispectrum" title="Permalink to this headline">¶</a></h2>
+<p>Bispectrum noise variance can be calculated if one can get noise powerspectrum at
+the three k-modes. We tried interpolation methods for this generate
+noise powerspectrum at (k1,k2,k3).</p>
+<img alt="_images/Interpolated.jpg" class="align-center" src="_images/Interpolated.jpg" />
+<p>Thereafter we measured bispectrum SNR.</p>
+<img alt="_images/Bk_SNR_noise.jpg" class="align-center" src="_images/Bk_SNR_noise.jpg" />
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="parameter_estimation.html" class="btn btn-neutral float-right" title="&lt;no title&gt;" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="bk_model.html" class="btn btn-neutral float-left" title="Bispectrum emulation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Himanshu Tiwari
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

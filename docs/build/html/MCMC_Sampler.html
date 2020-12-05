@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html4" lang="en" >
 <head>
   <meta charset="utf-8">
   
@@ -12,32 +11,32 @@
   
 
   
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
   
   
   
 
   
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
-        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="MCMC-posterior visualization" href="Visualize.html" />
-    <link rel="prev" title="Visualize your predictions" href="animateyourpredictions.html" /> 
+    <link rel="search" title="Search" href="search.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -51,7 +50,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home"> EmuPBk
+            <a href="contents.html" class="icon icon-home" alt="Documentation Home"> EmuPBk
           
 
           
@@ -74,6 +73,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -83,26 +83,20 @@
             
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="readme.html">EmuPBk</a></li>
-</ul>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="install.html">How to install</a></li>
-<li class="toctree-l1"><a class="reference internal" href="usage.html">How to Use</a></li>
-<li class="toctree-l1"><a class="reference internal" href="animateyourpredictions.html">Visualize your predictions</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">MCMC Sampler</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#MCMC-using-already-existing-ANN-models">MCMC using already existing ANN models</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#MCMC-using-Your-own-model">MCMC using Your own model</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="Visualize.html">MCMC-posterior visualization</a></li>
-<li class="toctree-l1"><a class="reference internal" href="3D_animate.html">Joint Plot</a></li>
-<li class="toctree-l1"><a class="reference internal" href="3D_animate.html#posterior-surface-plot">Posterior Surface Plot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="project.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="simulation.html">Populating the Parameter Space</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pk_model.html">Powerspectrum emulation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bk_model.html">Bispectrum emulation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="noise.html">Cosmic Variance &amp; Noise</a></li>
+<li class="toctree-l1"><a class="reference internal" href="additional.html">Additional Use</a></li>
 <li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
-<li class="toctree-l1"><a class="reference internal" href="help.html">Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help.html">Contact</a></li>
 </ul>
 
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -112,7 +106,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">EmuPBk</a>
+          <a href="contents.html">EmuPBk</a>
         
       </nav>
 
@@ -141,7 +135,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="index.html">Docs</a> &raquo;</li>
+      <li><a href="contents.html" class="icon icon-home"></a> &raquo;</li>
         
       <li>MCMC Sampler</li>
     
@@ -417,7 +411,7 @@ div.rendered_html tbody tr:hover {
 <div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
 <span></span><span class="kn">import</span> <span class="nn">emcee</span>
 <span class="kn">import</span> <span class="nn">cosmoHammer</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 </pre></div>
 </div>
 </div>
@@ -467,10 +461,16 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 <div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">mcmc</span> <span class="o">=</span> <span class="n">sampler</span><span class="o">.</span><span class="n">Run_MCMC</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">nbins</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span></span><span class="n">mcmc</span> <span class="o">=</span> <span class="n">sampler</span><span class="o">.</span><span class="n">Run_MCMC</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="n">nbins</span><span class="p">,</span><span class="n">noise</span><span class="p">,</span><span class="n">div</span><span class="p">)</span>
+
 <span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">:param data: load your data</span>
-<span class="sd">:param cov: data for covariance calculation</span>
+
+<span class="sd">:param data: load the data</span>
+<span class="sd">:param nbins: data for covariance calculation</span>
+<span class="sd">:param noise: noise inclusion</span>
+<span class="sd">:param div: likelihood normalization factor</span>
+
+
 <span class="sd">&#39;&#39;&#39;</span>
 
 </pre></div>
@@ -492,11 +492,11 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 <div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">mcmc</span><span class="o">.</span><span class="n">load_existing_model</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Pk&#39;</span><span class="p">)</span>
+<span></span><span class="n">mcmc</span><span class="o">.</span><span class="n">load_existing_model</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;pk&#39;</span><span class="p">)</span>
 
- <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        Use the existing ANN models for MCMC analysis</span>
-<span class="sd">        :param name: use (&#39;Pk&#39;,&#39;Bk02&#39;,&#39;Bk03&#39;,&#39;Bk15&#39;)==&gt;for powerspectrum, Bispectrum02, Bispectrum03, Bispectrum15</span>
+<span class="sd">        :param name: use (&#39;pk&#39;,&#39;bk&#39;)==&gt;for powerspectrum, bispectrum</span>
 <span class="sd">&#39;&#39;&#39;</span>
 </pre></div>
 </div>
@@ -516,7 +516,7 @@ logLikelihood setup is done
 </pre></div>
 </div>
 <div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">mcmc</span><span class="o">.</span><span class="n">sampler</span><span class="p">(</span><span class="n">walker_ratio</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">burnin</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">samples</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">threads</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+<span></span><span class="n">mcmc</span><span class="o">.</span><span class="n">sampler</span><span class="p">(</span><span class="n">walker_ratio</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">burnin</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">samples</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">threads</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -541,15 +541,16 @@ Done!
 </pre></div>
 </div>
 <div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">mcmc</span><span class="o">.</span><span class="n">load_model</span><span class="p">(</span><span class="n">load_model</span><span class="p">,</span><span class="n">name</span><span class="p">,</span><span class="n">rescale</span><span class="p">)</span>
+<span></span><span class="n">mcmc</span><span class="o">.</span><span class="n">load_model</span><span class="p">(</span><span class="n">load_model</span><span class="p">,</span><span class="n">name</span><span class="p">,</span><span class="n">norm</span><span class="p">)</span>
 
 <span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">        :param load_model: load your own model, (give the path)</span>
-<span class="sd">        :param name: name of data, (&#39;Pk&#39;,&#39;Bk02&#39;,&#39;Bk03&#39;,&#39;Bk15&#39;)==&gt;for powerspectrum, Bispectrum02, Bispectrum03, Bispectrum15</span>
-<span class="sd">        :param rescale: rescale used in the training</span>
+<span class="sd">        :param load_model: load the model, (give the path)</span>
+<span class="sd">        :param name: name of data, (&#39;pk&#39;,&#39;bk&#39;)==&gt; for powerspectrum, bispectrum</span>
+<span class="sd">        :param norm: normalising factor used in the training</span>
+
 <span class="sd">&#39;&#39;&#39;</span>
 
-<span class="n">mcmc</span><span class="o">.</span><span class="n">sampler</span><span class="p">(</span><span class="n">walker_ratio</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">burnin</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">samples</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">threads</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">mcmc</span><span class="o">.</span><span class="n">sampler</span><span class="p">(</span><span class="n">walker_ratio</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">burnin</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">samples</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">num</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span><span class="n">threads</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
 
 </pre></div>
 </div>
@@ -563,25 +564,24 @@ Done!
           </div>
           <footer>
   
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="Visualize.html" class="btn btn-neutral float-right" title="MCMC-posterior visualization" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="animateyourpredictions.html" class="btn btn-neutral float-left" title="Visualize your predictions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2020, Himanshu Tiwari
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -592,7 +592,6 @@ Done!
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

@@ -11,7 +11,8 @@ class ANN:
     This will help you to train your data (21-cm powerspectrum and bispectrum ) for
     an already build Artificial Neural Network
     '''
-    def __init__(self,data,parameters,epochs=100,batch=10,optimizer= 'adam', kernel_init='uniform',validation = 0.038):
+    def __init__(self,data,parameters,epochs=100,batch=10,
+                 optimizer= 'adam', kernel_init='uniform',validation = 0.038):
         '''
                 : data: must be an array (N*k_bins)
                 : params: must be an array (N*n_parameters)
@@ -36,26 +37,48 @@ class ANN:
         self.optimizer = optimizer
         self.validation = validation
 
-    def train_Pk(self, name = 'Power_spectrum'):
+    def train_pk(self, name = 'powerspectrum'):
         '''
         :return: A trained ANN based 21-cm powerspectrum EmuPBk
         '''
         self.name = name
-        model.add(Dense(3, input_shape=np.shape(self.parameters[0]), activation='elu', kernel_initializer=self.kernel_init,))
+        model.add(Dense(3, input_shape=np.shape(self.parameters[0]),
+                        activation='elu', kernel_initializer=self.kernel_init,))
         model.add(Dense(48, activation='elu', kernel_initializer=self.kernel_init))
         model.add(Dense(28, activation='elu', kernel_initializer=self.kernel_init))
         model.add(Dense(14, activation='elu', kernel_initializer=self.kernel_init))
         model.add(Dense(len(self.data[0]), activation='linear'))
         model.compile(loss='mse', optimizer=self.optimizer, metrics=['acc'])
-        self.history = model.fit(self.parameters,self.data, validation_split=self.validation, epochs=self.epochs,
+        self.history = model.fit(self.parameters,self.data,
+                                 validation_split=self.validation,
+                                 epochs=self.epochs,
                                  batch_size=self.batch)
 
-        model.save('PK.h5')
-        print('The model PK.h5 saved at your current directory')
+        model.save('pk.h5')
+        print('The model pk.h5 saved!')
+
+    def train_bk(self,name='bispectrum'):
+        '''
+        Train your Bispectrum data given the parameters
+        Please normalize the data before training
+        :return: A trained ANN based 21-cm Bispectrum EmuPBk
+        '''
+        self.name = name
+        model.add(Dense(656, input_shape=np.shape(self.parameters[0]), activation='elu'))
+        model.add(Dense(328, activation='elu'))
+        model.add(Dense(len(self.data[0])))
+        optimizer = ks.optimizers.Adam(lr=0.0001, )
+        model.compile(loss='mse', optimizer=optimizer, metrics=['acc'], )
+        self.history = model.fit(self.parameters, self.data,
+                                 validation_split=self.validation,
+                                 epochs=self.epochs,
+                                 batch_size=self.batch, )
+
+        model.save('bk.h5')
+        print('bk.h5 model saved!')
 
 
-
-    def train_BK_model_01(self,name = 'Bispectrum'):
+    def train_bk_model_01(self,name = 'bispectrum'):#old version
         '''
         Train your Bispectrum data given the parameters
         :return: A trained ANN based 21-cm Bispectrum EmuPBk
@@ -77,7 +100,7 @@ class ANN:
         model.save('Bk_model_01.h5')
         print('Bk_model_01.h5 model saved at current directory')
 
-    def train_BK_model_02(self,name='Bispectrum'):
+    def train_bk_model_02(self,name='bispectrum'):#old version
         '''
         Train your Bispectrum data given the parameters
         Please normalize the data before training
@@ -96,8 +119,11 @@ class ANN:
         self.history = model.fit(self.parameters, self.data,validation_split=self.validation, epochs=self.epochs,
                                  batch_size=self.batch, )
 
-        model.save('Bk_model_02.h5')
-        print('Bk_model_01.h5 model saved at current location')
+        model.save('bk_model_02.h5')
+        print('bk_model_02.h5 model saved at current location')
+
+
+
 
 
 
