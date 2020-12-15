@@ -50,21 +50,16 @@ cosmic variance as the covariance.
 Powerspectrum
 -------------
 
-::
-
-
 ..  image:: /docs/source/pk_0.png
     :width: 48%
 
 ..  image:: /docs/source/pk_1.png
     :width: 48%
 
-::
+
 
 Joint powerspectrum & bispectrum
 --------------------------------
-
-::
 
 
 ..  image:: /docs/source/joint1.png
@@ -74,7 +69,6 @@ Joint powerspectrum & bispectrum
     :width: 48%
 
 
-::
 
 
 This package is limited to one re-ionization model and it is under  development.
