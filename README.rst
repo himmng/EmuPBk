@@ -28,13 +28,42 @@ Mean free path of ionizing photons (The size of the ionized region) & Minimum ha
 We used a C-based semi-numarical code `ReionYuga <https://github.com/rajeshmondal18/ReionYuga>`_
 to build the data-sets for training and testing our ANNs.
 
-emulation of EoR simulations
-----------------------------
-
-
+ANN emulation of EoR simulations
+---------------------------------
+ANN model evaluation of the unseen test-data,
+The ANN models shows more than 90% accuracy in the
+predictions.
 
 
 ..  image:: /docs/source/Pk_pred.gif
+    :width: 60%
+
+.. image:: /docs/source/Bk_pred.gif
+
+
+Parameter estimation
+---------------------
+These are some test results of EoR parameter constraints using powerspectrum and bispectrum
+signal statistics. However, these primary results are only generated using
+cosmic variance as the covariance.
+
+Powerspectrum
+-------------
+..  image:: /docs/source/pk_0.png
+    :width: 48%
+
+..  image:: /docs/source/pk_1.png
+    :width: 48%
+
+Joint powerspectrum & bispectrum
+--------------------------------
+
+..  image:: /docs/source/joint1.png
+    :width: 48%
+
+..  image:: /docs/source/joint14.png
+    :width: 48%
+
 
 This package is limited to one re-ionization model and it is under development.
 -------------------------------------------------------------------------------
