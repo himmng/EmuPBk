@@ -26,7 +26,7 @@ This module contains trained ANN models with 550 LH (Latin-Hypercube sample) sim
 Powerspectrum and Bispectrum given the 3 EoR parameters (ζ, Rmfp, Mhmin) - The ionizing efficiency,
 Mean free path of ionizing photons (The size of the ionized region) & Minimum halo mass of the ionized region.
 We used a C-based semi-numarical code `ReionYuga <https://github.com/rajeshmondal18/ReionYuga>`_
-to build the data-sets for training and testing our ANNs.
+to build the data-sets for training and testing our ANNs. The documentation of the project can be found here `ReadtheDocs <https://emupbk.readthedocs.io/en/latest/>`_.
 
 ANN emulation of EoR simulations
 ---------------------------------
@@ -49,14 +49,23 @@ cosmic variance as the covariance.
 
 Powerspectrum
 -------------
+
+::
+
+
 ..  image:: /docs/source/pk_0.png
     :width: 48%
 
 ..  image:: /docs/source/pk_1.png
     :width: 48%
 
+::
+
 Joint powerspectrum & bispectrum
 --------------------------------
+
+::
+
 
 ..  image:: /docs/source/joint1.png
     :width: 48%
@@ -65,10 +74,11 @@ Joint powerspectrum & bispectrum
     :width: 48%
 
 
-This package is limited to one re-ionization model and it is under development.
+::
+
+
+This package is limited to one re-ionization model and it is under  development.
 -------------------------------------------------------------------------------
-The documentation of the project can be found here `ReadtheDocs <https://emupbk.readthedocs.io/en/latest/>`_.
-This package is limited to one re-ionization model and it is under development.
 However, It can be installed using pip:
 
 ::
