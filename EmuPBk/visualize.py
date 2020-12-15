@@ -1,6 +1,7 @@
 #from models import path
 import os
 import numpy as np
+<<<<<<< HEAD
 import seaborn as sns
 import matplotlib.pyplot as plt
 from tensorflow import keras as ks
@@ -17,13 +18,35 @@ ex_models = ['pk.h5','bk.h5']
 dir = './'
 images = []
 
+=======
+import matplotlib.pyplot as plt
+from tensorflow import keras as ks
+from chainconsumer import ChainConsumer
+from celluloid import Camera
+import matplotlib.ticker as ticker
+from mpl_toolkits import mplot3d
+import imageio
+import matplotlib
+
+path = os.path.abspath(os.path.join(__file__, os.pardir))
+path = path+'/MCMC/existing_models/'
+existing_models = ['pk.h5','bk.h5']
+
+dir = './'
+images = []
+>>>>>>> updated Readme
 class Animate_Pk:
     '''
     Generelized function for animating comparison between
     simulated data(powerspectrum) vs ANN predictions
     '''
+<<<<<<< HEAD
 
     def __init__(self, test_data, test_params, k, xh_test, load_model=path+ex_models[0], norm=1.0):
+=======
+    path = path + existing_models[0]
+    def __init__(self, test_data, test_params, k, xh_test, load_model=path, norm=1.0):
+>>>>>>> updated Readme
         '''
          :param: test_data : test_data(powerspectum)
          :param: test_params : test_parameters of EoR
@@ -43,6 +66,7 @@ class Animate_Pk:
         self.pk_pred = pk_pred * norm
 
     def get_animation_pk(self):
+<<<<<<< HEAD
         fig = plt.figure(figsize=(10, 6))
         plt.style.use('seaborn-pastel')
         plt.grid(color='lightsteelblue')
@@ -66,6 +90,32 @@ class Animate_Pk:
             camera.snap()
         animation = camera.animate()
         animation.save('pk.gif',fps=1,dpi=150,)
+=======
+
+        fig = plt.figure(figsize=(10, 7))
+        plt.style.use('seaborn')
+        plt.grid(color='white', lw=1.5)
+        camera = Camera(fig)
+        for i in range(15):
+            plt.suptitle('EoR 21-cm Powerspectrum, Simulation vs. ANN Prediction',
+                         size=20, color='Darkblue')
+            plt.xlabel('$\mathrm{k(Mpc^{-1})}$', size=20, color='darkblue')
+            plt.ylabel(r'$\rm k^3P(k)/2\pi^2(mK^2)$', size=25, color='Darkblue')
+            plt.xscale('log')
+            plt.ylim(0, int(np.max(self.test_data)+80))
+            plt.yscale('symlog')
+            plt.plot(self.k, self.pk_pred[i], marker='o',ls='-',color= 'blue',lw=3)
+            plt.plot(self.k, self.test_data[i], ls='--',lw=2,color='red' )
+            plt.legend(['ANN Prediction',
+                        r' Powerspectrum for $\rm \zeta = {0:.2f}, '
+                        r'Rmfp = {1:.2f}, Mhmin(10^8 M\odot) = {2:.1f}$'
+                       .format(self.test_params[i, 1], self.test_params[i, 2],
+                                   self.test_params[i, 0], self.xh_test[i])],
+                           loc='lower right',prop={'size':13})
+            camera.snap()
+        animation = camera.animate()
+        animation.save('pk.gif',fps=1,dpi=160,)
+>>>>>>> updated Readme
         print('pk.gif saved!')
 
 
@@ -73,9 +123,15 @@ class Animate_Bk:
     '''
     simulation specific function, will not be so useful on more than 3 EoR parameters.
     '''
+<<<<<<< HEAD
 
     def __init__(self, bk_test, params_test, ntri, xh, load_model = path+ex_models[1],
                  cos_min=0.50, cos_max=0.99, cos_step=0.1,
+=======
+    path = path+existing_models[1]
+    def __init__(self, bk_test, params_test, ntri, xh, load_model = path,
+                 cos_min=0.50, cos_max=0.99, cos_step=0.01,
+>>>>>>> updated Readme
                  k2byk1_min=0.50, k2byk1_max=1.00, k2byk1_step=0.05, norm=100.):
 
         '''
@@ -91,6 +147,12 @@ class Animate_Bk:
          :param: norm: normalizing factor, (default: 100.)
 
          '''
+<<<<<<< HEAD
+=======
+        model = ks.models.load_model(load_model)
+        costheta = np.array([0.52, 0.57, 0.62, 0.67, 0.72, 0.77, 0.82, 0.87, 0.92, 0.97])
+        self.costheta = costheta
+>>>>>>> updated Readme
         non_na_index = np.array([18, 19, 27, 28, 29, 35, 36, 37, 38, 39, 44, 45, 46,
                47, 48, 49, 53, 54, 55, 56, 57, 58, 59, 63, 64, 65,
                66, 67, 68, 69, 72, 73, 74, 75, 76, 77, 78, 79, 81,
@@ -101,6 +163,7 @@ class Animate_Bk:
         self.params_test = params_test
         self.xh = xh
         k2byk1 = np.arange(k2byk1_min, k2byk1_max + k2byk1_step, k2byk1_step)
+<<<<<<< HEAD
         costheta = np.arange(cos_min, cos_max + cos_step, cos_step)
         self.costheta = costheta
         self.k2byk1 = np.reshape(k2byk1, (len(k2byk1), 1))
@@ -110,10 +173,20 @@ class Animate_Bk:
                                                       len(k2byk1) * len(costheta)))
         ntri_dummy = np.reshape(ntri, shape = (len(k2byk1 * len(costheta))))
         model = ks.models.load_model(load_model)
+=======
+        #costheta = np.arange(cos_min, cos_max + cos_step, cos_step)
+        #self.costheta = costheta
+        self.k2byk1 = np.reshape(k2byk1, (len(k2byk1), 1))
+        cond = costheta.reshape(len(costheta), 1) * k2byk1.reshape(1, len(k2byk1))
+        ntri_dummy = np.reshape(ntri, ((len(self.k1), len(non_na_index))))
+        bk_test_dummy = np.reshape(bk_test,
+                                   (len(self.params_test),len(self.k1) , len(non_na_index)))
+>>>>>>> updated Readme
         bk_pred_dummy = model.predict(self.params_test)
         bk_pred_dummy = bk_pred_dummy * norm
         bk_pred_dummy = np.reshape(bk_pred_dummy, np.shape(bk_test_dummy))
 
+<<<<<<< HEAD
         bk_test = np.zeros(shape = (len(self.params_test), len(k2byk1) * len(costheta)))
         bk_pdct = np.zeros(shape = bk_test.shape)
         ntri = np.zeros(shape = len(k2byk1) * len(costheta))
@@ -121,6 +194,19 @@ class Animate_Bk:
         for i in range(len(self.xh)):
             bk_pdct[i][non_na_index] = bk_pred_dummy[i]
             bk_test[i][non_na_index] = bk_test_dummy[i]
+=======
+        bk_test = np.zeros(shape = (len(self.params_test),
+                                    len(self.k1),len(k2byk1) * len(costheta)))
+        bk_pdct = np.zeros(shape = bk_test.shape)
+        ntri = np.zeros(shape = (len(self.k1),len(costheta)*len(k2byk1)))
+        for i in range(len(self.k1)):
+            ntri[i][non_na_index] = ntri_dummy[i]
+
+        for i in range(len(self.xh)):
+            for j in range(len(self.k1)):
+                bk_pdct[i][j][non_na_index] = bk_pred_dummy[i][j]
+                bk_test[i][j][non_na_index] = bk_test_dummy[i][j]
+>>>>>>> updated Readme
 
 
         bk_test = np.reshape(bk_test,(len(xh),len(self.k1),len(k2byk1),len(costheta)))
@@ -147,7 +233,12 @@ class Animate_Bk:
         '''
 
         for i in range(len(self.xh)):
+<<<<<<< HEAD
             fig, axes = plt.subplots(nrows=2, ncols=5, figsize=(26, 8), sharex = True, sharey = True)
+=======
+            fig, axes = plt.subplots(nrows=2, ncols=5, figsize=(26, 8), sharex=True, sharey=True)
+
+>>>>>>> updated Readme
             B = np.array([self.bk_test[i][0], self.bk_test[i][1], self.bk_test[i][2],
                               self.bk_test[i][3], self.bk_test[i][4],
                               self.bk_pdct[i][0], self.bk_pdct[i][1], self.bk_pdct[i][2],
@@ -170,6 +261,7 @@ class Animate_Bk:
                          r'$\mathrm{k_1(Mpc^{-1})}$ = 0.92           '
                          r'$\mathrm{k_1(Mpc^{-1})}$ = 1.55',
                          size=20)
+<<<<<<< HEAD
                 fig.text(0.435, 0.04, r'$\mathrm{cos(\theta)}$', ha='center', size=30)
                 fig.text(0.05, 0.5, r'$\mathrm{k_2/k_1}$', va='center', rotation='vertical', size=30)
                 fig.text(0.09, 0.71, r'Simulation', va='center', rotation='vertical', size=25)
@@ -180,6 +272,21 @@ class Animate_Bk:
                                     ax=axes.ravel().tolist(), format=fmt)
                 cbar.ax.yaxis.label.set_size(25.)
                 plt.savefig('Bk_%d.jpg'% i, dpi=120, bbox_inches='tight')
+=======
+            fmt = ticker.ScalarFormatter(useMathText=True)
+            fmt.set_powerlimits((0, 0))
+            cbar = fig.colorbar(im, label=r"$\rm (k_1^3.k_2^3.B(k_1,k_2,k_3)/(2\pi^2)^2)[mK^3]$",
+                                    ax=axes.ravel().tolist(), format=fmt)
+            cbar.ax.yaxis.label.set_size(25.)
+            fig.text(0.435, 0.04, r'$\mathrm{cos(\theta)}$', ha='center', size=30)
+            fig.text(0.05, 0.5, r'$\mathrm{k_2/k_1}$', va='center', rotation='vertical', size=30)
+            fig.text(0.09, 0.71, r'Simulation', va='center', rotation='vertical', size=25)
+            fig.text(0.09, 0.31, r'Emulation', va='center', rotation='vertical', size=25)
+
+
+
+            plt.savefig('Bk_%d.jpg'% i, dpi=120, bbox_inches='tight')
+>>>>>>> updated Readme
 
 
         for file_name in os.listdir(dir):
@@ -188,7 +295,11 @@ class Animate_Bk:
                 images.append(imageio.imread(file_path))
         imageio.mimsave('Bk.gif', images, fps=1)
         os.system('rm Bk_*.jpg')
+<<<<<<< HEAD
     print('Bk.gif saved!')
+=======
+        print('Bk.gif saved!')
+>>>>>>> updated Readme
 
     def get_bk_vs_cos(self,):
         '''
@@ -238,10 +349,18 @@ class Get_Posterior:
     '''
 
     def __init__(self,data):
+<<<<<<< HEAD
         self.c = ChainConsumer()
         parameters=["$\zeta$", "$R_{mfp}$", r"$Mh_{min} \times 10^8 M\odot$"]
         self.parameters = parameters
         self.data = np.array([data[:, 1], data[:, 2], data[:, 0]])
+=======
+
+        self.c = ChainConsumer()
+        #self.parameters=["$\rm \zeta$", "$\rm R_{mfp}$", r"$\rm Mh_{min} \times 10^8 M\odot$"]
+        self.parameters = ['zeta','rmfp','noh']
+        self.data = data#np.array([data[:, 1], data[:, 2], data[:, 0]])
+>>>>>>> updated Readme
 
 
 
@@ -249,7 +368,11 @@ class Get_Posterior:
         '''
         :param index: index for the plot, type int
         '''
+<<<<<<< HEAD
         self.c.add_chain(self.data, parameters=self.parameters,color=color)
+=======
+        self.c.add_chain(self.data, parameters = ['zeta','rmfp','noh'],color=color)
+>>>>>>> updated Readme
 
         fig = self.c.plotter.plot(figsize=1.0)
 

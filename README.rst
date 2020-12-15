@@ -28,8 +28,13 @@ Mean free path of ionizing photons (The size of the ionized region) & Minimum ha
 We used a C-based semi-numarical code `ReionYuga <https://github.com/rajeshmondal18/ReionYuga>`_
 to build the data-sets for training and testing our ANNs.
 
+<<<<<<< HEAD
 
 This package is limited to one re-ionization model and it is under development. 
+=======
+The documentation of the project can be found here `ReadtheDocs <https://emupbk.readthedocs.io/en/latest/>`_.
+This package is limited to one re-ionization model and it is under development.
+>>>>>>> updated Readme
 However, It can be installed using pip:
 
 ::

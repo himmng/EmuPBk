@@ -13,10 +13,17 @@ from cosmoHammer.pso.MpiParticleSwarmOptimizer import MpiParticleSwarmOptimizer
 # paramters = [peak, min., max., jump] ===> A rough idea about the prior
 
 path = os.path.abspath(os.path.join(__file__, os.pardir))
+<<<<<<< HEAD
 path = path + '/tests/existing_models/'
 
 params = Params(("NoH", [275, 10, 550, 3],
                  "n_ion", [90.00, 10.00, 180.00, 1]),
+=======
+path = path + '/existing_models/'
+
+params = Params(("NoH", [275, 10, 550, 3]),
+                 ("n_ion", [90.00, 10.00, 180.00, 1]),
+>>>>>>> updated Readme
                 ("R_mfp", [30.00, 5.00, 60.00, 0.5]))
 
 
