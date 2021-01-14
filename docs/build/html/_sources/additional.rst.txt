@@ -28,7 +28,7 @@ Animating test prediction powerspectrum:
 
 ::
 
-        from EmuPBk.visualize import Animate_Pk
+        from EmuPBk.visualize import Animate_pk
 
         animation = animate_pk(test_data, test_params, k, xh, load_model, norm)
 

@@ -20,7 +20,7 @@ setuptools.setup(
               "cosmology",
               "MCMC"],
     project_urls={
-    "Documentation": "https://emupbk.readthedocs.io/en/latest/",},
+        "Documentation": "https://emupbk.readthedocs.io/en/latest/"},
     classifiers=[
         "Intended Audience :: Science/Research",
         "Programming Language :: Python",
@@ -29,4 +29,3 @@ setuptools.setup(
         'Programming Language :: Python :: 3',
     ],
 )
-
