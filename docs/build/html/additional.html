@@ -1,0 +1,381 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>How to use &mdash; EmuPBk 6.2 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="License" href="license.html" />
+    <link rel="prev" title="&lt;no title&gt;" href="parameter_estimation.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="contents.html" class="icon icon-home" alt="Documentation Home"> EmuPBk
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="readme.html">EmuPBk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="project.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="simulation.html">Populating the Parameter Space</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pk_model.html">Powerspectrum emulation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bk_model.html">Bispectrum emulation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="noise.html">Cosmic Variance &amp; Noise</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">How to use</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#install-from-pypi">install from PyPi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#from-source">from source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#visualizing-predictions">visualizing predictions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mcmc-sampler">MCMC sampler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#use-existing-models">use existing models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#use-custom-models">use custom models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mcmc-posterior">MCMC posterior</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help.html">Contact</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="contents.html">EmuPBk</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="contents.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>How to use</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/additional.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="how-to-use">
+<h1>How to use<a class="headerlink" href="#how-to-use" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="install-from-pypi">
+<h2>install from PyPi<a class="headerlink" href="#install-from-pypi" title="Permalink to this headline">¶</a></h2>
+<p>pip installation:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pip install EmuPBk
+</pre></div>
+</div>
+</div>
+<div class="section" id="from-source">
+<h2>from source<a class="headerlink" href="#from-source" title="Permalink to this headline">¶</a></h2>
+<p>clone from github:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git clone https://github.com/himmng/EmuPBk.git
+$ cd EmuPBk
+$ python setup.py install --user
+</pre></div>
+</div>
+</div>
+<div class="section" id="visualizing-predictions">
+<h2>visualizing predictions<a class="headerlink" href="#visualizing-predictions" title="Permalink to this headline">¶</a></h2>
+<p>Animating test prediction powerspectrum:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">EmuPBk.visualize</span> <span class="kn">import</span> <span class="n">Animate_pk</span>
+
+<span class="n">animation</span> <span class="o">=</span> <span class="n">animate_pk</span><span class="p">(</span><span class="n">test_data</span><span class="p">,</span> <span class="n">test_params</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">xh</span><span class="p">,</span> <span class="n">load_model</span><span class="p">,</span> <span class="n">norm</span><span class="p">)</span>
+
+ <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd"> :param: test_data : test_data(powerspectum)</span>
+<span class="sd"> :param: test_params : test_parameters of EoR</span>
+<span class="sd"> :param: k: corresponding k-values</span>
+<span class="sd"> :param: load_model: load model from a directory path, default: uses existing models.</span>
+<span class="sd"> :param: norm: normalizing factor, default is no rescaling = 1</span>
+<span class="sd"> :returns: animation between test_data and ANN predictions</span>
+
+<span class="sd"> &#39;&#39;&#39;</span>
+<span class="n">animation</span><span class="o">.</span><span class="n">get_Animation_Pk</span><span class="p">()</span>
+<span class="n">creates</span> <span class="n">pk</span><span class="o">.</span><span class="n">gif</span> <span class="n">at</span> <span class="n">present</span> <span class="n">working</span> <span class="n">directory</span><span class="o">.</span>
+</pre></div>
+</div>
+<img alt="Test powerpsectrum vs. ANN prediction by existing ANN model" class="align-center" src="_images/Pk_pred.gif" />
+<p>Bispectrum:</p>
+<p>For Unique (k2/k1 vs Cos(θ)) parameter space:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">EmuPBk.visualize</span> <span class="kn">import</span> <span class="n">Animate_Bk</span>
+
+<span class="n">animation</span> <span class="o">=</span> <span class="n">Animate_Bk</span><span class="p">(</span><span class="n">test_data</span><span class="p">,</span><span class="n">test_params</span><span class="p">,</span><span class="n">load_model</span><span class="p">,</span><span class="n">xHI</span><span class="p">,</span>
+                     <span class="n">k1</span><span class="p">,</span><span class="n">cos_min</span><span class="p">,</span><span class="n">cos_max</span><span class="p">,</span> <span class="n">cos_step</span><span class="p">,</span>
+                     <span class="n">k2byk1_min</span><span class="p">,</span><span class="n">k2byk1_max</span><span class="p">,</span><span class="n">k2byk1_step</span><span class="p">,</span><span class="n">rescale</span><span class="p">)</span>
+
+     <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">     It will give the animation of real bispectrum vs ANN predictions</span>
+<span class="sd">     for only Unique triangle space configuration.</span>
+<span class="sd">     :param: test_data : test_data(Bispectrum)</span>
+<span class="sd">     :param: test_params : test_parameters of EoR</span>
+<span class="sd">     :param: ntri: number of triangles contributes in each bisepctrum.</span>
+<span class="sd">     :param: xh : neutral fraction</span>
+<span class="sd">     :param: load_model: load_your own model from a directory path, (default: uses existing model)</span>
+<span class="sd">     :param: costheta: provide cos_min and cos_max and its step</span>
+<span class="sd">     :param: k2byk1: provide the range of k2byk1 and its step</span>
+<span class="sd">     :param: norm: normalizing factor, (default: 100.)</span>
+
+<span class="sd">     &#39;&#39;&#39;</span>
+
+<span class="n">animation</span><span class="o">.</span><span class="n">get_animation_bk</span><span class="p">()</span>
+<span class="n">creates</span> <span class="n">gif</span> <span class="n">animation</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>ANN accuracy &amp; loss on training and validation set:</p>
+<img alt="Example of Real vs. ANN prediction by one of our existing ANN model" class="align-center" src="_images/Bk_pred.gif" />
+</div>
+<div class="section" id="mcmc-sampler">
+<h2>MCMC sampler<a class="headerlink" href="#mcmc-sampler" title="Permalink to this headline">¶</a></h2>
+<p>The MCMC sampling is done using <a class="reference external" href="https://emcee.readthedocs.io/en/stable/">emcee</a> based
+<a class="reference external" href="http://cosmo-docs.phys.ethz.ch/cosmoHammer/">CosmoHammer</a></p>
+<p>All the custom core and likelihood modules are already in the EmuPBk’s MCMC class.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">EmuPBk.MCMC</span> <span class="kn">import</span> <span class="n">sampler</span>
+
+
+<span class="n">mcmc</span> <span class="o">=</span> <span class="n">sampler</span><span class="o">.</span><span class="n">Run_MCMC</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="n">nbins</span><span class="p">,</span><span class="n">noise</span><span class="p">,</span><span class="n">div</span><span class="p">)</span>
+
+<span class="sd">&#39;&#39;&#39;</span>
+
+<span class="sd">:param data: load the data</span>
+<span class="sd">:param nbins: data for covariance calculation</span>
+<span class="sd">:param noise: noise inclusion</span>
+<span class="sd">:param div: likelihood normalization factor</span>
+
+<span class="sd">&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="use-existing-models">
+<h2>use existing models<a class="headerlink" href="#use-existing-models" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mcmc</span><span class="o">.</span><span class="n">load_existing_model</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;pk&#39;</span><span class="p">)</span>
+
+<span class="sd">&#39;&#39;&#39;</span>
+
+<span class="sd">Use the existing ANN models for MCMC analysis</span>
+<span class="sd">:param name: use (&#39;pk&#39;,&#39;bk&#39;)==&gt;for powerspectrum, bispectrum</span>
+
+<span class="sd">&#39;&#39;&#39;</span>
+
+<span class="n">mcmc</span><span class="o">.</span><span class="n">sampler</span><span class="p">(</span><span class="n">walker_ratio</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">burnin</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">samples</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">threads</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="use-custom-models">
+<h2>use custom models<a class="headerlink" href="#use-custom-models" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mcmc</span><span class="o">.</span><span class="n">load_model</span><span class="p">(</span><span class="n">load_model</span><span class="p">,</span><span class="n">name</span><span class="p">,</span><span class="n">norm</span><span class="p">)</span>
+
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    :param load_model: load the model, (give the path)</span>
+<span class="sd">    :param name: name of data, (&#39;pk&#39;,&#39;bk&#39;)==&gt; for powerspectrum, bispectrum</span>
+<span class="sd">    :param norm: normalising factor used in the training</span>
+
+<span class="sd">&#39;&#39;&#39;</span>
+
+<span class="n">mcmc</span><span class="o">.</span><span class="n">sampler</span><span class="p">(</span><span class="n">walker_ratio</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">burnin</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">samples</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">num</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span><span class="n">threads</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="mcmc-posterior">
+<h2>MCMC posterior<a class="headerlink" href="#mcmc-posterior" title="Permalink to this headline">¶</a></h2>
+<p>This module works only for re-ionization parameters (ζ, Rmfp, Mhmin).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">EmuPBk</span> <span class="kn">import</span> <span class="n">visualize</span>
+
+<span class="n">plot</span> <span class="o">=</span> <span class="n">visualize</span><span class="o">.</span><span class="n">Get_Posterior</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+<span class="n">plot</span><span class="o">.</span><span class="n">corner</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="license.html" class="btn btn-neutral float-right" title="License" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="parameter_estimation.html" class="btn btn-neutral float-left" title="&lt;no title&gt;" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Himanshu Tiwari
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

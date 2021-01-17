@@ -1,0 +1,332 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>How to Use &mdash; EmuPBk 1.1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Visualize your predictions" href="animateyourpredictions.html" />
+    <link rel="prev" title="How to install" href="install.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> EmuPBk
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="readme.html">EmuPBk</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="install.html">How to install</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">How to Use</a></li>
+<li class="toctree-l1"><a class="reference internal" href="animateyourpredictions.html">Visualize your predictions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MCMC_Sampler.html">MCMC Sampler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Visualize.html">MCMC-posterior visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3D_animate.html">Joint Plot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3D_animate.html#posterior-surface-plot">Posterior Surface Plot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help.html">Help</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">EmuPBk</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>How to Use</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/usage.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="how-to-use">
+<h1>How to Use<a class="headerlink" href="#how-to-use" title="Permalink to this headline">¶</a></h1>
+<p>Build your own ANN model based on EoR 21-cm Powerspectrum or Bispectrum:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">EmuPBk</span> <span class="kn">import</span> <span class="n">ANN</span>
+
+<span class="c1"># load your (data,params) as ==&gt; (Pk,EoR parameters) or (Bk, EoR parameters)</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">ANN</span><span class="o">.</span><span class="n">Model</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="n">params</span><span class="p">,</span><span class="n">epochs</span><span class="p">,</span><span class="n">batch</span><span class="p">,</span><span class="n">optimizer</span><span class="p">,</span><span class="n">kernel_init</span><span class="p">,</span><span class="n">validation</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">            : data: must be an array (N*k_bins)</span>
+<span class="sd">            : params: must be an array (N*n_parameters)</span>
+<span class="sd">            : epochs: number of epochs for the training</span>
+<span class="sd">            : batch: batch size</span>
+<span class="sd">            : optimizer: choose the optimizer (&#39;adam&#39;,&#39;adamax&#39;, &#39;graident_descent&#39;),</span>
+<span class="sd">            default: &#39;adam&#39;</span>
+<span class="sd">            :kernel_init: kernel_initilizier: default is &#39;uniform&#39;</span>
+<span class="sd">            :validation: The ration of validation to the training set, default:0.010,</span>
+<span class="sd">            which is 10 out of 1000 training data, (10 for validation, 9990 for training)</span>
+
+<span class="sd">            :return: A trained model</span>
+
+<span class="sd">            e.g.: data =array([10,20,40,80,130],....N)</span>
+<span class="sd">            params = array([10,20,50],...N)</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+<span class="c1"># If you are training the model for Power spectrum, do like this:</span>
+
+<span class="n">model</span><span class="o">.</span><span class="n">train_Pk</span><span class="p">()</span>
+
+<span class="c1"># If you are training the model for Bispectrum, do like this:</span>
+<span class="c1"># Here we have 2 structured ANNs which came out to be very good for training Bispectrum</span>
+
+<span class="c1">#either choose:</span>
+
+<span class="n">model</span><span class="o">.</span><span class="n">train_Bk_model_01</span><span class="p">()</span>
+
+<span class="c1">#or:</span>
+
+<span class="n">model</span><span class="o">.</span><span class="n">train_Bk_model_02</span><span class="p">()</span>
+
+<span class="c1"># after the training the model will be saved at your current location.</span>
+<span class="n">e</span><span class="o">.</span><span class="n">g</span><span class="p">:</span> <span class="s1">&#39;PK.h5&#39;</span> <span class="k">for</span> <span class="n">power</span> <span class="n">spectrum</span><span class="p">,</span> <span class="s1">&#39;BK.h5&#39;</span> <span class="k">for</span> <span class="n">Bispectrum</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Make sure to rescale the data(Powespectrum or Bispectrum) in case of bad training.</p>
+</div>
+<p>Get the training accuracy and loss plot on data and validation data:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">get_plot</span><span class="p">()</span>
+
+<span class="c1"># The plot will be saved at current directory.</span>
+</pre></div>
+</div>
+<img alt="An example of accuracy and loss plot" class="align-center" src="_images/lvac02.png" />
+<p>Use already existing models for the predictions:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">EmuPBk.EMUPBK</span> <span class="kn">import</span> <span class="n">EMUPBK</span>
+
+
+
+<span class="c1">#e.g. make a parameter array</span>
+<span class="c1"># let us choose 3 EoR parameters, with 6 different pair values</span>
+
+<span class="n">params</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">EMUPBK</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
+
+<span class="c1"># predicting power spectrum</span>
+
+<span class="n">pk</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">PK</span><span class="p">()</span>
+
+<span class="c1"># gives the power spectrum array for given parameters.</span>
+
+<span class="c1"># predicting Bispectrum</span>
+
+<span class="n">Bk02</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">Bk02</span><span class="p">()</span>    <span class="c1"># for k = 0.2 mpc^-1</span>
+<span class="n">Bk03</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">Bk03</span><span class="p">()</span>    <span class="c1"># for k = 0.3 mpc^-1</span>
+<span class="n">Bk15</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">Bk15</span><span class="p">()</span>    <span class="c1"># for k = 1.5 mpc^-1</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>By default, it will use existing models, to use you own models do the following.</p>
+</div>
+<p>Your saved model will be at current directory, if now get the path of your model:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pk</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">PK</span><span class="p">(</span><span class="n">load_model</span> <span class="o">=</span> <span class="s1">&#39;PK.h5&#39;</span><span class="p">)</span>
+
+<span class="c1"># OR</span>
+
+<span class="n">pk</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">PK</span><span class="p">(</span><span class="n">load_model</span> <span class="o">=</span> <span class="s1">&#39;path/to/your/Pk_model&#39;</span><span class="p">)</span>
+
+<span class="c1"># similarly do for Bispectrum</span>
+
+<span class="n">Bk02</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">Bk02</span><span class="p">(</span><span class="n">load_model</span> <span class="o">=</span> <span class="s1">&#39;BK.h5&#39;</span> <span class="ow">or</span> <span class="s1">&#39;path/to/your/Bk_model&#39;</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="animateyourpredictions.html" class="btn btn-neutral float-right" title="Visualize your predictions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="install.html" class="btn btn-neutral float-left" title="How to install" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Himanshu Tiwari
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

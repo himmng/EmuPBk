@@ -1,0 +1,3 @@
+include README.rst
+include docs/*.txt
+include EmuPBk/MCMC/existing_models/*.h5
