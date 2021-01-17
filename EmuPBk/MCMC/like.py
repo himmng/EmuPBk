@@ -92,10 +92,10 @@ class ComplexLikeModule(object):
             cov = np.abs(self.noise)
 
         cov = np.reshape(cov, (len(self.k1), len(self.non_na_index)))
-        cov = cov.T
         data_ob = np.reshape(self.data, np.shape(cov))
         data_pd = ctx.get("model_th").reshape(np.shape(cov))
         diff = np.subtract(data_pd, data_ob)
+        cov = cov.T
         diff = diff.T
         like = np.zeros(shape=len(self.non_na_index))
         for i in range(len(self.non_na_index)):
