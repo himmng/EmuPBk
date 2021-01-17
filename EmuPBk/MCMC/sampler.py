@@ -36,7 +36,7 @@ class RunMCMC:
         if like_func == 'n':
             chain.addLikelihoodModule(LikeModule(data, nbins, noise, div))
         else:
-            chain.addLikelihoodModule(ComplexLikeModule(data, nbins, noise))
+            chain.addLikelihoodModule(ComplexLikeModule(data, nbins, noise, region))
         self.chain = chain
 
     def load_existing_model(self, name='pk'):

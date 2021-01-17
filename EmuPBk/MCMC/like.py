@@ -48,7 +48,7 @@ class LikeModule(object):
 class ComplexLikeModule(object):
     """Likelihood module (CosmoHammer)"""
 
-    def __init__(self, data, ntri, noise):
+    def __init__(self, data, ntri, noise, region='unique'):
 
         """
 		simulation specific function, will not be so useful on more than 3 EoR parameters.
@@ -59,6 +59,9 @@ class ComplexLikeModule(object):
 		test_params : test_parameters of EoR
 		ntri: number of triangles contributes in each bisepctrum.
 		norm: normalizing factor, (default: 100.)
+		region: you can choose the region of unique triangle space of bispectrum
+		  to specifically see its senstivity on parameter posterior PDFs.
+		  e.g. use 'unique', 'stretched', 'squeezed', 'linear', 'l-isosceles', 'equilateral'.
 		"""
 
         self.costheta = np.array([0.52, 0.57, 0.62, 0.67, 0.72, 0.77, 0.82, 0.87, 0.92, 0.97])
@@ -72,14 +75,13 @@ class ComplexLikeModule(object):
         self.data = np.around(data, 2)
         self.ntri = ntri
         self.noise = noise
+        self.region = region
 
-    def computeLikelihood(self, ctx, region='unique'):
+    def computeLikelihood(self, ctx,):
         """
 		:parameters
 		 ctx: context loads the proposed steps Core module
-		 region: you can choose the region of unique triangle space of bispectrum
-		  to specifically see its senstivity on parameter posterior PDFs.
-		  e.g. use 'unique', 'stretched', 'squeezed', 'linear', 'l-isosceles', 'equilateral'.
+
 		:return: loglikelihood
 		"""
         if np.sum(self.ntri) != 0.:
@@ -102,15 +104,15 @@ class ComplexLikeModule(object):
         logl = np.zeros(shape=110)
         logl[self.non_na_index] = like
         logl = logl.reshape((11, 10))
-        if region == 'unique':
+        if self.region == 'unique':
             return np.average(logl)
-        elif region == 'linear':
+        elif self.region == 'linear':
             return np.average(logl.T[-1])
-        elif region == 'equilateral':
+        elif self.region == 'equilateral':
             return logl[-1][0]
-        elif region == 'stretched':
+        elif self.region == 'stretched':
             return logl[1][1]
-        elif region == 'squeezed':
+        elif self.region == 'squeezed':
             return logl[-1][-1]
         else:
             return np.average(logl[-1])
