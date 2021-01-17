@@ -105,7 +105,7 @@ class ComplexLikeModule(object):
         if region == 'unique':
             return np.average(logl)
         elif region == 'linear':
-            return np.sum(logl.T[-1])
+            return np.average(logl.T[-1])
         elif region == 'equilateral':
             return logl[-1][0]
         elif region == 'stretched':
