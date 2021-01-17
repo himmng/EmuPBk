@@ -103,7 +103,7 @@ class ComplexLikeModule(object):
         logl[self.non_na_index] = like
         logl = logl.reshape((11, 10))
         if region == 'unique':
-            return np.sum(logl)
+            return np.average(logl)
         elif region == 'linear':
             return np.sum(logl.T[-1])
         elif region == 'equilateral':
@@ -113,7 +113,7 @@ class ComplexLikeModule(object):
         elif region == 'squeezed':
             return logl[-1][-1]
         else:
-            return np.sum(logl[-1])
+            return np.average(logl[-1])
 
     @staticmethod
     def setup():

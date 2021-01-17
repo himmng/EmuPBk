@@ -4,20 +4,11 @@
     <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="10636d71-7300-44d3-9372-d7ae5e102133" name="Default Changelist" comment="updated Readme">
+    <list default="true" id="10636d71-7300-44d3-9372-d7ae5e102133" name="Default Changelist" comment="updated repo">
+      <change beforePath="$PROJECT_DIR$/.idea/EmuPBk.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/EmuPBk.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/EmuPBk.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/EmuPBk.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EmuPBk/MCMC/core.py" beforeDir="false" afterPath="$PROJECT_DIR$/EmuPBk/MCMC/core.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EmuPBk/MCMC/like.py" beforeDir="false" afterPath="$PROJECT_DIR$/EmuPBk/MCMC/like.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EmuPBk/MCMC/sampler.py" beforeDir="false" afterPath="$PROJECT_DIR$/EmuPBk/MCMC/sampler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EmuPBk/build.py" beforeDir="false" afterPath="$PROJECT_DIR$/EmuPBk/build.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EmuPBk/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/EmuPBk/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EmuPBk/visualize.py" beforeDir="false" afterPath="$PROJECT_DIR$/EmuPBk/visualize.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_sources/additional.rst.txt" beforeDir="false" afterPath="$PROJECT_DIR$/docs/build/html/_sources/additional.rst.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_sources/animateyourpredictions.rst.txt" beforeDir="false" afterPath="$PROJECT_DIR$/docs/build/html/_sources/animateyourpredictions.rst.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/additional.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/build/html/additional.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/animateyourpredictions.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/build/html/animateyourpredictions.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/source/additional.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/source/additional.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +17,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="SWAP_SIDES_IN_COMPARE_BRANCHES" value="true" />
   </component>
   <component name="ProjectId" id="1lhiXzf2NRLih6Vctt9aRNwqgWI" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -34,10 +26,11 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/docs/source" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -153,8 +146,32 @@
       <option name="project" value="LOCAL" />
       <updated>1610510993332</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="updated repo">
+      <created>1610856189695</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1610856189695</updated>
+    </task>
+    <task id="LOCAL-00013" summary="updated repo">
+      <created>1610857134800</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1610857134800</updated>
+    </task>
+    <task id="LOCAL-00014" summary="updated repo">
+      <created>1610857596768</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1610857596768</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.js" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -186,7 +203,11 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/.." />
+    </ignored-roots>
     <MESSAGE value="updated Readme" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated Readme" />
+    <MESSAGE value="updated repo" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated repo" />
   </component>
 </project>
