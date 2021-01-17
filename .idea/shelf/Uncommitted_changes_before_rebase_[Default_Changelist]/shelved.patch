@@ -1,0 +1,138 @@
+Index: .idea/EmuPBk.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<module type=\"PYTHON_MODULE\" version=\"4\">\n  <component name=\"NewModuleRootManager\">\n    <content url=\"file://$MODULE_DIR$\">\n      <sourceFolder url=\"file://$MODULE_DIR$\" isTestSource=\"false\" />\n    </content>\n    <orderEntry type=\"jdk\" jdkName=\"Python 3.8\" jdkType=\"Python SDK\" />\n    <orderEntry type=\"sourceFolder\" forTests=\"false\" />\n  </component>\n</module>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/EmuPBk.iml b/.idea/EmuPBk.iml
+--- a/.idea/EmuPBk.iml	(revision 9a69ba3b7203eb5fb18ac33bc460888a940d1c4a)
++++ b/.idea/EmuPBk.iml	(date 1610856484553)
+@@ -3,6 +3,14 @@
+   <component name="NewModuleRootManager">
+     <content url="file://$MODULE_DIR$">
+       <sourceFolder url="file://$MODULE_DIR$" isTestSource="false" />
++      <sourceFolder url="file://$MODULE_DIR$/.idea" isTestSource="false" />
++      <sourceFolder url="file://$MODULE_DIR$/.idea/inspectionProfiles" isTestSource="false" />
++      <sourceFolder url="file://$MODULE_DIR$/.idea/runConfigurations" isTestSource="false" />
++      <sourceFolder url="file://$MODULE_DIR$/EmuPBk" isTestSource="false" />
++      <sourceFolder url="file://$MODULE_DIR$/EmuPBk/MCMC" isTestSource="false" />
++      <sourceFolder url="file://$MODULE_DIR$/EmuPBk/tests" isTestSource="false" />
++      <sourceFolder url="file://$MODULE_DIR$/docs" isTestSource="false" />
++      <sourceFolder url="file://$MODULE_DIR$/docs/build" isTestSource="false" />
+     </content>
+     <orderEntry type="jdk" jdkName="Python 3.8" jdkType="Python SDK" />
+     <orderEntry type="sourceFolder" forTests="false" />
+Index: .idea/runConfigurations/EmuPBk.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><component name=\"ProjectRunConfigurationManager\">\n  <configuration default=\"false\" name=\"EmuPBk\" type=\"PythonConfigurationType\" factoryName=\"Python\" singleton=\"false\" nameIsGenerated=\"true\">\n    <module name=\"EmuPBk\" />\n    <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\n    <option name=\"PARENT_ENVS\" value=\"true\" />\n    <envs>\n      <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\n    </envs>\n    <option name=\"SDK_HOME\" value=\"\" />\n    <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$/..\" />\n    <option name=\"IS_MODULE_SDK\" value=\"true\" />\n    <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\n    <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\n    <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$\" />\n    <option name=\"PARAMETERS\" value=\"\" />\n    <option name=\"SHOW_COMMAND_LINE\" value=\"true\" />\n    <option name=\"EMULATE_TERMINAL\" value=\"false\" />\n    <option name=\"MODULE_MODE\" value=\"false\" />\n    <option name=\"REDIRECT_INPUT\" value=\"false\" />\n    <option name=\"INPUT_FILE\" value=\"\" />\n    <method v=\"2\" />\n  </configuration>\n</component>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/runConfigurations/EmuPBk.xml b/.idea/runConfigurations/EmuPBk.xml
+--- a/.idea/runConfigurations/EmuPBk.xml	(revision 9a69ba3b7203eb5fb18ac33bc460888a940d1c4a)
++++ b/.idea/runConfigurations/EmuPBk.xml	(date 1610856099799)
+@@ -6,9 +6,9 @@
+     <envs>
+       <env name="PYTHONUNBUFFERED" value="1" />
+     </envs>
+-    <option name="SDK_HOME" value="" />
+-    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/.." />
+-    <option name="IS_MODULE_SDK" value="true" />
++    <option name="SDK_HOME" value="/usr/bin/python3.8" />
++    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
++    <option name="IS_MODULE_SDK" value="false" />
+     <option name="ADD_CONTENT_ROOTS" value="true" />
+     <option name="ADD_SOURCE_ROOTS" value="true" />
+     <option name="SCRIPT_NAME" value="$PROJECT_DIR$" />
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AnalysisUIOptions\">\n    <option name=\"SCOPE_TYPE\" value=\"3\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"10636d71-7300-44d3-9372-d7ae5e102133\" name=\"Default Changelist\" comment=\"updated Readme\">\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/EmuPBk/MCMC/core.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/EmuPBk/MCMC/core.py\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/EmuPBk/MCMC/like.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/EmuPBk/MCMC/like.py\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/EmuPBk/MCMC/sampler.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/EmuPBk/MCMC/sampler.py\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/EmuPBk/build.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/EmuPBk/build.py\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/EmuPBk/models.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/EmuPBk/models.py\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/EmuPBk/visualize.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/EmuPBk/visualize.py\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/docs/build/html/_sources/additional.rst.txt\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/docs/build/html/_sources/additional.rst.txt\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/docs/build/html/_sources/animateyourpredictions.rst.txt\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/docs/build/html/_sources/animateyourpredictions.rst.txt\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/docs/build/html/additional.html\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/docs/build/html/additional.html\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/docs/build/html/animateyourpredictions.html\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/docs/build/html/animateyourpredictions.html\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/docs/source/additional.rst\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/docs/source/additional.rst\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/setup.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/setup.py\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"ProjectId\" id=\"1lhiXzf2NRLih6Vctt9aRNwqgWI\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$/docs/source\" />\n    <property name=\"settings.editor.selected.configurable\" value=\"configurable.group.appearance\" />\n  </component>\n  <component name=\"RecentsManager\">\n    <key name=\"CopyFile.RECENT_KEYS\">\n      <recent name=\"$PROJECT_DIR$/docs/source\" />\n    </key>\n  </component>\n  <component name=\"RunManager\">\n    <configuration default=\"true\" type=\"PythonConfigurationType\" factoryName=\"Python\">\n      <module name=\"EmuPBk\" />\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\n      <option name=\"PARENT_ENVS\" value=\"true\" />\n      <envs>\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\n      </envs>\n      <option name=\"SDK_HOME\" value=\"/usr/bin/python3.8\" />\n      <option name=\"WORKING_DIRECTORY\" value=\"\" />\n      <option name=\"IS_MODULE_SDK\" value=\"false\" />\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\n      <option name=\"SCRIPT_NAME\" value=\"\" />\n      <option name=\"PARAMETERS\" value=\"\" />\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\n      <option name=\"MODULE_MODE\" value=\"false\" />\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\n      <option name=\"INPUT_FILE\" value=\"\" />\n      <method v=\"2\" />\n    </configuration>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"10636d71-7300-44d3-9372-d7ae5e102133\" name=\"Default Changelist\" comment=\"\" />\n      <created>1608055768981</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1608055768981</updated>\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"updated Readme\">\n      <created>1608056511095</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1608056511095</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"updated Readme\">\n      <created>1608057076144</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1608057076144</updated>\n    </task>\n    <task id=\"LOCAL-00003\" summary=\"updated Readme\">\n      <created>1608057174700</created>\n      <option name=\"number\" value=\"00003\" />\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1608057174700</updated>\n    </task>\n    <task id=\"LOCAL-00004\" summary=\"updated Readme\">\n      <created>1608058022753</created>\n      <option name=\"number\" value=\"00004\" />\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1608058022753</updated>\n    </task>\n    <task id=\"LOCAL-00005\" summary=\"updated Readme\">\n      <created>1608058206621</created>\n      <option name=\"number\" value=\"00005\" />\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1608058206621</updated>\n    </task>\n    <task id=\"LOCAL-00006\" summary=\"updated Readme\">\n      <created>1608060685614</created>\n      <option name=\"number\" value=\"00006\" />\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1608060685614</updated>\n    </task>\n    <task id=\"LOCAL-00007\" summary=\"updated Readme\">\n      <created>1608061334385</created>\n      <option name=\"number\" value=\"00007\" />\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1608061334385</updated>\n    </task>\n    <task id=\"LOCAL-00008\" summary=\"updated Readme\">\n      <created>1608062882830</created>\n      <option name=\"number\" value=\"00008\" />\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1608062882830</updated>\n    </task>\n    <task id=\"LOCAL-00009\" summary=\"updated Readme\">\n      <created>1608063634192</created>\n      <option name=\"number\" value=\"00009\" />\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1608063634192</updated>\n    </task>\n    <task id=\"LOCAL-00010\" summary=\"updated Readme\">\n      <created>1608063724576</created>\n      <option name=\"number\" value=\"00010\" />\n      <option name=\"presentableId\" value=\"LOCAL-00010\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1608063724576</updated>\n    </task>\n    <task id=\"LOCAL-00011\" summary=\"updated Readme\">\n      <created>1610510993332</created>\n      <option name=\"number\" value=\"00011\" />\n      <option name=\"presentableId\" value=\"LOCAL-00011\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1610510993332</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"12\" />\n    <servers />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State>\n              <option name=\"CUSTOM_BOOLEAN_PROPERTIES\">\n                <map>\n                  <entry key=\"Show.Git.Branches\" value=\"false\" />\n                </map>\n              </option>\n              <option name=\"FILTERS\">\n                <map>\n                  <entry key=\"branch\">\n                    <value>\n                      <list>\n                        <option value=\"master\" />\n                      </list>\n                    </value>\n                  </entry>\n                </map>\n              </option>\n            </State>\n          </value>\n        </entry>\n      </map>\n    </option>\n    <option name=\"oldMeFiltersMigrated\" value=\"true\" />\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <MESSAGE value=\"updated Readme\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"updated Readme\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 9a69ba3b7203eb5fb18ac33bc460888a940d1c4a)
++++ b/.idea/workspace.xml	(date 1610857283706)
+@@ -4,20 +4,10 @@
+     <option name="SCOPE_TYPE" value="3" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="10636d71-7300-44d3-9372-d7ae5e102133" name="Default Changelist" comment="updated Readme">
++    <list default="true" id="10636d71-7300-44d3-9372-d7ae5e102133" name="Default Changelist" comment="updated repo">
++      <change beforePath="$PROJECT_DIR$/.idea/EmuPBk.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/EmuPBk.iml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/EmuPBk.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/EmuPBk.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/EmuPBk/MCMC/core.py" beforeDir="false" afterPath="$PROJECT_DIR$/EmuPBk/MCMC/core.py" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/EmuPBk/MCMC/like.py" beforeDir="false" afterPath="$PROJECT_DIR$/EmuPBk/MCMC/like.py" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/EmuPBk/MCMC/sampler.py" beforeDir="false" afterPath="$PROJECT_DIR$/EmuPBk/MCMC/sampler.py" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/EmuPBk/build.py" beforeDir="false" afterPath="$PROJECT_DIR$/EmuPBk/build.py" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/EmuPBk/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/EmuPBk/models.py" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/EmuPBk/visualize.py" beforeDir="false" afterPath="$PROJECT_DIR$/EmuPBk/visualize.py" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/docs/build/html/_sources/additional.rst.txt" beforeDir="false" afterPath="$PROJECT_DIR$/docs/build/html/_sources/additional.rst.txt" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/docs/build/html/_sources/animateyourpredictions.rst.txt" beforeDir="false" afterPath="$PROJECT_DIR$/docs/build/html/_sources/animateyourpredictions.rst.txt" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/docs/build/html/additional.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/build/html/additional.html" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/docs/build/html/animateyourpredictions.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/build/html/animateyourpredictions.html" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/docs/source/additional.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/source/additional.rst" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -34,10 +24,11 @@
+     <option name="showLibraryContents" value="true" />
+   </component>
+   <component name="PropertiesComponent">
++    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+-    <property name="last_opened_file_path" value="$PROJECT_DIR$/docs/source" />
+-    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
++    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
++    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+   </component>
+   <component name="RecentsManager">
+     <key name="CopyFile.RECENT_KEYS">
+@@ -153,9 +144,26 @@
+       <option name="project" value="LOCAL" />
+       <updated>1610510993332</updated>
+     </task>
+-    <option name="localTasksCounter" value="12" />
++    <task id="LOCAL-00012" summary="updated repo">
++      <created>1610856189695</created>
++      <option name="number" value="00012" />
++      <option name="presentableId" value="LOCAL-00012" />
++      <option name="project" value="LOCAL" />
++      <updated>1610856189695</updated>
++    </task>
++    <task id="LOCAL-00013" summary="updated repo">
++      <created>1610857134800</created>
++      <option name="number" value="00013" />
++      <option name="presentableId" value="LOCAL-00013" />
++      <option name="project" value="LOCAL" />
++      <updated>1610857134800</updated>
++    </task>
++    <option name="localTasksCounter" value="14" />
+     <servers />
+   </component>
++  <component name="UnknownFeatures">
++    <option featureType="com.intellij.fileTypeFactory" implementationName="*.js" />
++  </component>
+   <component name="Vcs.Log.Tabs.Properties">
+     <option name="TAB_STATES">
+       <map>
+@@ -186,7 +194,11 @@
+     <option name="oldMeFiltersMigrated" value="true" />
+   </component>
+   <component name="VcsManagerConfiguration">
++    <ignored-roots>
++      <path value="$PROJECT_DIR$/.." />
++    </ignored-roots>
+     <MESSAGE value="updated Readme" />
+-    <option name="LAST_COMMIT_MESSAGE" value="updated Readme" />
++    <MESSAGE value="updated repo" />
++    <option name="LAST_COMMIT_MESSAGE" value="updated repo" />
+   </component>
+ </project>
+\ No newline at end of file
