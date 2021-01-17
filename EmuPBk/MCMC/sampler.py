@@ -21,14 +21,18 @@ params = Params(("NoH", [275, 10, 550, 3]),
 class RunMCMC:
 
     """ sampler & MPI sampler class """
-    def __init__(self, data, nbins, noise=0., div=1.0, like_func='c'):
+    def __init__(self, data, nbins, noise=0., div=1.0, like_func='c', region='unique'):
         """
-        :param data: load your data
-        :param nbins: number of k-modes in powerspectrum OR
+        :parameter
+        data: load your data
+         nbins: number of k-modes in powerspectrum OR
          number of triangle contributions in bispectrum (for covariance matrix)
-        :param noise: system noise, e.g. SKA, MWA noise response (if any), default 0.0,
-        :param div: likelihood normalization factor, default 1.0,
-        :param like_func: choose between complex likelihood function (use 'c'), and normal function (use 'n')
+        noise: system noise, e.g. SKA, MWA noise response (if any), default 0.0,
+        div: likelihood normalization factor, default 1.0,
+        like_func: choose between complex likelihood function (use 'c'), and normal function (use 'n')
+        region: you can choose the region of unique triangle space of bispectrum
+		  to specifically see its senstivity on parameter posterior PDFs.
+		  e.g. use 'unique', 'stretched', 'squeezed', 'linear', 'l-isosceles', 'equilateral'.
         
         """
         chain = LikelihoodComputationChain(min=params[:, 1], max=params[:, 2])

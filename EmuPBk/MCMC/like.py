@@ -48,7 +48,7 @@ class LikeModule(object):
 class ComplexLikeModule(object):
     """Likelihood module (CosmoHammer)"""
 
-    def __init__(self, data, ntri, noise, region='unique'):
+    def __init__(self, data, ntri, noise, region):
 
         """
 		simulation specific function, will not be so useful on more than 3 EoR parameters.
