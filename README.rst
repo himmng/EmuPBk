@@ -51,13 +51,6 @@ We assume the situation where the foregrounds, RFIs and other artifacts are comp
 the signal. The signal thus only contributed by the sample variance and system noise of the observing instrument
 (SKA1-low in this case). We simulated system noise of SKA1-low correspond to 1000 hours of observation time.
 
-
-..  image:: /docs/source/npk.png
-    :width: 5%
-
-..  image:: /docs/source/bk_eq.png
-    :width: 5%
-
 ..  image:: /docs/source/joint.jpg
     :width: 5%
 
