@@ -6,6 +6,7 @@ from cosmoHammer.util import Params
 from cosmoHammer import MpiCosmoHammerSampler
 from cosmoHammer import CosmoHammerSampler
 from cosmoHammer import LikelihoodComputationChain
+
 #  from cosmoHammer.pso.MpiParticleSwarmOptimizer import MpiParticleSwarmOptimizer
 
 # The parameter space is defined
@@ -19,28 +20,24 @@ params = Params(("NoH", [275, 10, 550, 3]),
 
 
 class RunMCMC:
-
     """ sampler & MPI sampler class """
-    def __init__(self, data, nbins, noise=0., div=1.0, like_func='c', region='unique'):
+
+    def __init__(self, data, nbins, noise=0., div=1.0, like_func='c'):
         """
-        :parameter
-        data: load your data
-         nbins: number of k-modes in powerspectrum OR
+        :param data: load your data
+        :param nbins: number of k-modes in powerspectrum OR
          number of triangle contributions in bispectrum (for covariance matrix)
-        noise: system noise, e.g. SKA, MWA noise response (if any), default 0.0,
-        div: likelihood normalization factor, default 1.0,
-        like_func: choose between complex likelihood function (use 'c'), and normal function (use 'n')
-        region: you can choose the region of unique triangle space of bispectrum
-		  to specifically see its senstivity on parameter posterior PDFs.
-		  e.g. use 'unique', 'stretched', 'squeezed', 'linear', 'l-isosceles', 'equilateral'.
-        
+        :param noise: system noise, e.g. SKA, MWA noise response (if any), default 0.0,
+        :param div: likelihood normalization factor, default 1.0,
+        :param like_func: choose between complex likelihood function (use 'c'), and normal function (use 'n')
+
         """
         chain = LikelihoodComputationChain(min=params[:, 1], max=params[:, 2])
         chain.params = params
         if like_func == 'n':
             chain.addLikelihoodModule(LikeModule(data, nbins, noise, div))
         else:
-            chain.addLikelihoodModule(ComplexLikeModule(data, nbins, noise, region))
+            chain.addLikelihoodModule(ComplexLikeModule(data, nbins, noise))
         self.chain = chain
 
     def load_existing_model(self, name='pk'):
@@ -50,10 +47,10 @@ class RunMCMC:
         """
         self.name = name
         if self.name == 'pk':
-            self.chain.addCoreModule(Core(load_model=path+'pk.h5', norm=1.))
+            self.chain.addCoreModule(Core(load_model=path + 'pk.h5', norm=1.))
 
         elif self.name == 'bk':
-            self.chain.addCoreModule(Core(load_model=path+'bk.h5', norm=100.))
+            self.chain.addCoreModule(Core(load_model=path + 'bk.h5', norm=100.))
 
         self.chain.setup()
 
@@ -83,7 +80,7 @@ class RunMCMC:
         #   params[:, 0] = pso.gbest.position
         mpi_sampler = MpiCosmoHammerSampler(params=params,
                                             likelihoodComputationChain=self.chain,
-                                            filePrefix='%s' % self.name+'%d' % num,
+                                            filePrefix='%s' % self.name + '%d' % num,
                                             walkersRatio=walker_ratio,
                                             burninIterations=burnin,
                                             sampleIterations=samples, threadCount=threads)
@@ -111,17 +108,17 @@ class RunMCMC:
         """
 
         sampler = CosmoHammerSampler(
-                params=params,
-                likelihoodComputationChain=self.chain,
-                filePrefix='%s' % self.name + '%d' % num,
-                walkersRatio=walker_ratio,
-                burninIterations=burnin,
-                sampleIterations=samples, threadCount=threads)
+            params=params,
+            likelihoodComputationChain=self.chain,
+            filePrefix='%s' % self.name + '%d' % num,
+            walkersRatio=walker_ratio,
+            burninIterations=burnin,
+            sampleIterations=samples, threadCount=threads)
 
         print("started sampling:")
         start = time.time()
         sampler.startSampling()
         end = time.time()
-        tics = end-start
+        tics = end - start
         print("The time taken %.2f sec. done!" % tics)
         print('Done!')

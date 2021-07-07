@@ -40,26 +40,26 @@ class AnimatePk:
         self.pk_pred = pk_pred * norm
 
     def get_animation_pk(self):
-        fig = plt.figure(figsize=(10, 7))
-        plt.style.use('seaborn')
-        plt.grid(color='white', lw=1.5)
+        fig = plt.figure(figsize=(8, 6), facecolor='w', )
+        plt.style.use('classic')
+        plt.suptitle(r'$\rm Simulation$' r' $vs.$' r'$\rm ANN$ ' r'$\rm Prediction$',
+                     size=20, )
+        plt.xlabel(r'$\rm{k(Mpc^{-1})}$', size=20, )
+        plt.ylabel(r'$\rm k^3P(k)/2\pi^2[mK^2]$', size=20, )
+        plt.xscale('log')
+        plt.xlim(0.1, 3.2)
+        plt.grid()
+        plt.ylim(0, int(np.max(self.test_data) + 20))
         camera = Camera(fig)
         for i in range(15):
-            plt.suptitle('EoR 21-cm Powerspectrum, Simulation vs. ANN Prediction',
-                         size=20, color='Darkblue')
-            plt.xlabel(r'$\mathrm{k(Mpc^{-1})}$', size=20, color='darkblue')
-            plt.ylabel(r'$\rm k^3P(k)/2\pi^2(mK^2)$', size=25, color='Darkblue')
-            plt.xscale('log')
-            plt.ylim(0, int(np.max(self.test_data)+80))
-            plt.yscale('symlog')
-            plt.plot(self.k, self.pk_pred[i], marker='o', ls='-', color='blue', lw=3)
-            plt.plot(self.k, self.test_data[i], ls='--', lw=2, color='red')
-            plt.legend(['ANN Prediction',
-                        r' Powerspectrum for $\rm \zeta = {0:.2f}, '
-                        r'Rmfp = {1:.2f}, Mhmin(10^8 M\odot) = {2:.1f}$'
+            plt.plot(self.k, self.pk_pred[i], ls='-', color='k', lw=2)
+            plt.plot(self.k, self.test_data[i], 'o', color='b')
+            plt.legend([r'$\rm ANN $' r' $\rm Prediction $',
+                        r'$\rm P(k); N_{{ion}} = {0:.2f}, '
+                        r'R_{{mfp}}(Mpc) = {1:.2f}, Mhalo_{{min}}(10^8 M\odot) = {2:.1f}$'
                        .format(self.test_params[i, 1], self.test_params[i, 2],
                                self.test_params[i, 0], self.xh_test[i])],
-                       loc='lower right', prop={'size': 13})
+                       loc='upper right', prop={'size': 13})
             camera.snap()
         animation = camera.animate()
         animation.save('pk.gif', fps=1, dpi=160)
@@ -182,6 +182,34 @@ class AnimateBk:
         imageio.mimsave('Bk.gif', images, fps=1)
         os.system('rm Bk_*.jpg')
         print('Bk.gif saved!')
+
+        fig, axes = plt.subplots(nrows=2, ncols=5, figsize=(14, 6), sharex=True, sharey=True, facecolor='w')
+        plt.style.use('classic')
+        # Bk = [bk[i][0], bk[i][1], bk[i][2], bk[i][3], bk[i][4],bkpd[i][0], bkpd[i][1], bkpd[i][2], bkpd[i][3], bkpd[i][4]]
+        for j, ax in zip(Bk[i], axes.flat):
+            bounds = np.array([-3e3, -1e3, -1e2, -1e1, 0, 1e0, 1e1, 1e2, 1e3, 3e3, 4e4, 8e4, 1e5, ])
+            norm = colors.BoundaryNorm(boundaries=bounds, ncolors=265)
+            im = ax.imshow(j, origin='lower', cmap='RdBu', extent=[0.50, 0.99, 0.52, .97],
+                           norm=norm)  # ,corner_mask=False)
+        fig.text(0.51, 0.565, r'$\rm \mathrm{cos(\theta)}$', ha='center', size=20)
+        fig.text(0.135, 0.91, r'$\rm k_1(Mpc^{-1})=0.19$'
+                              '                    $0.32$'
+                              '                            $0.54$'
+                              '                            $0.92$'
+                              '                             $1.55$', size=15)
+        fig.text(0.08, 0.6, r'$\mathrm{k_2/k_1}$', va='center', rotation='vertical', size=20)
+        fig.text(0.065, 0.76, r'$\rm Simulation$', va='center', rotation='vertical', size=20)
+        fig.text(0.065, 0.41, r'$\rmEmulation$', va='center', rotation='vertical', size=20)
+        # plt.hlines(y=0.5,xmin=0.1,xmax=0.5)
+        cbar = fig.colorbar(im, label=r"$\rm k_1^3.k_2^3.B(k_1,k_2,k_3)/(2\pi^2)^2[mK^3]; N_{{ion}}={0:.2f},"
+                                      "R_{{mfp}}={1:.2f}, Mhalo_{{min}}={2:.1f}$".format(params[i, 1], params[i, 2],
+                                                                                         params[i, 0])
+                            , ax=axes.ravel().tolist(), orientation='horizontal',
+                            fraction=0.15, aspect=70, pad=0.05,
+                            format=ticker.FuncFormatter(fmt))
+        cbar.ax.xaxis.label.set_size(18)
+        # plt.colorbar( )
+        plt.savefig('Bk_norm%d.pdf' % i, dpi=120, bbox_inches='tight')
 
     def get_bk_vs_cos(self,):
         """

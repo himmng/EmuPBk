@@ -16,58 +16,50 @@ EmuPBk
    :target: https://www.python.org/
 
 
-
-Epoch of Reionization(EoR) is one of the least known and yet important period
-in the history of the Universe. The very first structures (stars & galaxies) are supposed to
-form during this era. The 21-cm powerspectrum and bispectrum puts great possibility to probe the EoR.
-Therefore, We have developed ANN based 21-cm statistical signal emulators (Powerspectrum and Bispectrum) based on
-Supervised machine learning (Artificial Neural Network).
-This module contains trained ANN models with 550 LH (Latin-Hypercube sample) simulated
-Powerspectrum and Bispectrum given the 3 EoR parameters (ζ, Rmfp, Mhmin) - The ionizing efficiency,
-Mean free path of ionizing photons (The size of the ionized region) & Minimum halo mass of the ionized region.
-We used a C-based semi-numarical code `ReionYuga <https://github.com/rajeshmondal18/ReionYuga>`_
-to build the data-sets for training and testing our ANNs. The documentation of the project can be found here `ReadtheDocs <https://emupbk.readthedocs.io/en/latest/>`_.
+Epoch of Reionization(EoR) is one of the crucial periods in the history of our Universe. The origin of the very first
+stars & galaxies formed during this era are unknown mainly due to various observational challenges that prohibit the
+detection of preferred H1 21-cm signal (hyperfine transition line from the neutral Hydrogen) coming from the EoR.
+The Fourier-based signal statistics (e.g. 21-cm power spectrum and Bispectrum) thus provide a much-refined way to
+probe the EoR. One way of characterizing EoR is constraining the reionization parameters using these statistical models
+via methods like MCMC and Bayesian Inference.
 
 ANN emulation of EoR simulations
 ---------------------------------
+Simulation-based statistical models cast expansive computational overhead while performing the Bayesian
+Inference. Thus, we used Artificial Neural Networks (ANN)-based emulation models for the Power spectrum and
+Bispectrum to replace the simulation models.
+We generated 550 samples of Power spectrum and Bispectrum by varying 3 parameters (Mhmin, Rmfp, Nion) to train the
+networks. The parameters are minimum mass of the host dark matter halo, mean free path of ionizing photons
+(i.e. also the relative size of the ionized region) and the ionizing efficiency of the ionizing photons, respectively.
+We used semi-numarical code `ReionYuga <https://github.com/rajeshmondal18/ReionYuga>`_
+to build the data sets for training and testing our ANNs. The documentation of the project can be found here
+`ReadtheDocs <https://emupbk.readthedocs.io/en/latest/>`_.
 ANN model evaluation of the unseen test-data,
 The ANN models shows more than 90% accuracy in the
 predictions.
 
 
-..  image:: /docs/source/Pk_pred.gif
+..  image:: /docs/source/pk.gif
     :width: 60%
 
-.. image:: /docs/source/Bk_pred.gif
+.. image:: /docs/source/Bk.gif
 
 
 Parameter estimation
 ---------------------
-These are some test results of EoR parameter constraints using powerspectrum and bispectrum
-signal statistics. However, these primary results are only generated using
-cosmic variance as the covariance.
-
-Powerspectrum
--------------
-
-..  image:: /docs/source/pk_0.png
-    :width: 48%
-
-..  image:: /docs/source/pk_1.png
-    :width: 48%
+We assume the situation where the foregrounds, RFIs and other artifacts are completely removed from
+the signal. The signal thus only contributed by the sample variance and system noise of the observing instrument
+(SKA1-low in this case). We simulated system noise of SKA1-low correspond to 1000 hours of observation time.
 
 
+..  image:: /docs/source/npk.png
+    :width: 20%
 
-Joint powerspectrum & bispectrum
---------------------------------
+..  image:: /docs/source/bk_eq.png
+    :width: 20%
 
-
-..  image:: /docs/source/joint1.png
-    :width: 48%
-
-..  image:: /docs/source/joint14.png
-    :width: 48%
-
+..  image:: /docs/source/joint.pdf
+    :width: 30%
 
 
 

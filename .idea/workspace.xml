@@ -5,8 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="10636d71-7300-44d3-9372-d7ae5e102133" name="Default Changelist" comment="updated repo">
+      <change afterPath="$PROJECT_DIR$/docs/source/Bk.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/source/bk_eq.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/source/npk.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/source/pk.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EmuPBk/MCMC/like.py" beforeDir="false" afterPath="$PROJECT_DIR$/EmuPBk/MCMC/like.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EmuPBk/MCMC/sampler.py" beforeDir="false" afterPath="$PROJECT_DIR$/EmuPBk/MCMC/sampler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EmuPBk/visualize.py" beforeDir="false" afterPath="$PROJECT_DIR$/EmuPBk/visualize.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.rst" beforeDir="false" afterPath="$PROJECT_DIR$/README.rst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,7 +36,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/docs/source" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
