@@ -58,7 +58,7 @@ the signal. The signal thus only contributed by the sample variance and system n
 ..  image:: /docs/source/bk_eq.png
     :width: 5%
 
-..  image:: /docs/source/joint.pdf
+..  image:: /docs/source/joint.jpg
     :width: 5%
 
 
