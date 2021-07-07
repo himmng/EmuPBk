@@ -40,10 +40,10 @@ predictions.
 
 
 ..  image:: /docs/source/pk.gif
-    :width: 60%
+    :width: 10%
 
 .. image:: /docs/source/Bk.gif
-
+    :width: 10%
 
 Parameter estimation
 ---------------------
@@ -59,7 +59,7 @@ the signal. The signal thus only contributed by the sample variance and system n
     :width: 5%
 
 ..  image:: /docs/source/joint.pdf
-    :width: 30%
+    :width: 5%
 
 
 
