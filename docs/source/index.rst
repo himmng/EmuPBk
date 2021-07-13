@@ -13,12 +13,6 @@ About
    :maxdepth: 2
 
    readme
-   project
-   simulation
-   pk_model
-   bk_model
-   noise
-   parameter_estimation
 
 Use
 ----------
@@ -26,8 +20,6 @@ Use
 .. toctree::
    :maxdepth: 2
 
-
-   additional
    license
    help
 

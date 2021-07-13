@@ -58,16 +58,6 @@ the signal. The signal thus only contributed by the sample variance and system n
 
 This package is limited to one re-ionization model and it is under  development.
 -------------------------------------------------------------------------------
-However, It can be installed using pip:
-
-::
-
-
-    $ pip install EmuPBk
-
-::
-
- 
 All ANNs' related tasks are done using `keras <https://keras.io/>`_, a python based deep-learning library,
 For MCMC analysis we used python `cosmoHammer <http://cosmo-docs.phys.ethz.ch/cosmoHammer/>`_, which uses 
 `emcee <https://emcee.readthedocs.io/en/stable/>`_
