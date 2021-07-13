@@ -39,10 +39,10 @@ The ANN models shows more than 90% accuracy in the
 predictions.
 
 
-..  image:: /docs/source/pk.gif
+..  image:: /docs/source/test_emulations/pk.gif
     :width: 10%
 
-.. image:: /docs/source/Bk.gif
+.. image:: /docs/source/test_emulations/Bk.gif
     :width: 10%
 
 Parameter estimation
