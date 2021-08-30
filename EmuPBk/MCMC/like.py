@@ -52,7 +52,7 @@ class LikeModule(object):
 class ComplexLikeModule(object):
     """Likelihood module (CosmoHammer)"""
 
-    def __init__(self, data, ntri, noise, div, region):
+    def __init__(self, data, nbins, noise, div,):
 
         """
 		simulation specific function, will not be so useful on more than 3 EoR parameters.
@@ -61,7 +61,7 @@ class ComplexLikeModule(object):
 		:parameter:
 		test_data : test_data(Bispectrum)
 		test_params : test_parameters of EoR
-		ntri: number of triangles contributes in each bisepctrum.
+		nbins: number of triangles contributes in each bisepctrum.
 		norm: normalizing factor, (default: 100.)
 		region: you can choose the region of unique triangle space of bispectrum
 		  to specifically see its senstivity on parameter posterior PDFs.
@@ -75,8 +75,8 @@ class ComplexLikeModule(object):
                                       68, 69, 72, 73, 74, 75, 76, 77, 78, 79, 81, 82, 83, 84,
                                       85, 86, 87, 88, 89, 91, 92, 93, 94, 95, 96, 97, 98, 99,
                                       100, 101, 102, 103, 104, 105, 106, 107, 108, 109])
-        if np.sum(ntri[:2]) != 0.:
-            cov = abs(data ** 2) / ntri
+        if np.sum(nbins[:2]) != 0.:
+            cov = abs(data ** 2) / nbins
             cov = cov + np.abs(noise)
             print('SV or SV+noise case')
         else:
@@ -87,9 +87,9 @@ class ComplexLikeModule(object):
         self.data_ob = np.reshape(np.around(data, 2), np.shape(cov))
         self.cov = cov.T
         self.div = div
-        self.region = region
 
-    def computeLikelihood(self, ctx):
+
+    def computeLikelihood(self, ctx, region):
         """
 		:parameters
 		 ctx: context loads the proposed steps Core module
@@ -97,6 +97,7 @@ class ComplexLikeModule(object):
 		:return: loglikelihood
 
 	"""
+        self.region = region
         data_pd = ctx.get("model_th")
         data_pd = np.reshape(data_pd, np.shape(self.data_ob))
         diff = np.subtract(data_pd, self.data_ob).T

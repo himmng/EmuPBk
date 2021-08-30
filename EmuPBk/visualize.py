@@ -45,25 +45,28 @@ class AnimatePk:
         plt.suptitle(r'$\rm Simulation$' r' $vs.$' r'$\rm ANN$ ' r'$\rm Prediction$',
                      size=20, )
         plt.xlabel(r'$\rm{k(Mpc^{-1})}$', size=20, )
-        plt.ylabel(r'$\rm k^3P(k)/2\pi^2[mK^2]$', size=20, )
+        plt.ylabel(r'$\rm \Delta^2[mK^2]$', size=20, )
         plt.xscale('log')
         plt.xlim(0.1, 3.2)
         plt.grid()
         plt.ylim(0, int(np.max(self.test_data) + 20))
         camera = Camera(fig)
-        for i in range(15):
+        for i in range(len(self.test_data)):
             plt.plot(self.k, self.pk_pred[i], ls='-', color='k', lw=2)
             plt.plot(self.k, self.test_data[i], 'o', color='b')
             plt.legend([r'$\rm ANN $' r' $\rm Prediction $',
                         r'$\rm P(k); N_{{ion}} = {0:.2f}, '
-                        r'R_{{mfp}}(Mpc) = {1:.2f}, Mhalo_{{min}}(10^8 M\odot) = {2:.1f}$'
+                        r'R_{{mfp}}(Mpc) = {1:.2f}, Mhalo_{{min}}(10^9 M_\odot) = {2:.1f}$'
                        .format(self.test_params[i, 1], self.test_params[i, 2],
-                               self.test_params[i, 0], self.xh_test[i])],
+                               self.test_params[i, 0]/10., self.xh_test[i])],
                        loc='upper right', prop={'size': 13})
+
             camera.snap()
         animation = camera.animate()
         animation.save('pk.gif', fps=1, dpi=160)
+
         print('pk.gif saved!')
+        plt.close()
 
 
 class AnimateBk:

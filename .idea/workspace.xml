@@ -3,236 +3,20 @@
   <component name="AnalysisUIOptions">
     <option name="SCOPE_TYPE" value="3" />
   </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="10636d71-7300-44d3-9372-d7ae5e102133" name="Default Changelist" comment="updated repo">
+    <list default="true" id="10636d71-7300-44d3-9372-d7ae5e102133" name="Default Changelist" comment="change docs">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.rst" beforeDir="false" afterPath="$PROJECT_DIR$/README.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/doctrees/.ipynb_checkpoints/MCMC_Sampler-checkpoint.doctree" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/doctrees/.ipynb_checkpoints/Visualize-checkpoint.doctree" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/doctrees/3D_animate.doctree" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/doctrees/MCMC_Sampler.doctree" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/doctrees/Visualize.doctree" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/doctrees/additional.doctree" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/doctrees/animateyourpredictions.doctree" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/doctrees/bk_model.doctree" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/doctrees/contents.doctree" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/doctrees/environment.pickle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/doctrees/help.doctree" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/doctrees/index.doctree" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/doctrees/install.doctree" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/doctrees/license.doctree" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/doctrees/nbsphinx/.ipynb_checkpoints/MCMC_Sampler-checkpoint.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/doctrees/nbsphinx/.ipynb_checkpoints/Visualize-checkpoint.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/doctrees/nbsphinx/.ipynb_checkpoints_Visualize-checkpoint_5_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/doctrees/nbsphinx/.ipynb_checkpoints_Visualize-checkpoint_6_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/doctrees/nbsphinx/MCMC_Sampler.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/doctrees/nbsphinx/Visualize.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/doctrees/nbsphinx/Visualize_5_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/doctrees/nbsphinx/Visualize_6_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/doctrees/noise.doctree" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/doctrees/parameter_estimation.doctree" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/doctrees/pk_model.doctree" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/doctrees/project.doctree" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/doctrees/readme.doctree" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/doctrees/simulation.doctree" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/doctrees/usage.doctree" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/.buildinfo" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/.ipynb_checkpoints/MCMC_Sampler-checkpoint.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/.ipynb_checkpoints/MCMC_Sampler-checkpoint.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/.ipynb_checkpoints/Visualize-checkpoint.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/.ipynb_checkpoints/Visualize-checkpoint.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/3D_animate.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/MCMC_Sampler.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/MCMC_Sampler.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/Visualize.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/Visualize.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_images/.ipynb_checkpoints_Visualize-checkpoint_5_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_images/.ipynb_checkpoints_Visualize-checkpoint_6_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_images/Bk_SNR_noise.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_images/Bk_accuracy.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_images/Bk_loss.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_images/Bk_pred.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_images/Bk_vs_cos.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_images/Interpolated.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_images/LH.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_images/LH0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_images/Noise_Pk.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_images/Pk_accuracy.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_images/Pk_loss.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_images/Pk_pred.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_images/SNR_CV.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_images/SNR_CV_Pk.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_images/Visualize_5_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_images/bk.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_images/chi.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_images/flowchart.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_images/joint1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_images/joint14.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_images/pk_0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_images/pk_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_images/pk_SNR.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_images/pkann.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_images/unique_triangle_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_sources/.ipynb_checkpoints/MCMC_Sampler-checkpoint.ipynb.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_sources/.ipynb_checkpoints/Visualize-checkpoint.ipynb.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_sources/3D_animate.rst.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_sources/MCMC_Sampler.ipynb.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_sources/Visualize.ipynb.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_sources/additional.rst.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_sources/animateyourpredictions.rst.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_sources/bk_model.rst.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_sources/contents.rst.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_sources/help.rst.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_sources/index.rst.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_sources/install.rst.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_sources/license.rst.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_sources/noise.rst.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_sources/parameter_estimation.rst.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_sources/pk_model.rst.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_sources/project.rst.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_sources/readme.rst.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_sources/simulation.rst.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_sources/usage.rst.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/ajax-loader.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/basic.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/comment-bright.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/comment-close.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/comment.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/css/badge_only.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/css/fonts/Roboto-Slab-Bold.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/css/fonts/Roboto-Slab-Bold.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/css/fonts/Roboto-Slab-Regular.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/css/fonts/Roboto-Slab-Regular.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/css/fonts/fontawesome-webfont.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/css/fonts/fontawesome-webfont.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/css/fonts/fontawesome-webfont.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/css/fonts/fontawesome-webfont.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/css/fonts/fontawesome-webfont.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/css/fonts/lato-bold-italic.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/css/fonts/lato-bold-italic.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/css/fonts/lato-bold.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/css/fonts/lato-bold.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/css/fonts/lato-normal-italic.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/css/fonts/lato-normal-italic.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/css/fonts/lato-normal.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/css/fonts/lato-normal.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/css/theme.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/doctools.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/documentation_options.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/down-pressed.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/down.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/file.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/fonts/FontAwesome.otf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/fonts/Inconsolata-Bold.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/fonts/Inconsolata-Regular.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/fonts/Inconsolata.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/fonts/Lato-Bold.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/fonts/Lato-Regular.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/fonts/Lato/lato-bold.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/fonts/Lato/lato-bold.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/fonts/Lato/lato-bold.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/fonts/Lato/lato-bold.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/fonts/Lato/lato-bolditalic.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/fonts/Lato/lato-bolditalic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/fonts/Lato/lato-bolditalic.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/fonts/Lato/lato-bolditalic.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/fonts/Lato/lato-italic.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/fonts/Lato/lato-italic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/fonts/Lato/lato-italic.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/fonts/Lato/lato-italic.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/fonts/Lato/lato-regular.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/fonts/Lato/lato-regular.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/fonts/Lato/lato-regular.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/fonts/Lato/lato-regular.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/fonts/Roboto-Slab-Bold.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/fonts/Roboto-Slab-Bold.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/fonts/Roboto-Slab-Light.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/fonts/Roboto-Slab-Light.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/fonts/Roboto-Slab-Regular.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/fonts/Roboto-Slab-Regular.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/fonts/Roboto-Slab-Thin.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/fonts/Roboto-Slab-Thin.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/fonts/RobotoSlab-Bold.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/fonts/RobotoSlab-Regular.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/fonts/RobotoSlab/roboto-slab-v7-bold.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/fonts/RobotoSlab/roboto-slab-v7-bold.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/fonts/RobotoSlab/roboto-slab-v7-bold.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/fonts/RobotoSlab/roboto-slab-v7-bold.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/fonts/RobotoSlab/roboto-slab-v7-regular.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/fonts/RobotoSlab/roboto-slab-v7-regular.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/fonts/RobotoSlab/roboto-slab-v7-regular.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/fonts/RobotoSlab/roboto-slab-v7-regular.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/fonts/fontawesome-webfont.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/fonts/fontawesome-webfont.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/fonts/fontawesome-webfont.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/fonts/fontawesome-webfont.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/fonts/fontawesome-webfont.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/fonts/lato-bold-italic.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/fonts/lato-bold-italic.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/fonts/lato-bold.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/fonts/lato-bold.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/fonts/lato-normal-italic.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/fonts/lato-normal-italic.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/fonts/lato-normal.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/fonts/lato-normal.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/jquery-3.2.1.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/jquery-3.4.1.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/jquery.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/js/badge_only.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/js/html5shiv-printshiv.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/js/html5shiv.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/js/modernizr.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/js/theme.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/language_data.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/minus.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/plus.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/pygments.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/searchtools.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/underscore-1.3.1.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/underscore.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/up-pressed.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/up.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/_static/websupport.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/additional.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/animateyourpredictions.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/bk_model.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/contents.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/genindex.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/help.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/install.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/license.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/noise.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/objects.inv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/parameter_estimation.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/pk_model.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/project.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/readme.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/search.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/searchindex.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/simulation.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/build/html/usage.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/source/Bk.gif" beforeDir="false" afterPath="$PROJECT_DIR$/docs/source/test_emulations/Bk.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/source/Bk_SNR_noise.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/source/Bk_accuracy.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/source/Bk_loss.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/source/Bk_pred.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/source/Interpolated.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/source/Noise_Pk.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/source/additional.rst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/source/bk.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/source/bk_model.rst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/source/contents.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/source/contents.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/source/index.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/source/index.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/source/noise.rst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/source/npk.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/source/parameter_estimation.rst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/source/pk.gif" beforeDir="false" afterPath="$PROJECT_DIR$/docs/source/test_emulations/pk.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/source/pk_model.rst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/source/pkann.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/source/project.rst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/source/readme.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/source/readme.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/source/simulation.rst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EmuPBk/MCMC/like.py" beforeDir="false" afterPath="$PROJECT_DIR$/EmuPBk/MCMC/like.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EmuPBk/MCMC/sampler.py" beforeDir="false" afterPath="$PROJECT_DIR$/EmuPBk/MCMC/sampler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EmuPBk/build.py" beforeDir="false" afterPath="$PROJECT_DIR$/EmuPBk/build.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EmuPBk/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/EmuPBk/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EmuPBk/visualize.py" beforeDir="false" afterPath="$PROJECT_DIR$/EmuPBk/visualize.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -254,7 +38,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/docs/source" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -457,7 +241,14 @@
       <option name="project" value="LOCAL" />
       <updated>1625658523881</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="change docs">
+      <created>1626175528648</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1626175528648</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -498,6 +289,7 @@
     </ignored-roots>
     <MESSAGE value="updated Readme" />
     <MESSAGE value="updated repo" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated repo" />
+    <MESSAGE value="change docs" />
+    <option name="LAST_COMMIT_MESSAGE" value="change docs" />
   </component>
 </project>

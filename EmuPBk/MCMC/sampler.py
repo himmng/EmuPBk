@@ -22,7 +22,7 @@ params = Params(("NoH", [275, 10, 550, 3]),
 class RunMCMC:
     """ sampler & MPI sampler class """
 
-    def __init__(self, data, nbins, noise=0., div=1.0, like_func='c'):
+    def __init__(self, data, nbins, model, noise=0., div=1.0, like_func='n'):
         """
         :param data: load your data
         :param nbins: number of k-modes in powerspectrum OR
@@ -30,14 +30,14 @@ class RunMCMC:
         :param noise: system noise, e.g. SKA, MWA noise response (if any), default 0.0,
         :param div: likelihood normalization factor, default 1.0,
         :param like_func: choose between complex likelihood function (use 'c'), and normal function (use 'n')
-
+        prefer complex likelihood for bispectrum
         """
         chain = LikelihoodComputationChain(min=params[:, 1], max=params[:, 2])
         chain.params = params
         if like_func == 'n':
-            chain.addLikelihoodModule(LikeModule(data, nbins, noise, div))
+            chain.addLikelihoodModule(LikeModule(data, nbins, noise, div, model))
         else:
-            chain.addLikelihoodModule(ComplexLikeModule(data, nbins, noise))
+            chain.addLikelihoodModule(ComplexLikeModule(data, nbins, noise, div))
         self.chain = chain
 
     def load_existing_model(self, name='pk'):
