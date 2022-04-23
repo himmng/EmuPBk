@@ -24,15 +24,15 @@ class Core(object):
         :param ctx: contexts saves proposed step in (parameter, data) space
         """
 
-        params = ctx.getParams()
+        par = ctx.getParams()
 
-        ctx.add('params_pk', params)
+        ctx.add('params', par)
 
-        mhmin, nion, rmfp = params
+        par_count = len(par.keys)
 
-        params = np.array([[mhmin, nion, rmfp]])
+        params = np.array([i for i in par])
 
-        params = np.reshape(params, (1, 3))
+        params = np.reshape(params, (1, par_count))
 
         model_th = self.model.predict(params)
         model_th = model_th * self.norm

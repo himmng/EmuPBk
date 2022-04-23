@@ -14,16 +14,13 @@ from cosmoHammer import LikelihoodComputationChain
 
 path = os.path.abspath(os.path.join(__file__, os.pardir))
 path = path + '/existing_models/'
-params = Params(("NoH", [275, 10, 550, 3]),
-                ("n_ion", [90.00, 10.00, 180.00, 1]),
-                ("R_mfp", [30.00, 5.00, 60.00, 0.5]))
-
 
 class RunMCMC:
     """ sampler & MPI sampler class """
 
-    def __init__(self, data, nbins, model, noise=0., div=1.0, like_func='n'):
+    def __init__(self, prior, data, nbins, model, noise=0., div=1.0, like_func='n'):
         """
+        :param prior: define the prior according to CosmoHammer format
         :param data: load your data
         :param nbins: number of k-modes in powerspectrum OR
          number of triangle contributions in bispectrum (for covariance matrix)
@@ -32,10 +29,11 @@ class RunMCMC:
         :param like_func: choose between complex likelihood function (use 'c'), and normal function (use 'n')
         prefer complex likelihood for bispectrum
         """
-        chain = LikelihoodComputationChain(min=params[:, 1], max=params[:, 2])
-        chain.params = params
+        self.params=prior
+        chain = LikelihoodComputationChain(min=self.params[:, 1], max=self.params[:, 2])
+        chain.params = self.params
         if like_func == 'n':
-            chain.addLikelihoodModule(LikeModule(data, nbins, noise, div, model))
+            chain.addLikelihoodModule(LikeModule(data, nbins, noise, div, model_name))
         else:
             chain.addLikelihoodModule(ComplexLikeModule(data, nbins, noise, div))
         self.chain = chain
@@ -78,7 +76,7 @@ class RunMCMC:
         #   pso = MpiParticleSwarmOptimizer(self.chain, params[:, 1], params[:, 2])
         #   psoTrace = np.array([pso.gbest.position.copy() for _ in pso.sample()])
         #   params[:, 0] = pso.gbest.position
-        mpi_sampler = MpiCosmoHammerSampler(params=params,
+        mpi_sampler = MpiCosmoHammerSampler(params=self.params,
                                             likelihoodComputationChain=self.chain,
                                             filePrefix='%s' % self.name + '%d' % num,
                                             walkersRatio=walker_ratio,
@@ -108,7 +106,7 @@ class RunMCMC:
         """
 
         sampler = CosmoHammerSampler(
-            params=params,
+            params=self.params,
             likelihoodComputationChain=self.chain,
             filePrefix='%s' % self.name + '%d' % num,
             walkersRatio=walker_ratio,
